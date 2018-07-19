@@ -1,16 +1,12 @@
 /**
  * 用户相关服务
  */
-
 const util = require('../utils/util.js');
 const api = require('../config/api.js');
-
-
 /**
  * 调用微信登录
  */
 function loginByWeixin() {
-
   let code = null;
   return new Promise(function (resolve, reject) {
     return util.login().then((res) => {
@@ -23,7 +19,6 @@ function loginByWeixin() {
           //存储用户信息
           wx.setStorageSync('userInfo', res.data.userInfo);
           wx.setStorageSync('token', res.data.token);
-
           resolve(res);
         } else {
           reject(res);
@@ -55,7 +50,6 @@ function checkLogin() {
     }
   });
 }
-
 
 module.exports = {
   loginByWeixin,
