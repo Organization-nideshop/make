@@ -46,14 +46,26 @@ function checkLogin() {
       });
 
     } else {
-      reject(false);
+      //reject(false);
+      loginByWeixin();
     }
   });
+}
+
+function checkLocation() {
+  //检查是否选择订购城市
+  var location = wx.getStorageSync('location');
+  if (location) {
+    return "{'location' : " + location + ",'status':false}";
+  } else {
+    return "{'location' : '无','status':true}";
+  }
 }
 
 module.exports = {
   loginByWeixin,
   checkLogin,
+  checkLocation,
 };
 
 

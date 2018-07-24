@@ -1,0 +1,12 @@
+.img{
+    width: 60%;
+    margin: 50rpx 20%;
+}
+.login-button{
+    width: 90%;
+    margin: 160rpx 5% 0;
+    font-size: 35rpx;
+    background-color: #FF665C;
+    color: #fff;
+    border: none;
+}

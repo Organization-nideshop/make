@@ -1,6 +1,73 @@
-
+<!--<script src="../../layer/layer.js" > </script>-->
 <!--index.wxml-->
 <view class="container">
-首页
-<include src="../footer/footer.wxml"/>
+<view class="cityandlogo" bindtap="showCity">
+  <view class="city">
+    <image class="cityImg" src="../../static/images/location.png"></image>
+    <text>{{showModalLocation}}</text>
+  </view>
+  <image class="logoImg" src="../../static/images/logo.png"></image>
 </view>
+<swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+      <navigator url="{{item.link}}">
+        <image src="{{item.image_url}}" background-size="cover"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <view class="m-menu">
+    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+      <view calss="icon-image">
+        <image src="{{item.icon_url}}" background-size="cover"></image>
+      </view>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+  <view class="a-section a-topic" wx:if="topics.length > 0">
+    <view class="h">
+      <navigator url="../topic/topic" open-type="switchTab">
+        <text class="txt-content">新品</text>
+        <text class="txt-more">更多 ></text>
+        </navigator>
+    </view>
+    <view class="b">
+      <block wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+        <!--<view class="item {{iindex % 2 == 0 ? '' : 'item-b'}}">-->
+          <navigator url="#">
+            <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
+            <view class="np">
+              <text class="name">{{item.title}}</text>
+              <text class="price">￥{{item.price_info}}元起</text>
+            </view>
+            <text class="desc">{{item.subtitle}}</text>
+          </navigator>
+        <!--</view>-->
+      </block>
+    </view>
+  </view>
+</view>
+<!--弹出框start-->
+  <view class="commodity_screen" catchtouchmove='true'wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box"  wx:if="{{showModalStatus}}">
+    <view class="title-modal" catchtouchmove='true'>可订购城市</view>
+    <view class="now-location">当前定位城市: <span class="now-location-inf">{{showModalLocation}}</span></view>
+    <view class="more-location">更多城市可选择</view>
+    <!--
+    calss="{{ showModalLocation == city.name ? 'city-inf-hover' : ''}}"-->
+    <view class="city-inf" style="background-image:url('../../static/images/city-back.jpg') center no-repeat">
+       <block wx:for="{{city_list}}" wx:for-item="city" wx:key="city_id">
+        <span  data-key="{{index}}">
+          <view>{{city.name}}</view>
+        </span>
+      </block>
+    </view>
+  </view>
+<!--弹出框end-->
+
+<!--footer-->
+<include src="../footer/footer.wxml"/>
+<!--弹出框
+<block wx:if="{{layLocation}}">
+    <import src="../../layer/layer.wxml"/>
+    <template is="layLocation" data="{{...item}}"/>
+</block>-->

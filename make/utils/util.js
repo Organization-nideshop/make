@@ -124,7 +124,10 @@ function getUserInfo() {
         resolve(res);
       },
       fail: function (err) {
-        reject(err);
+        //reject(err);
+        wx.navigateTo({
+          url: '/pages/auth/index/index'
+        })
       }
     })
   });
