@@ -1,0 +1,188 @@
+page{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.container{
+    background: #fff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.chargeTitle{
+    font-size: 14px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    color: #c9a16d;
+}
+.chargeTips{
+    font-size: 14px;
+    padding-left: 15px;
+    margin-top: 10px;
+    color: #c9a16d;
+}
+li{
+    display: flex;
+    align-items: center;
+    height: 25px;
+    padding-left: 15px;
+    color: grey;
+    font-size: 12px;
+}
+.dot{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #c9a16d;
+    margin-right: 5px;
+}
+.buttonCharge{
+    margin: 30px 0 10px 0;
+}
+.buttonCharge button{
+    border-radius: 10px;
+}
+.ensureCharge{
+    font-size: 14px;
+    color: #fff;
+    background: #c9a16d;
+    width: 90%;
+    margin-bottom: 10px;
+
+}
+.foot{
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.radio-group{
+    padding: 0 15px 0 15px;
+    margin-bottom: 30px;
+}
+.radio-style{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
+    font-weight: bold;
+    font-size: 12px;
+    border-bottom: 0.5px solid #f4f4f4;
+}
+.radio-style radio{
+    transform:scale(.5);
+    border: 1px solid #c9a16d;
+    background: transparent;
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    padding: 0.3em;
+    text-align: center;
+}
+/* 未选中的 背景样式 */
+radio .wx-radio-input{
+    border: 1px solid #c9a16d;
+    background: transparent;
+    border-radius: 50%;
+    width: 36rpx;
+    height: 36rpx;
+}
+/* 选中后的 背景样式  */
+radio .wx-radio-input.wx-radio-input-checked{
+    border: none;
+    background: #c9a16d;
+}
+/* 选中后的 对勾样式 */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    display: none;
+}
+
+.codeCharge{
+    font-size: 14px;
+    color: #c9a16d;
+    width: 90%;
+    border: 1px solid #c9a16d;
+    background: #fff;
+}
+.modal-screen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.chargeModal{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    font-size: 12px;
+}
+.chargeModal-title{
+    line-height: 40px;
+    background-color: #eee;
+    color: #888;
+    padding: 0 5%;
+}
+.chargeItems{
+    border-bottom: 0.5px solid #eee;
+    display: flex;
+    line-height: 40px;
+    padding: 0 5%;
+    color: #888;
+    font-size: 12px;
+}
+.chargeItems-sp{
+    border-bottom: 0.5px solid #eee;
+    display: flex;
+    line-height: 40px;
+    color: #c9a16d;
+    padding: 0 5%;
+}
+.chargeItems-sp span{
+    color: #c9a16d;
+}
+.chargeItemsTitle{
+    width: 30%;
+}
+.chargeDetail{
+    color: #888;
+}
+.ensurePay{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    background: #c9a16d;
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.codeChargeModal{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    color: #999;
+    font-size: 12px;
+}
+.codeChargeModal .chargeItems input{
+    color: #e7e7e7;
+    font-size: 12px;
+    height: 40px;
+}

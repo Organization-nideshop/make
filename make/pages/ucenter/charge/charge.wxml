@@ -1,0 +1,51 @@
+<view class="container">
+    <view class="chargeTitle">请选择充值金额</view>
+    <radio-group class="radio-group">
+        <label class="radio-style" wx:for="{{items}}">
+            {{item.value}}<radio value="{{item.name}}" checked="{{item.checked}}" color="#c9a16d"/>
+        </label>
+    </radio-group>
+    <ul>
+        <li wx:for="{{chargeTips}}"><label class="dot"></label>{{item.value}}</li>
+    </ul>
+    <view class="buttonCharge">
+        <button class="ensureCharge" bindtap="goToCharge">确定充值</button>
+        <button class="codeCharge" bindtap="goToCodeCharge">充值码充值</button>
+    </view>
+    <view class="foot">技术支持：阿中软件</view>
+
+    <!--弹出充值框-->
+    <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
+    <view class="chargeModal" wx:if="{{modalShow}}" animation="{{animationData}}">
+        <span class="chargeModal-title">支付详情</span>
+        <view class="chargeItems">
+            <span class="chargeItemsTitle">付款金额</span>
+            <span class="chargeDetail">100元</span>
+        </view>
+        <view class="chargeItems">
+            <span class="chargeItemsTitle">赠送金额</span>
+            <span class="chargeDetail">5元</span>
+        </view>
+        <view class="chargeItems-sp">
+            <span class="chargeItemsTitle">需付款</span>
+            <span class="chargeDetail">100元</span>
+        </view>
+        <button class="ensurePay">确定</button>
+    </view>
+
+    <!--弹出充值码充值框-->
+    <view class="modal-screen" wx:if="{{codeModalShow}}" bindtap="codeModalHide"></view>
+    <view class="codeChargeModal" wx:if="{{codeModalShow}}" animation="{{animationData_}}">
+        <span class="chargeModal-title">充值码充值</span>
+        <view class="chargeItems">
+            <input value="请输入充值码"/>
+        </view>
+        <view class="chargeItems">
+            <input value="请输入密码"/>
+        </view>
+        <view class="chargeItems">
+            <input value="请输入验证码"/>
+        </view>
+        <button class="ensurePay">确定</button>
+    </view>
+</view>

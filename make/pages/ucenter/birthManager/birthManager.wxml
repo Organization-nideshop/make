@@ -1,0 +1,27 @@
+<view class="container">
+    <view class="birth-top">
+        <image src="../../../static/images/birth-bg1_02.jpg" mode="widthFix"></image>
+    </view>
+    <view class="birthTips">
+        <image src="../../../static/images/birth-bg_04.jpg" mode="widthFix"></image>
+        <view class="tips-left">
+            <view class="tips-left-top">
+                {{comingDate}}<span>天后是您{{relationship}}的生日</span>
+            </view>
+            <span class="tips-left-bottom">{{birthday}} {{constellation}}</span>
+        </view>
+        <view class="tips-right">
+            <view class="tips-right-top">
+                <image src="../../../static/images/birth-icon_05.png" mode="widthFix"></image>
+                <span>提前{{remindDate}}天提醒您</span>
+            </view>
+            <view class="tips-right-bottom">查看</view>
+        </view>
+    </view>
+    <!--没有生日信息-->
+    <view class="birthTips-none" style="display: none">
+        {{addInfoTips}}
+    </view>
+
+    <view class="addBirthday">添加TA的生日</view>
+</view>

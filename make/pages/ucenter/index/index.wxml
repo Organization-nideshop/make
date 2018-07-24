@@ -1,4 +1,45 @@
 <view class="container">
-我的
+    <view class="top-info" style="background: url(../../../static/images/ucenter-bg.jpg) no-repeat;background-size:cover;">
+        <!--<image class="bg-img" src="../../../static/images/ucenter-bg.jpg" mode="widthFix"></image>-->
+        <view class="icon-items">
+            <image class="icon" src="../../../static/images/icon1_03.png" mode="widthFix"></image>
+            <view class="userInfo">
+                <span class="userInfo">{{uname}}</span>
+                <span class="userInfo">{{mobile}}</span>
+            </view>
+        </view>
+        <view class="top-nav">
+            <view class="top-nav-items" data-id='../chargeDetail/chargeDetail' bindtap='goToPage'>
+                <span class="top-nav-val">{{balance}}</span>
+                <span class="top-nav-title">我的余额</span>
+            </view>
+            <view class="top-nav-items">
+                <span class="top-nav-val">{{score}}</span>
+                <span class="top-nav-title">我的积分</span>
+            </view>
+            <view class="top-nav-items">
+                <span class="top-nav-val">{{growVal}}</span>
+                <span class="top-nav-title">我的成长值</span>
+            </view>
+        </view>
+    </view>
+
+    <scroll-view scroll-x class="scroll-x">
+        <block wx:for-items="{{menuList}}" wx:for-item="item" wx:key="{{index}}">
+            <view id="{{index}}">
+                <image class="menu-icon" src="{{item.imgUrl}}" mode="aspectFit"></image>
+                <span>{{item.title}}</span>
+            </view>
+        </block>
+    </scroll-view>
+
+    <view class="user-list">
+        <view class="list-items" wx:for="{{userList}}">
+            <view id="{{index}}">
+                <span>{{item.uListTitle}}</span>
+                <image src="../../../static/images/arrow-right.png"></image>
+            </view>
+        </view>
+    </view>
 <include src="../../footer/footer.wxml"/>
 </view>

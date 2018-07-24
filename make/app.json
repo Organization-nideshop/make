@@ -1,8 +1,12 @@
 {
   "pages": [
+    "pages/ucenter/birthManager/birthManager",
+    "pages/ucenter/index/index",
+    "pages/ucenter/chargeDetail/chargeDetail",
+    "pages/ucenter/charge/charge",
     "pages/index/index",
-    "pages/goods/goods",
-    "pages/ucenter/index/index"
+    "pages/goods/goods"
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",

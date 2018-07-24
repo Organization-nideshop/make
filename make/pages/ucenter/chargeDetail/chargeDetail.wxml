@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="top">
+        <view class="currentBalance">
+            <span class="currentBalance-title">余额</span>
+            <span class="currentBalance-detail">{{balance}}</span>
+        </view>
+    </view>
+    <view class="balance-nav">
+        <view class="nav-items change-month-data" data-num="0" bindtap="toggle" style="{{_num == 0?'color:#c9a16d':''}}">
+            <span>一个月内</span>
+            <view class="line {{_num==0?'nav-line':''}}"></view>
+        </view>
+        <view class="nav-items change-month-data" data-num="1" bindtap="toggle" style="{{_num == 1?'color:#c9a16d':''}}">
+            <span>三个月内</span>
+            <view class="line {{_num==1?'nav-line':''}}"></view>
+        </view>
+    </view>
+    <view class="balance-list">
+        <view class="getBalance-items">
+            <view class="getBalance-detail">
+                <span class="consume-time">{{consumeTime}}</span>
+                <span class="consumeWay">{{consumePlace}} -消费</span>
+            </view>
+        </view>
+        <view class="new-balance">{{consumeMoney}}
+            <span class="consumeWay">余额：{{balance}}</span>
+        </view>
+    </view>
+</view>

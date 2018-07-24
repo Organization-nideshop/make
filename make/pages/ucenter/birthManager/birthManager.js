@@ -1,0 +1,10 @@
+Page({
+    data:{
+        comingDate:'222',
+        relationship:'母亲',
+        birthday:'06月12日',
+        constellation:'双子座',
+        remindDate:'2',
+        addInfoTips:'添加生日信息后，会提前收到消息提醒！去添加那个TA吧~'
+    }
+})
