@@ -26,7 +26,7 @@
 
     <scroll-view scroll-x class="scroll-x">
         <block wx:for-items="{{menuList}}" wx:for-item="item" wx:key="{{index}}">
-            <view id="{{index}}">
+            <view id="{{index}}" data-id="{{item.pageUrl}}" bindtap="goToPage">
                 <image class="menu-icon" src="{{item.imgUrl}}" mode="aspectFit"></image>
                 <span>{{item.title}}</span>
             </view>
@@ -35,7 +35,7 @@
 
     <view class="user-list">
         <view class="list-items" wx:for="{{userList}}">
-            <view id="{{index}}">
+            <view id="{{index}}" data-id="{{item.pageUrl}}" bindtap="goToPage">
                 <span>{{item.uListTitle}}</span>
                 <image src="../../../static/images/arrow-right.png"></image>
             </view>

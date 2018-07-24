@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="title">提醒的天数的设置</view>
+    <radio-group class="radio-group">
+        <label class="radio-style" wx:for="{{items}}">
+            {{item.value}}<radio value="{{item.name}}" checked="{{item.checked}}"/>
+        </label>
+    </radio-group>
+</view>

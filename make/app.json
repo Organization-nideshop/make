@@ -1,10 +1,14 @@
 {
   "pages": [
+    "pages/ucenter/birthManager/birthManager",
+    "pages/ucenter/index/index",
+    "pages/ucenter/addBirthdayDetail/addBirthdayDetail",
+    "pages/ucenter/addBirthday/addBirthday",
+    "pages/ucenter/birthDetails/birthDetails",
+    "pages/ucenter/setBirthRemind/setBirthRemind",
     "pages/index/index",
     "pages/goods/goods",
     "pages/auth/index/index",
-    "pages/ucenter/birthManager/birthManager",
-    "pages/ucenter/index/index",
     "pages/ucenter/chargeDetail/chargeDetail",
     "pages/ucenter/charge/charge"
   ],

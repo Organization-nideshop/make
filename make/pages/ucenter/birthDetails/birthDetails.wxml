@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="birthInfo-list" wx:for="{{birthInfo}}">
+        <span class="birthInfo-title" id="{{index}}">{{item.title}}</span>
+        <span class="birthInfo-content">{{item.content}}</span>
+    </view>
+    <view class="button-bottom" data-id="../birthManager/birthManager" bindtap="backToList">返回列表</view>
+</view>

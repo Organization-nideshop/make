@@ -1,0 +1,13 @@
+Page({
+    data:{
+        items:[
+            {name:'section1',value:'提前2天',checked:true},
+            {name:'section2',value:'提前3天'},
+            {name:'section3',value:'提前4天'},
+            {name:'section4',value:'提前5天'},
+            {name:'section4',value:'提前6天'},
+            {name:'section4',value:'提前7天'},
+            {name:'section4',value:'提前15天'},
+        ],
+    }
+})

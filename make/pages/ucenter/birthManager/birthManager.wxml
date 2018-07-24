@@ -15,7 +15,7 @@
                 <image src="../../../static/images/birth-icon_05.png" mode="widthFix"></image>
                 <span>提前{{remindDate}}天提醒您</span>
             </view>
-            <view class="tips-right-bottom">查看</view>
+            <view class="tips-right-bottom" bindtap="showBirthDetails">查看</view>
         </view>
     </view>
     <!--没有生日信息-->
@@ -23,5 +23,5 @@
         {{addInfoTips}}
     </view>
 
-    <view class="addBirthday">添加TA的生日</view>
+    <view class="addBirthday" data-id="../addBirthday/addBirthday" bindtap="goToAddBirthday">添加TA的生日</view>
 </view>

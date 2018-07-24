@@ -1,0 +1,56 @@
+<view class="container">
+    <view class="top-icon"></view>
+    <view class="input-list">
+        <view class="input-items">
+            <span>姓名</span>
+            <input value="请输入您的姓名" />
+        </view>
+        <view class="input-items">
+            <span>性别</span>
+            <radio-group class="radio-group">
+                <label class="radio-style">
+                    <radio value="male" checked color="#c9a16d"/>男
+                </label>
+                <label class="radio-style">
+                    <radio value="female" color="#c9a16d"/>女
+                </label>
+            </radio-group>
+        </view>
+        <view class="input-items">
+            <span>年历</span>
+            <radio-group class="radio-group">
+                <label class="radio-style">
+                    <radio value="solar" checked color="#c9a16d"/>阳历
+                </label>
+                <label class="radio-style">
+                    <radio value="lunar" color="#c9a16d"/>阴历
+                </label>
+            </radio-group>
+        </view>
+        <view class="input-items">
+            <span>生日</span>
+            <input value="点击设置生日" />
+        </view>
+        <view class="input-items">
+            <span>手机</span>
+            <input value="请输入您的手机号码" />
+        </view>
+        <view class="input-items">
+            <span>关系</span>
+            <input value="描述你们的关系" />
+        </view>
+        <view class="input-items-sp" data-id="../addBirthdayDetail/addBirthdayDetail" bindtap="goToPage">
+            <span>添加更多资料</span>
+            <span class="triangle"></span>
+        </view>
+        <view class="input-items-sp" data-id="../setBirthRemind/setBirthRemind" bindtap="goToPage">
+            <span>设置生日提醒</span>
+            <view class="sp-right">
+                <span>提前2天</span>
+                <span class="triangle"></span>
+            </view>
+        </view>
+    </view>
+
+    <view class="button-bottom">保存</view>
+</view>
