@@ -54,11 +54,12 @@ function checkLogin() {
 
 function checkLocation() {
   //检查是否选择订购城市
+  //wx.setStorageSync("location", "西安");
   var location = wx.getStorageSync('location');
   if (location) {
-    return "{'location' : " + location + ",'status':false}";
+    return {'location' : location,'status':false};
   } else {
-    return "{'location' : '无','status':true}";
+    return { 'location': '无', 'status': true };
   }
 }
 

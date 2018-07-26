@@ -1,6 +1,6 @@
 <!--<script src="../../layer/layer.js" > </script>-->
 <!--index.wxml-->
-<view class="container">
+<view class="container {{showModalStatus ? 'over-flow-hidden' : ''}}">
 <view class="cityandlogo" bindtap="showCity">
   <view class="city">
     <image class="cityImg" src="../../static/images/location.png"></image>
@@ -46,7 +46,8 @@
     </view>
   </view>
 </view>
-<!--弹出框start-->
+
+<!--弹出框 选择地址 start-->
   <view class="commodity_screen" catchtouchmove='true'wx:if="{{showModalStatus}}"></view>
   <view animation="{{animationData}}" class="commodity_attr_box"  wx:if="{{showModalStatus}}">
     <view class="title-modal" catchtouchmove='true'>可订购城市</view>
@@ -54,15 +55,15 @@
     <view class="more-location">更多城市可选择</view>
     <!--
     calss="{{ showModalLocation == city.name ? 'city-inf-hover' : ''}}"-->
-    <view class="city-inf" style="background-image:url('../../static/images/city-back.jpg') center no-repeat">
+    <view class="city-inf" style="background-image:url('../../static/images/city-back.jpg')">
        <block wx:for="{{city_list}}" wx:for-item="city" wx:key="city_id">
-        <span  data-key="{{index}}">
+        <span  data-key="{{index}}" data-name="{{city.name}}" class="{{showModalLocation==city.name?'active-tag':''}}" bindtap="selectCity">
           <view>{{city.name}}</view>
         </span>
       </block>
     </view>
   </view>
-<!--弹出框end-->
+<!--弹出框 选择地址 end-->
 
 <!--footer-->
 <include src="../footer/footer.wxml"/>

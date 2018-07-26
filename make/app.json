@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/ucenter/birthManager/birthManager",
+    
     "pages/ucenter/index/index",
     "pages/ucenter/addBirthdayDetail/addBirthdayDetail",
     "pages/ucenter/addBirthday/addBirthday",
@@ -10,6 +10,8 @@
     "pages/goods/goods",
     "pages/auth/index/index",
     "pages/ucenter/chargeDetail/chargeDetail",
+    "pages/ucenter/birthManager/birthManager",
+    "pages/ucenter/order/order",
     "pages/ucenter/charge/charge"
   ],
   "window": {

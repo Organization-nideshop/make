@@ -12,6 +12,8 @@ App({
     }).catch(() => {
       
     });
+      this.globalData.location = user.checkLocation();
+      
   },
   
   globalData: {

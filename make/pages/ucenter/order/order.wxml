@@ -1,0 +1,174 @@
+<!--pages/ucenter/order/order.wxml-->
+<view class="container {{showModalStatus ? 'over-flow-hidden' : ''}}">
+  <view class="cate-nav">
+    <view class="cate-nav-body">
+      <view class="switchitem {{ id == 0 ? 'active' : ''}}" data-name="all" data-index="0" bindtap="switchOrder">
+        <view class="name">
+          <label>全部</label>
+        </view>
+      </view>
+      <view class="switchitem {{ id == 1 ? 'active' : ''}}" data-name="pay" data-index="1" bindtap="switchOrder">
+        <view class="name">
+          <label>待付款</label>
+        </view>
+      </view>
+      <view class="switchitem {{ id == 2 ? 'active' : ''}}" data-name="Collect" data-index="2" bindtap="switchOrder">
+        <view class="name">
+          <label>待收货</label>
+        </view>
+      </view>
+      <view class="switchitem {{ id == 3 ? 'active' : ''}}" data-name="comment" data-index="3" bindtap="switchOrder">
+        <view class="name">
+          <label>待评论</label>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--显示订单list-->
+  <block wx:if="{{listOrDetail == 'list'}}">
+    <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}};" wx:if="{listOrDetail == 0}}">
+      <view class="orders">
+        <!--<navigator url="../orderDetail/orderDetail?id={{item.id}}" class="order" wx:for="{{orderList}}" wx:key="{{item.id}}">-->
+        <view class="order" wx:for="{{orderList}}" wx:key="{{item.id}}">
+          <view class="h">
+            <view class="l">订单编号：
+              <label>{{item.order_sn}}</label>
+            </view>
+            <view class="r">{{item.order_status_text}}</view>
+          </view>
+          <view class="goods" wx:for="{{item.goodsList}}" wx:key="{{gitem.id}}" wx:for-item="gitem">
+            <view class="img">
+              <image src="{{gitem.list_pic_url}}"></image>
+            </view>
+            <view class="info">
+              <text class="name">{{gitem.goods_name}}</text>
+              <text class="type">订单类型: {{item.type}}</text>
+              <text class="price">{{gitem.goods_price}}元</text>
+            </view>
+            <view class="status">
+              <text class="shop">{{gitem.shop}}</text>
+              <text class="number">×{{gitem.number}}</text>
+              <text class="detail" data-ordersn="{{item.order_sn}}" bindtap="showDetail">订单详情</text>
+            </view>
+          </view>
+          <view class="b">
+            <view class="l">合计: {{item.actual_price}}元</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+  <!--显示订单详情-->
+  <block wx:if="{{listOrDetail == 'detail'}}">
+    <view class="ordersdetail">
+      <view class="order">
+        <view class="h">
+          <view class="l">订单编号：
+            <label>{{orderDetail.order_sn}}</label>
+          </view>
+          <view class="r">{{orderDetail.order_status_text}}</view>
+        </view>
+        <view class="goods">
+          <view class="img">
+            <image src="{{orderDetail.list_pic_url}}"></image>
+          </view>
+          <view class="info">
+            <text class="name">{{orderDetail.goods_name}}</text>
+            <text class="type">订单类型: {{orderDetail.type}}</text>
+            <text class="price">{{orderDetail.goods_price}}元</text>
+          </view>
+          <view class="status">
+            <text class="shop">{{orderDetail.shop}}</text>
+            <text class="number">×{{orderDetail.number}}</text>
+            <text class="detail" data-ordersn="{{orderDetail.order_sn}}" bindtap="orderComment">产品评价</text>
+          </view>
+        </view>
+        <view class="b">
+          <view class="d">优惠: {{orderDetail.discount}}元</view>
+        </view>
+        <view class="b">
+          <view class="l">合计: {{orderDetail.actual_price}}元</view>
+          <view class="r">
+              <text class="btn" data-order-index="{{index}}" catchtap="payOrder" wx:if="{{orderDetail.order_status==0}}">立即支付</text>
+              <text class="btn" data-order-index="{{index}}" catchtap="payOrder" wx:if="{{orderDetail.order_status==0}}">取消订单</text>
+            </view>
+        </view>
+      </view>
+      <view class="order content">
+        <view class="b">
+          <view class="t">订单类型：</view>
+          <view class="c">
+            {{orderDetail.type}}
+          </view>
+        </view>
+        <view class="b">
+          <view class="t">配送方式：</view>
+          <view class="c">
+            {{orderDetail.distribution}}
+          </view>
+        </view>
+        <view class="b">
+          <view class="t">提货门店：</view>
+          <view class="c">
+            {{orderDetail.store_name}}
+          </view>
+        </view>
+        <view class="b">
+          <view class="t">联系电话：</view>
+          <view class="c">
+            {{orderDetail.telephone}}
+          </view>
+        </view>
+        <view class="b">
+          <view class="t">提货时间：</view>
+          <view class="c">
+            {{orderDetail.pu_time}}
+          </view>
+        </view>
+        <view class="b">
+          <view class="t">下单时间：</view>
+          <view class="c">
+            {{orderDetail.order_time}}
+          </view>
+        </view>
+        <view class="b">
+          <view class="t">订单备注：</view>
+          <view class="c">
+            {{orderDetail.remarks}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!--弹出框start-->
+<view class="commodity_screen" catchtouchmove='true' bindtap="hideComment" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="title-modal" catchtouchmove='true'>评价
+    <view class="close-modal" bindtap="hideComment">×</view>
+  </view>
+  <view class="collage-content-inf">
+    <view class="order comment" wx:for="{{commentList}}" wx:key="{{citem.id}}" wx:for-item="citem">
+      <view class="b">
+        <view class="t">{{citem.value}}：</view>
+        <view class="c">
+          <radio-group class="radio-group">
+            <label class="radio radio-style" wx:for="{{citem.type}}" wx:key="{{typeitem.type_id}}" wx:for-item="typeitem">
+              <radio value="{{typeitem.type_name}}" checked="{{typeitem.checked}}" color="#c9a16d"/>{{typeitem.type_name}}
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+    <!--textarea.wxml-->
+    <textarea class="text-comment" placeholder="在这里可以留下您更多宝贵的意见或建议哦~" maxlength="-1" focus="{{focus}}" />
+    <!--<view class="section">
+      
+    </view>-->
+  </view>
+  <view class="footer-modal">
+    <button type="default" bindtap="default" hover-class="other-button-hover" form-type="submit"> 提交 </button>
+  </view>
+</view>
+<!--弹出框start-->
+<include src="../../footer/footer.wxml" />

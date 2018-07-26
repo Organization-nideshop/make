@@ -1,0 +1,424 @@
+/* pages/ucenter/order/order.wxss */
+
+.container {
+  font-family: PingFang SC Medium;
+  background: #fff;
+}
+
+.cate-nav {
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.cate-nav-body {
+  height: 84rpx;
+  background: #eee;
+  /*border-top: 1px solid rgba(0,0,0,.15);
+    overflow: hidden;white-space: nowrap;  */
+  padding: 0 15rpx;
+}
+
+.cate-nav .switchitem {
+  display: inline-block;
+  height: 84rpx;
+  width: 25%;
+  padding: 0 15rpx;
+}
+
+.cate-nav .switchitem .name {
+  display: block;
+  height: 84rpx;
+  padding: 0 20rpx;
+  line-height: 95rpx;
+  color: #888;
+  font-size: 32rpx;
+  width: auto;
+}
+
+.cate-nav .switchitem.active .name {
+  color: #c9a16d;
+  /*border-bottom: 2px solid #c9a16d;*/
+}
+
+.cate-nav .switchitem.active .name label {
+  border-bottom: 1rpx solid #c9a16d;
+  padding-bottom: 15rpx;
+}
+
+/*order start
+
+.navigator-hover {
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 1;
+}*/
+
+.orders,.ordersdetail {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.order {
+  margin: 0 15rpx;
+  border-bottom: 5rpx solid #eee;
+}
+
+.order.content{
+  padding-top: 40rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.order.comment{
+  /*border-bottom: 1rpx solid #eee;*/
+  border-bottom: 0;
+}
+
+.order.content>.b:first-child{
+  border-top: 0;
+}
+
+.order .h {
+  height: 83.3rpx;
+  line-height: 83.3rpx;
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 30rpx;
+  color: #333;
+  padding: 0 15rpx;
+}
+
+.order .h .l {
+  float: left;
+  color: #333;
+}
+
+.order .h .l label {
+  color: #888;
+}
+
+.order .h .r {
+  float: right;
+  color: #c9a16d;
+  font-size: 28rpx;
+  font-family: PingFang SC Bold;
+  width: 160rpx;
+}
+
+.order .goods {
+  display: flex;
+  align-items: center;
+  height: 199rpx;
+  padding: 0 15rpx;
+}
+
+.order .goods .img {
+  height: 145.83rpx;
+  width: 145.83rpx;
+  background: #f4f4f4;
+}
+
+.order .goods .img image {
+  height: 145.83rpx;
+  width: 145.83rpx;
+}
+
+.order .goods .info {
+  height: 145.83rpx;
+  flex: 1;
+  padding-left: 40rpx;
+}
+
+.order .goods .name {
+  display: block;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC Bold;
+}
+
+.order .goods .detail {
+  display: block;
+  width:130rpx;
+height:54rpx;
+line-height:54rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-family: PingFang SC Bold;
+  background-color: #c9a16d;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.order .goods .shop, .order .goods .type {
+  display: block;
+  height: 44rpx;
+  line-height: 44rpx;
+  color: #888;
+  font-size: 28rpx;
+}
+
+.order .goods .price, .order .goods .number {
+  display: block;
+  color: #c9a16d;
+  font-size: 30rpx;
+  font-family: PingFang SC Heavy;
+}
+
+.order .goods .type, .order .goods .number {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.order .goods .price {
+  height: 54rpx;
+  line-height: 54rpx;
+}
+
+.order .goods .status {
+  height: 145.83rpx;
+  width: 160rpx;
+  color: #b4282d;
+  font-size: 25rpx;
+}
+
+.order .b {
+  height: 70rpx;
+  line-height: 70rpx;
+  border-top: 1px solid #f4f4f4;
+  font-size: 30rpx;
+  color: #333;
+  padding: 0 15rpx;
+}
+
+.order .b .l,.order .b .d {
+  float: left;
+  font-family: PingFang SC Heavy;
+  font-size: 34rpx;
+  color: #c9a16d;
+}
+
+.order .b .d {
+  font-size: 28rpx;
+}
+
+.order .b .r {
+  float: right;
+  
+height:70rpx;
+line-height:70rpx;
+display:flex;
+align-items:center;
+
+}
+
+.order .b .btn {
+  height:50rpx;
+line-height:50rpx;
+text-align:center;
+padding:0 20rpx;
+border-radius:5rpx;
+font-size:28rpx;
+color:#c9a16d;
+background:#fff;
+float:left;
+border:1rpx solid #c9a16d;
+margin-left:12rpx;
+}
+
+.order .b .t {
+  float: left;
+  width:30%;
+  color:#333;
+}
+
+.order .b .c {
+  width:70%;
+  color:#999;
+}
+.order.comment .b{
+height: 75rpx;
+line-height: 75rpx;
+}
+
+.order.comment .b .t{
+width:20%;
+color: #888;
+font-size: 26rpx;
+}
+.order.comment .b .c {
+  width: 80%;
+}
+.order.comment .b .t,.order.comment .b .c  {
+  font-family: PingFang SC Heavy;
+  color:#888;
+  float: left;
+}
+.order.comment .b {
+  border-top: 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+/*order end*/
+/*弹出框start*/
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.title-modal {
+  background-color: #c9a16d;
+  font-size: 32rpx;
+  padding: 28rpx 4%;
+  font-family: PingFang SC Heavy;
+  color:#fff;
+}
+
+.close-modal {
+  width: 40rpx;
+  float: right;
+  font-size: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-family: PingFang SC Heavy;
+  color:#fff;
+}
+
+.collage-content-inf>.collage-information:last-child {
+  border-bottom: 0;
+}
+.collage-content-inf .section{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.text-comment{
+  width:90%;
+height:250rpx;
+background-color:#eee;
+margin-top: 35rpx;
+margin-bottom: 25rpx;
+font-family: PingFang SC Medium;
+font-size: 24rpx;
+color:#888;
+margin-left:5%;
+letter-spacing:3rpx;
+resize:none;
+padding:25rpx 40rpx;
+box-sizing:border-box;
+border-radius: 5rpx;
+}
+
+.footer-modal button{
+  width: 90%;
+  background-color: #c9a16d;
+  color:#fff;
+  font-family: PingFang SC Medium;
+  font-size: 32rpx;
+  margin-bottom:60rpx;
+  border-radius:5rpx;
+}
+
+.over-flow-hidden{
+    overflow: hidden;
+    position:fixed;
+    width:100%;
+}
+
+/*  重写 radio 样式  */
+.radio-group{
+   /* display: flex;*/
+}
+.radio-style{
+   /* height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    border-bottom: 0.5px solid #f4f4f4;*/
+    /*margin-right: 40px;*/
+    width:33%;
+    float:left;
+    font-size:26rpx;
+    color: #888;
+}
+.radio-style radio{
+    transform:scale(.5);
+    border: 1px solid #c9a16d;
+    background: transparent;
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    padding: 0.5em;
+    text-align: center;
+    line-height:35rpx;
+}
+/* 未选中的 背景样式 */
+radio .wx-radio-input{
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50%;
+    width: 36rpx;
+    height: 36rpx;
+}
+/* 选中后的 背景样式  */
+radio .wx-radio-input.wx-radio-input-checked{
+    border: none;
+    background: #c9a16d;
+}
+/* 选中后的 对勾样式 */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    display: none;
+}
+
+/* 未选中的 背景样式 
+radio .wx-radio-input{
+   border-radius: 50%;
+   height: 26rpx; 
+   width: 26rpx;
+   background-color: #fff; 
+   border: 1rpx solid #c9a16d;
+}*/
+/* 选中后的 背景样式
+radio .wx-radio-input.wx-radio-input-checked{
+    border-radius: 50%;
+    height: 20rpx; 
+    width: 20rpx;
+    background-color: red; 
+    z-index: 999;
+
+} */
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改）
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 26rpx; 
+    height: 26rpx; 
+    line-height: 26rpx;
+    text-align: center;
+    font-size:12rpx; 
+    color:#fff; 
+    background: transparent;
+    transform:translate(-50%, -50%) scale(1);
+    -webkit-transform:translate(-50%, -50%) scale(1);
+    background-color: #fff; 
+    border: 1rpx solid #000;
+} */
+/*弹出框end*/
