@@ -1,0 +1,55 @@
+page{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.container{
+    background: #fff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.input-items{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 5%;
+}
+.input-items input{
+    height: 40px;
+    color: #cdcdcd;
+    font-size: 12px;
+}
+.input-items span{
+    width: 30%;
+    color: #888;
+}
+.tips{
+    font-size: 14px;
+    color: #888;
+    margin: 10px 5% 20px 5%;
+    width: 90%;
+}
+
+.button-bottom{
+    margin: 30px 0 10px 0;
+}
+.button-bottom button{
+    border-radius: 10px;
+    width: 80%;
+    font-size: 14px;
+}
+.ensure{
+    color: #fff;
+    background: #c9a16d;
+}
+.cancel{
+    font-size: 14px;
+    color: #c9a16d;
+    border: 1px solid #c9a16d;
+    background: #fff;
+    margin-top: 10px;
+}

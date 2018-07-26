@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="input-items">
+        <span>设置密码</span>
+        <input value="请输入6位数字密码" />
+    </view>
+    <view class="input-items">
+        <span>确认密码</span>
+        <input value="请输入6位数字密码" />
+    </view>
+    <view class="tips">客服电话：400-022-6999</view>
+    <view class="button-bottom">
+        <button class="ensure">确定</button>
+        <button class="cancel" bindtap="backToPage">取消</button>
+    </view>
+</view>
+

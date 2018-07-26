@@ -2,10 +2,14 @@
     <view class="top-info" style="background: url(../../../static/images/ucenter-bg.jpg) no-repeat;background-size:cover;">
         <!--<image class="bg-img" src="../../../static/images/ucenter-bg.jpg" mode="widthFix"></image>-->
         <view class="icon-items">
-            <image class="icon" src="../../../static/images/icon1_03.png" mode="widthFix"></image>
+            <image class="icon" src="../../../static/images/birth-icon_03.png" mode="widthFix" data-id='../completeInfo/completeInfo' bindtap='goToPage'></image>
             <view class="userInfo">
-                <span class="userInfo">{{uname}}</span>
-                <span class="userInfo">{{mobile}}</span>
+                <!--<span>{{uname}}</span>
+                <span>{{mobile}}</span>-->
+                <view>
+                    <span class="cmpInfo" bindtap='showCmpView'>请完善账号></span>{{uname}}
+                </view>
+                <span>{{mobile}}</span>
             </view>
         </view>
         <view class="top-nav">
@@ -39,6 +43,27 @@
                 <span>{{item.uListTitle}}</span>
                 <image src="../../../static/images/arrow-right.png"></image>
             </view>
+        </view>
+    </view>
+
+    <!--完善资料弹窗-->
+    <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
+    <view class="chargeModal" wx:if="{{modalShow}}" animation="{{animationData}}">
+        <view class="chargeModal-title">
+            完善资料<span>送积分</span>
+        </view>
+        <view class="chargeItems">
+            <span class="chargeItemsTitle">姓名：</span>
+            <input class="chargeDetail" />
+        </view>
+        <view class="chargeItems">
+            <span class="chargeItemsTitle">手机绑定：</span>
+            <input class="chargeDetail" />
+            <span class="getCode">获取验证码</span>
+        </view>
+        <view class="btn-area">
+            <span class="getCode" data-id="../charge/charge" bindtap="goToPage">余额充值</span>
+            <span class="getCode" data-id="../birthManager/birthManager" bindtap="goToPage">生日管家</span>
         </view>
     </view>
 <include src="../../footer/footer.wxml"/>

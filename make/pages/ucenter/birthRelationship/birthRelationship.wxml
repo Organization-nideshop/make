@@ -1,7 +1,9 @@
 <view class="container">
     <view class="addRelTips">
-        {{name}}<span>是我的</span>{{relation.value}}
-
+        <view class="addRelTips-title">
+            {{name}}<span>是我的</span>
+        </view>
+        <view class="relationship" wx:if="{{relation.id}}">{{relation.value}}</view>
     </view>
     <view class="input-list">
         <view class="input-items" data-id="0" bindtap="showList">
@@ -19,7 +21,30 @@
             <span class="hideList" style="{{_id==1&&open?'display:block':'display:none'}}"></span>
         </view>
         <view class="relList" style="{{_id==1&&open?'display:block':'display:none'}}">
-            <view wx:for="{{relation2}}" class="relationship {{num==item.id?'selected':''}}" data-num="{{item.id}}" bindtap="selectThis">{{item.value}}</view>
+            <view wx:for="{{relation2}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
+        </view>
+
+        <view class="input-items" data-id="2" bindtap="showList">
+            <span class="relType">同事/伙伴</span>
+            <span class="showList" style="{{_id==2&&open?'display:none':'display:block'}}"></span>
+            <span class="hideList" style="{{_id==2&&open?'display:block':'display:none'}}"></span>
+        </view>
+        <view class="relList" style="{{_id==2&&open?'display:block':'display:none'}}">
+            <view wx:for="{{relation3}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
+        </view>
+
+        <view class="input-items" data-id="3" bindtap="showList">
+            <span class="relType">同学/老师</span>
+            <span class="showList" style="{{_id==3&&open?'display:none':'display:block'}}"></span>
+            <span class="hideList" style="{{_id==3&&open?'display:block':'display:none'}}"></span>
+        </view>
+        <view class="relList" style="{{_id==3&&open?'display:block':'display:none'}}">
+            <view wx:for="{{relation4}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
+        </view>
+
+        <view class="button-bottom">
+            <button class="cancel" bindtap="backToPage">取消</button>
+            <button class="ensure">确定</button>
         </view>
     </view>
 </view>

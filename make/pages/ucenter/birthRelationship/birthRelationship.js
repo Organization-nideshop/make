@@ -1,3 +1,5 @@
+/*
+*/
 Page({
     data:{
         name:'发发',
@@ -26,16 +28,32 @@ Page({
             {id:'18',value:'孙女'}
         ],
         relation2:[
-            {id:'1',value:'朋友'},
-            {id:'2',value:'恋人'},
-            {id:'3',value:'情人'},
-            {id:'4',value:'闺蜜'},
-            {id:'5',value:'死党'},
-            {id:'6',value:'好友'},
-            {id:'7',value:'玩伴'},
-            {id:'8',value:'知己'},
-            {id:'9',value:'老友'},
-            {id:'10',value:'战友'}
+            {id:'19',value:'朋友'},
+            {id:'20',value:'恋人'},
+            {id:'21',value:'情人'},
+            {id:'22',value:'闺蜜'},
+            {id:'23',value:'死党'},
+            {id:'24',value:'好友'},
+            {id:'25',value:'玩伴'},
+            {id:'26',value:'知己'},
+            {id:'27',value:'老友'},
+            {id:'28',value:'战友'}
+        ],
+        relation3:[
+            {id:'29',value:'同事'},
+            {id:'30',value:'伙伴'},
+            {id:'31',value:'领导'},
+            {id:'32',value:'下属'},
+            {id:'33',value:'客户'}
+        ],
+        relation4:[
+            {id:'34',value:'同学'},
+            {id:'35',value:'大学同学'},
+            {id:'36',value:'高中同学'},
+            {id:'37',value:'初中同学'},
+            {id:'38',value:'小学同学'},
+            {id:'39',value:'老师'},
+            {id:'40',value:'学生'},
         ],
     },
     showList:function (e) {
@@ -48,6 +66,11 @@ Page({
     selectThis:function (e) {
         this.setData({
             relation:{id:e.target.dataset.num,value:e.target.dataset.value}
+        })
+    },
+    backToPage:function () {
+        wx.navigateBack({
+            delta:1
         })
     }
 })

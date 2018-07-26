@@ -43,7 +43,7 @@
             <span>手机</span>
             <input value="请输入您的手机号码" />
         </view>
-        <view class="input-items">
+        <view class="input-items" data-id="../birthRelationship/birthRelationship" disabled bindtap="goToPage">
             <span>关系</span>
             <input value="描述你们的关系" />
         </view>

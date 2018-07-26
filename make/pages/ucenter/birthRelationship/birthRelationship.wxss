@@ -14,8 +14,18 @@ page{
     padding-left: 10px;
     margin-bottom: 30px;
 }
-.addRelTips span{
+.addRelTips-title span{
     margin-left: 5px;
+}
+.showRelation{
+    font-size: 10px;
+    width: 60px;
+    padding: 3px 0;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 5%;
 }
 .input-list{
     padding: 0 5%;
@@ -28,6 +38,7 @@ page{
     width: 100%;
     height: 40px;
     font-size: 14px;
+    border-bottom: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 .relType{
@@ -53,7 +64,7 @@ page{
     /*border-bottom: 1px solid #eee;*/
     padding-top: 10px;
     width: 100%;
-    padding: 0 5%;
+    padding: 10px 5%;
 }
 .relationship{
     font-size: 10px;
@@ -63,10 +74,31 @@ page{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 5%;
+    margin: 5px 5%;
     float: left;
 }
 .selected{
     border: 1px solid #c9a16d;
     color: #c9a16d;
+}
+.button-bottom{
+    margin: 30px 0 10px 0;
+}
+.button-bottom button{
+    border-radius: 10px;
+}
+.ensure{
+    font-size: 14px;
+    color: #fff;
+    background: #c9a16d;
+    width: 90%;
+    margin-top: 10px;
+}
+.cancel{
+    font-size: 14px;
+    color: #c9a16d;
+    width: 90%;
+    border: 1px solid #c9a16d;
+    background: #fff;
+    margin-top: 10px;
 }

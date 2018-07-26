@@ -1,0 +1,34 @@
+<view class="container">
+    <view class="input-list">
+        <view class="input-items">
+            <span>姓名：</span>
+            <input value="李璐" />
+        </view>
+        <view class="input-items">
+            <span>性别:</span>
+            <radio-group class="radio-group">
+                <label class="radio-style">
+                    <radio value="male" checked color="#c9a16d"/>男
+                </label>
+                <label class="radio-style">
+                    <radio value="female" color="#c9a16d"/>女
+                </label>
+            </radio-group>
+        </view>
+        <view class="input-items">
+            <span>生日:</span>
+            <picker mode="date" value="{{date}}" start="1900-01-01" end="{{myDate}}" bindchange="bindDateChange">
+                <view class="picker">
+                    {{date}}
+                </view>
+            </picker>
+            <!--<input value="点击设置生日" style="display: {{showTips}}" disabled bindtap="showPicker" />{{showDate}}-->
+        </view>
+
+        <view class="input-items">
+            <span>电话:</span>
+            <input value="1820****5664" />
+        </view>
+    </view>
+    <view class="button-bottom">确定</view>
+</view>
