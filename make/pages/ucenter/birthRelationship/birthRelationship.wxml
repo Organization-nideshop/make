@@ -1,0 +1,25 @@
+<view class="container">
+    <view class="addRelTips">
+        {{name}}<span>是我的</span>{{relation.value}}
+
+    </view>
+    <view class="input-list">
+        <view class="input-items" data-id="0" bindtap="showList">
+            <span class="relType">家人/亲戚</span>
+            <span class="showList" style="{{_id==0&&open?'display:none':'display:block'}}"></span>
+            <span class="hideList" style="{{_id==0&&open?'display:block':'display:none'}}"></span>
+        </view>
+        <view class="relList" style="{{_id==0&&open?'display:block':'display:none'}}">
+            <view wx:for="{{relation1}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
+        </view>
+
+        <view class="input-items" data-id="1" bindtap="showList">
+            <span class="relType">朋友/恋人</span>
+            <span class="showList" style="{{_id==1&&open?'display:none':'display:block'}}"></span>
+            <span class="hideList" style="{{_id==1&&open?'display:block':'display:none'}}"></span>
+        </view>
+        <view class="relList" style="{{_id==1&&open?'display:block':'display:none'}}">
+            <view wx:for="{{relation2}}" class="relationship {{num==item.id?'selected':''}}" data-num="{{item.id}}" bindtap="selectThis">{{item.value}}</view>
+        </view>
+    </view>
+</view>

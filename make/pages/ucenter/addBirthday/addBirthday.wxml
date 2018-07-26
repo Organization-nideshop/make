@@ -1,5 +1,7 @@
 <view class="container">
-    <view class="top-icon"></view>
+    <view class="top-icon">
+        <image src="../../../static/images/birth-icon_03.png"></image>
+    </view>
     <view class="input-list">
         <view class="input-items">
             <span>姓名</span>
@@ -29,8 +31,14 @@
         </view>
         <view class="input-items">
             <span>生日</span>
-            <input value="点击设置生日" />
+            <!--<picker mode="date" value="{{date}}" start="1900-01-01" end="{{myDate}}" bindtap="getCurrDate" bindchange="bindDateChange">
+                <view class="picker">
+                    <input value="点击设置生日" style="display: {{showTips}}" disabled/>{{date}}
+                </view>
+            </picker>-->
+            <input value="点击设置生日" style="display: {{showTips}}" disabled bindtap="showPicker" />{{showDate}}
         </view>
+
         <view class="input-items">
             <span>手机</span>
             <input value="请输入您的手机号码" />
@@ -51,6 +59,16 @@
             </view>
         </view>
     </view>
-
+    <picker-view indicator-style="height: 30px;" style="display: {{showPicker}}" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+            <view wx:for="{{years}}" style="line-height: 30px">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{months}}" style="line-height: 30px">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{days}}" style="line-height: 30px">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
     <view class="button-bottom">保存</view>
 </view>

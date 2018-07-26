@@ -1,0 +1,53 @@
+Page({
+    data:{
+        name:'发发',
+        open:false,
+        num:'',
+        _id:'',
+        relation:{},
+        relation1:[
+            {id:'1',value:'老婆'},
+            {id:'2',value:'老公'},
+            {id:'3',value:'父亲'},
+            {id:'4',value:'母亲'},
+            {id:'5',value:'公公'},
+            {id:'6',value:'婆婆'},
+            {id:'7',value:'哥哥'},
+            {id:'8',value:'姐姐'},
+            {id:'9',value:'弟弟'},
+            {id:'10',value:'妹妹'},
+            {id:'11',value:'爷爷'},
+            {id:'12',value:'奶奶'},
+            {id:'13',value:'叔叔'},
+            {id:'14',value:'阿姨'},
+            {id:'15',value:'儿子'},
+            {id:'16',value:'女儿'},
+            {id:'17',value:'孙子'},
+            {id:'18',value:'孙女'}
+        ],
+        relation2:[
+            {id:'1',value:'朋友'},
+            {id:'2',value:'恋人'},
+            {id:'3',value:'情人'},
+            {id:'4',value:'闺蜜'},
+            {id:'5',value:'死党'},
+            {id:'6',value:'好友'},
+            {id:'7',value:'玩伴'},
+            {id:'8',value:'知己'},
+            {id:'9',value:'老友'},
+            {id:'10',value:'战友'}
+        ],
+    },
+    showList:function (e) {
+        var id = e.currentTarget.dataset.id;
+        this.setData({
+            open:!this.data.open,
+            _id: id
+        })
+    },
+    selectThis:function (e) {
+        this.setData({
+            relation:{id:e.target.dataset.num,value:e.target.dataset.value}
+        })
+    }
+})
