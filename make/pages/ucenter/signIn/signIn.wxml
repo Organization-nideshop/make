@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="sign-top">
+        <view class="icon-items">
+            <image class="icon" src="../../../static/images/birth-icon_03.png" mode="widthFix" data-id='../completeInfo/completeInfo' bindtap='goToPage'></image>
+            <span>普卡</span>
+        </view>
+        <view class="userInfo">
+            <view class="tips-top">
+                <span class="cmpInfo" bindtap='showCmpView'>请完善账号></span>133****3278
+            </view>
+            <span>还差66成长值即可升值为银卡</span>
+            <progress percent="80" activeColor="#c9a16d" backgroundColor="#fff"/>
+        </view>
+    </view>
+    <view class="sign-content">
+        <view class="progress-left">
+            <span class="triangle"></span>
+        </view>
+        <view class="progress-line"></view>
+        <!--<view class="progress-line-items">-->
+            <view class="progress-section-list">
+                <view class="progress-section-items">
+                    <span class="progress-section"></span>
+                    <span class="progress-title">05/23</span>
+                </view>
+            </view>
+        <!--</view>-->
+    </view>
+</view>

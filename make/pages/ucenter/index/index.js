@@ -35,7 +35,7 @@ Page({
                 id:4,
                 title:'签到',
                 imgUrl:'../../../static/images/icon1_14.png',
-                pageUrl:''
+                pageUrl:'../signIn/signIn'
             },
             {
                 id:5,
