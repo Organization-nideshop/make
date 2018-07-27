@@ -13,17 +13,48 @@
         </view>
     </view>
     <view class="sign-content">
-        <view class="progress-left">
-            <span class="triangle"></span>
-        </view>
-        <view class="progress-line"></view>
-        <!--<view class="progress-line-items">-->
-            <view class="progress-section-list">
-                <view class="progress-section-items">
+        <view class="sign-list">
+            <view class="progress-left">
+                <span class="triangle"></span>
+            </view>
+            <view class="progress-line"></view>
+            <view class="progress-section-list" bindtap="showSignRecords">
+                <view class="progress-section-items {{ischeck==0?'':'check'}}" wx:for="{{date}}" data-id="{{index}}">
                     <span class="progress-section"></span>
-                    <span class="progress-title">05/23</span>
+                    <span class="progress-title">{{item.day}}</span>
                 </view>
             </view>
-        <!--</view>-->
+        </view>
+        <view class="sign-btn" bindtap="signIn">签 到</view>
+    </view>
+    <view class="signIn-rules">
+        <span class="rule-title">签到规则说明：</span>
+        <span>当月连续签到10天，赠送1张5元产品电子券</span>
+    </view>
+    <view class="signIn-img">
+        <image src="../../../static/images/signIn_02.jpg" mode="widthFix"></image>
+    </view>
+    <view class="button-bottom" bindtap="backToPage">返回列表</view>
+
+    <!--弹出框-->
+    <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
+    <view class="chargeModal" wx:if="{{modalShow}}" animation="{{animationData}}">
+        <span class="chargeModal-title">签到查询</span>
+        <view class="chargeItems">
+            <view class="weekName">
+                <view class="sunday">Sun</view>
+                <view class="monday">Mon</view>
+                <view class="tuesday">Tue</view>
+                <view class="wednesday">Wed</view>
+                <view class="thursday">Thu</view>
+                <view class="friday">Fri</view>
+                <view class="saturday">Sat</view>
+            </view>
+            <view class="week">
+                <block wx:for="{{signDate}}" wx:for-index="idx" wx:for-item="menus" wx:key="menus">
+                    <view class="signDate">{{menus.date}}</view>
+                </block>
+            </view>
+        </view>
     </view>
 </view>
