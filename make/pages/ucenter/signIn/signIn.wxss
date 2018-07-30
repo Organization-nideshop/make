@@ -272,3 +272,11 @@ progress{
     height: 30px;
     color: #888;
 }
+.date-style{
+    padding: 5px;
+    border-radius: 50%;
+}
+.selected{
+    background: #c9a16d;
+    color: #fff;
+}

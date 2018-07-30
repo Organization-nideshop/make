@@ -6,6 +6,7 @@ Page({
         signDate:[{id:1,date:2}],
         month:'',
         year:'',
+        thisDay:'',
         showLast:true,
         showDate:false,
         date:[
@@ -87,9 +88,11 @@ Page({
         var date = new Date();
         var ori_Month = date.getMonth() + 1;
         var year = date.getFullYear();
+        var thisDay = date.getDate();
         this.setData({
             month:ori_Month,
-            year:year
+            year:year,
+            thisDay:thisDay
         })
 
     },
@@ -119,17 +122,12 @@ Page({
         }
         var jsonstr = [];
         for (var i = 0; i < days; i++) {
-
-            
-            //var jsonarray = eval('(' + jsonstr + ')');
             var arr =
                 {
                     id: i,
                     date: i + 1
                 }
-            
             jsonstr.push(arr);
-            //signDate.push(i+1);
         }
         that.setData({
           signDate: jsonstr

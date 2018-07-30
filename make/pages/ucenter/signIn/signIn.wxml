@@ -66,7 +66,9 @@
             </view>
             <view class="week">
                 <block wx:for="{{signDate}}" wx:for-index="idx" wx:for-item="menus" wx:key="menus">
-                    <view class="signDate">{{menus.date}}</view>
+                    <view class="signDate">
+                        <span class="date-style {{menus.date==thisDay?'selected':''}}">{{menus.date}}</span>
+                    </view>
                 </block>
             </view>
         </view>
