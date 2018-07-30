@@ -2,7 +2,7 @@
     <view class="input-list">
         <view class="input-items">
             <span>姓名：</span>
-            <input value="李璐" />
+            <span>李璐</span>
         </view>
         <view class="input-items">
             <span>性别:</span>
@@ -17,18 +17,43 @@
         </view>
         <view class="input-items">
             <span>生日:</span>
-            <picker mode="date" value="{{date}}" start="1900-01-01" end="{{myDate}}" bindchange="bindDateChange">
+            <!--<picker mode="date" value="{{date}}" start="1900-01-01" end="{{myDate}}" bindchange="bindDateChange">
                 <view class="picker">
                     {{date}}
                 </view>
-            </picker>
-            <!--<input value="点击设置生日" style="display: {{showTips}}" disabled bindtap="showPicker" />{{showDate}}-->
+            </picker>-->
+            <span style="display: {{showTips}}" bindtap="showPicker" >{{showDate}}</span>
         </view>
 
         <view class="input-items">
             <span>电话:</span>
-            <input value="1820****5664" />
+            <span>1820****5664</span>
         </view>
     </view>
     <view class="button-bottom">确定</view>
+
+    <!--弹出日期选择器-->
+    <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
+    <view class="modal" wx:if="{{modalShow}}" animation="{{animationData}}">
+        <view class="btn-area">
+            <span bindtap="modalHide">取消</span>
+            <span bindtap="modalHide">确定</span>
+        </view>
+        <view class="modal-title">
+            <span>年</span>
+            <span>月</span>
+            <span>日</span>
+        </view>
+        <picker-view indicator-class="selectedItems" mask-style="opacity:0" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{years}}" style="line-height: 30px">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{months}}" style="line-height: 30px">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{days}}" style="line-height: 30px">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
 </view>

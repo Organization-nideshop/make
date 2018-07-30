@@ -59,16 +59,31 @@
             </view>
         </view>
     </view>
-    <picker-view indicator-style="height: 30px;" style="display: {{showPicker}}" value="{{value}}" bindchange="bindChange">
-        <picker-view-column>
-            <view wx:for="{{years}}" style="line-height: 30px">{{item}}</view>
-        </picker-view-column>
-        <picker-view-column>
-            <view wx:for="{{months}}" style="line-height: 30px">{{item}}</view>
-        </picker-view-column>
-        <picker-view-column>
-            <view wx:for="{{days}}" style="line-height: 30px">{{item}}</view>
-        </picker-view-column>
-    </picker-view>
+
     <view class="button-bottom">保存</view>
+
+    <!--弹出日期选择器-->
+    <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
+    <view class="modal" wx:if="{{modalShow}}" animation="{{animationData}}">
+        <view class="btn-area">
+            <span bindtap="modalHide">取消</span>
+            <span bindtap="modalHide">确定</span>
+        </view>
+        <view class="modal-title">
+            <span>年</span>
+            <span>月</span>
+            <span>日</span>
+        </view>
+        <picker-view indicator-class="selectedItems" mask-style="opacity:0" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{years}}" style="line-height: 30px">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{months}}" style="line-height: 30px">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{days}}" style="line-height: 30px">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
 </view>
