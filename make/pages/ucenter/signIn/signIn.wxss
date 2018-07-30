@@ -196,35 +196,79 @@ progress{
     border-radius: 5px;
 }
 .chargeModal-title{
-    line-height: 40px;
+    height: 30px;
     color: #c9a16d;
     padding: 0 5%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.modal-btn{
+    color: #888;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #888;
+    display: flex;
+    align-items: center;
+}
+.beforeMore{
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid #888;
+    border-left: 1px solid #888;
+    transform:rotate(-45deg);
+    margin-left: 6px;
+}
+.afterMore{
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid #888;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid #888;
+    border-left: 1px solid transparent;
+    transform:rotate(45deg);
+    margin-left: 3px;
+}
+.close{
+
 }
 .chargeItems{
     display: flex;
     flex-direction: column;
     line-height: 40px;
-    padding: 0 5%;
+    padding: 0 10%;
     color: #888;
     font-size: 10px;
+    width: 100%;
 }
 .weekName{
     width: 100%;
+    height: 30px;
+    padding: 0 6% 0 3%;
     display: flex;
     justify-content: space-between;
 }
 .weekName view{
     font-size: 10px;
     color: #888;
+    text-align: center;
+    height: 30px;
+    width: 14px;
 }
 .week{
     width: 100%;
     height: 30px;
-    background: #c9a16d;
 }
 .signDate{
-    width: 12%;
+    width: 14%;
+    float: left;
+    text-align: center;
+    font-size: 10px;
+    height: 30px;
+    color: #888;
 }

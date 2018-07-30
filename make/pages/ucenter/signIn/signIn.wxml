@@ -39,7 +39,21 @@
     <!--弹出框-->
     <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
     <view class="chargeModal" wx:if="{{modalShow}}" animation="{{animationData}}">
-        <span class="chargeModal-title">签到查询</span>
+        <view class="chargeModal-title">
+            <view class="modal-btn" wx:if="{{showLast}}" bindtap="showLastMonth">
+                <span class="beforeMore"></span>
+            </view>
+            <view class="modal-btn" wx:else bindtap="showLastMonth">
+                <span class="afterMore"></span>
+            </view>
+            <view>
+                <span>签到查询</span>
+                <span wx:if="{{showDate}}">({{year}}年{{month}}月)</span>
+            </view>
+            <view class="modal-btn">
+                <span class="close"></span>
+            </view>
+        </view>
         <view class="chargeItems">
             <view class="weekName">
                 <view class="sunday">Sun</view>

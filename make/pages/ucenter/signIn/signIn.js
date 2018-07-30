@@ -1,10 +1,13 @@
-//var signDate = [];
 Page({
     data:{
         ischeck:0,
         animationData:{},
         modalShow:'',
         signDate:[{id:1,date:2}],
+        month:'',
+        year:'',
+        showLast:true,
+        showDate:false,
         date:[
             {day: '05/23'},
             {day: '05/24'},
@@ -21,10 +24,13 @@ Page({
         })
     },
     showSignRecords:function () {
-        // this.showModal('animationData');
         this.showModal();
     },
     showModal:function () {
+        /*var ori_Month = new Date().getMonth() + 1;
+        this.setData({
+            month:ori_Month
+        })*/
         this.createDate();
         console.log("1111");
         var animation = wx.createAnimation({
@@ -78,13 +84,26 @@ Page({
     },
 
     onLoad:function () {
+        var date = new Date();
+        var ori_Month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        this.setData({
+            month:ori_Month,
+            year:year
+        })
 
-
-    },createDate:function(){
+    },
+    createDate:function(){
         var that = this;
         var date = new Date();
         var days;
-        var month = date.getMonth() + 1;
+        // var month = date.getMonth() + 1;
+        /*var ori_month = date.getMonth() + 1;
+        that.setData({
+            month:ori_month
+        })
+        console.log(ori_month);*/
+        var month = that.data.month;
         console.log(month);
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
             days = 31;
@@ -116,5 +135,27 @@ Page({
           signDate: jsonstr
         })
         console.log(that.data.signDate)
+    },
+    showLastMonth:function () {
+        var ori_Month = this.data.month;
+        console.log(ori_Month);
+        var showLast = this.data.showLast;
+        if(showLast==true){
+            ori_Month-=1;
+            this.setData({
+                month:ori_Month,
+                showLast:!showLast,
+                showDate:true
+            })
+        }else{
+            ori_Month+=1;
+            this.setData({
+                month:ori_Month,
+                showLast:!showLast,
+                showDate:true
+            })
+        }
+        console.log(this.data.month);
+        this.createDate();
     }
 })
