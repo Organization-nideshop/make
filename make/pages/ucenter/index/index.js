@@ -12,66 +12,67 @@ Page({
         growVal:'普卡',
         animationData:{},
         modalShow:'',
+        _animationData:{},
+        _modalShow:'',
+        orderAmount:'2',
         menuList:[
             {
                 id:1,
-                title:'购物车',
-                imgUrl:'../../../static/images/icon1_06.png',
+                imgUrl:'../../../static/images/my_15.png',
                 pageUrl:''
             },
             {
                 id:2,
-                title:'门店支付',
-                imgUrl:'../../../static/images/icon1_08.png',
+                imgUrl:'../../../static/images/my_17.png',
                 pageUrl:''
             },
             {
                 id:3,
-                title:'生日管家',
-                imgUrl:'../../../static/images/icon1_03.png',
+                imgUrl:'../../../static/images/my_19.png',
                 pageUrl:'../birthManager/birthManager'
             },
             {
                 id:4,
-                title:'签到',
-                imgUrl:'../../../static/images/icon1_14.png',
-                pageUrl:'../signIn/signIn'
+                imgUrl:'../../../static/images/my_19.png',
+                pageUrl:'../birthManager/birthManager'
             },
-            {
-                id:5,
-                title:'交易明细',
-                imgUrl:'../../../static/images/icon1_11.png',
-                pageUrl:'../chargeDetail/chargeDetail'
-            }
         ],
         userList:[
             {
                 id:1,
+                uListTitle:'门店支付',
+                pageUrl: '../order/order'
+
+            },
+            {
+                id:2,
                 uListTitle:'我的订单',
                 pageUrl: '../order/order'
             },
             {
-                id:2,
-                uListTitle:'我的优惠券',
-                pageUrl: '../order/order'
+                id:3,
+                uListTitle:'余额充值',
+                pageUrl: '../charge/charge'
+
             },
             {
-                id:3,
+                id:4,
+                uListTitle:'购物车',
+                pageUrl: '../order/order'
+
+            },
+            {
+                id:5,
+                uListTitle:'电子发票',
+                pageUrl:'../order/order'
+            },
+            {
+                id:6,
                 uListTitle:'交易明细',
                 pageUrl:'../chargeDetail/chargeDetail'
             },
             {
-                id:4,
-                uListTitle:'余额充值',
-                pageUrl: '../charge/charge'
-            },
-            {
-                id:5,
-                uListTitle:'待支付',
-                pageUrl: '../order/order'
-            },
-            {
-                id:6,
+                id:7,
                 uListTitle:'设置',
                 pageUrl: '../set/set'
             },
@@ -141,6 +142,56 @@ Page({
             this.setData({
                 animationData:animation.export(),
                 modalShow:false
+            })
+        }.bind(this,100))
+    },
+
+    clickMe:function () {
+        // this.showModal('animationData');
+        this._showModal();
+    },
+    _showModal:function () {
+        console.log("1111");
+        var animation = wx.createAnimation({
+            duration:100,
+            timingFunction:"linear",
+            delay:0
+        })
+        this.animation = animation;
+        animation.translateY(300).step();
+        this.setData({
+            _animationData:animation.export(),
+            _modalShow:true
+        })
+        setTimeout(function () {
+            animation.translateY(0).step();
+            this.setData({
+                _animationData:animation.export(),
+                _modalShow:true
+            })
+        }.bind(this,100))
+    },
+    _modalHide:function () {
+        this._hideModal();
+    },
+    _hideModal:function () {
+        console.log("2222");
+        var animation = wx.createAnimation({
+            duration:100,
+            timingFunction:"linear",
+            delay:0
+        })
+        this.animation = animation;
+        animation.translateY(300).step();
+        this.setData({
+            _animationData:animation.export(),
+            _modalShow:false
+        })
+        setTimeout(function () {
+            animation.translateY(0).step();
+            this.setData({
+                _animationData:animation.export(),
+                _modalShow:false
             })
         }.bind(this,100))
     },

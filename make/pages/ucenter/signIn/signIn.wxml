@@ -36,7 +36,7 @@
     </view>
     <view class="button-bottom" bindtap="backToPage">返回列表</view>
 
-    <!--弹出框-->
+    <!--弹出签到记录框-->
     <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
     <view class="chargeModal" wx:if="{{modalShow}}" animation="{{animationData}}">
         <view class="chargeModal-title">
@@ -71,6 +71,27 @@
                     </view>
                 </block>
             </view>
+        </view>
+    </view>
+
+    <!--完善资料弹窗-->
+    <view class="modal-screen" wx:if="{{_modalShow}}" bindtap="_modalHide"></view>
+    <view class="modal" wx:if="{{_modalShow}}" animation="{{_animationData}}">
+        <view class="modal-title">
+            完善资料<span>送积分</span>
+        </view>
+        <view class="modalItems">
+            <span class="modalItemsTitle">姓名：</span>
+            <input class="modalDetail" />
+        </view>
+        <view class="modalItems">
+            <span class="modalItemsTitle">手机绑定：</span>
+            <input class="modalDetail" />
+            <span class="getCode">获取验证码</span>
+        </view>
+        <view class="btn-area">
+            <span class="getCode" data-id="../charge/charge" bindtap="goToPage">余额充值</span>
+            <span class="getCode" data-id="../birthManager/birthManager" bindtap="goToPage">生日管家</span>
         </view>
     </view>
 </view>

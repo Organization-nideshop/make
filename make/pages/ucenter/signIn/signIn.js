@@ -3,6 +3,8 @@ Page({
         ischeck:0,
         animationData:{},
         modalShow:'',
+        _animationData:{},
+        _modalShow:'',
         signDate:[{id:1,date:2}],
         month:'',
         year:'',
@@ -155,5 +157,54 @@ Page({
         }
         console.log(this.data.month);
         this.createDate();
-    }
+    },
+    showCmpView:function () {
+        // this.showModal('animationData');
+        this._showModal();
+    },
+    _showModal:function () {
+        console.log("1111");
+        var animation = wx.createAnimation({
+            duration:100,
+            timingFunction:"linear",
+            delay:0
+        })
+        this.animation = animation;
+        animation.translateY(300).step();
+        this.setData({
+            _animationData:animation.export(),
+            _modalShow:true
+        })
+        setTimeout(function () {
+            animation.translateY(0).step();
+            this.setData({
+                _animationData:animation.export(),
+                _modalShow:true
+            })
+        }.bind(this,100))
+    },
+    _modalHide:function () {
+        this._hideModal();
+    },
+    _hideModal:function () {
+        console.log("2222");
+        var animation = wx.createAnimation({
+            duration:100,
+            timingFunction:"linear",
+            delay:0
+        })
+        this.animation = animation;
+        animation.translateY(300).step();
+        this.setData({
+            _animationData:animation.export(),
+            _modalShow:false
+        })
+        setTimeout(function () {
+            animation.translateY(0).step();
+            this.setData({
+                _animationData:animation.export(),
+                _modalShow:false
+            })
+        }.bind(this,100))
+    },
 })
