@@ -79,17 +79,47 @@
     <!--点我送弹窗-->
     <view class="modal-screen" wx:if="{{_modalShow}}" bindtap="_modalHide"></view>
     <view class="modal" wx:if="{{_modalShow}}" animation="{{_animationData}}">
-        <view class="modal-title">
-            <image src="../../../static/images/ucenter-bg.jpg" mode="widthFix"></image>
+        <view class="modal-title"  style="background: url(../../../static/images/ucenter-bg.jpg) no-repeat;background-size:cover;">
             <view class="title-content">
                 <label>Membership rights</label>
                 <span>多重礼遇 享不停</span>
             </view>
-
         </view>
-        <view class="modalItems">
-            <span class="modalItemsTitle">姓名：</span>
-            <input class="modalDetail" />
+        <view class="modalList">
+            <view class="modalItems" data-id="../birthManager/birthManager" bindtap="goToPage">
+                <view class="modalItemsTitle">生日管家
+                    <span class="modalItems-content">添加送10元生日专享券，100成长值</span>
+                </view>
+                <span class="arrow-right-gold"></span>
+            </view>
+            <view class="modalItems" data-id="" bindtap="goToPage">
+                <view class="modalItemsTitle">推荐有礼
+                    <span class="modalItems-content">推荐好友送200元成长值</span>
+                </view>
+                <span class="arrow-right-gold"></span>
+            </view>
+            <view class="modalItems" data-id="../completeInfo/completeInfo" bindtap="goToPage">
+                <view class="modalItemsTitle">完善资料
+                    <span class="modalItems-content">送100元成长值</span>
+                </view>
+                <span class="arrow-right-gold"></span>
+            </view>
+            <view class="modalItems" data-id="" bindtap="goToPage">
+                <view class="modalItemsTitle">服务评价
+                    <span class="modalItems-content">送10积分，10成长值</span>
+                </view>
+                <span class="arrow-right-gold"></span>
+            </view>
+            <view class="modalItems" data-id="../signIn/signIn" bindtap="goToPage">
+                <view class="modalItemsTitle">签到有礼
+                    <span class="modalItems-content">连续10天签到，即送5元产品券</span>
+                </view>
+                <span class="arrow-right-gold"></span>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="close-btn" bindtap="_modalHide">
+            <image src="../../../static/images/my_07.png"></image>
         </view>
     </view>
 <include src="../../footer/footer.wxml"/>
