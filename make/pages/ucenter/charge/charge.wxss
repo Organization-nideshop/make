@@ -182,7 +182,6 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     font-size: 12px;
 }
 .codeChargeModal .chargeItems input{
-    color: #e7e7e7;
     font-size: 12px;
     height: 40px;
 }

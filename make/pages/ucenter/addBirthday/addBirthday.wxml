@@ -5,7 +5,7 @@
     <view class="input-list">
         <view class="input-items">
             <span>姓名</span>
-            <input value="请输入您的姓名" />
+            <input placeholder-style="color:#999" placeholder="请输入您的姓名" />
         </view>
         <view class="input-items">
             <span>性别</span>
@@ -36,16 +36,16 @@
                     <input value="点击设置生日" style="display: {{showTips}}" disabled/>{{date}}
                 </view>
             </picker>-->
-            <input value="点击设置生日" style="display: {{showTips}}" disabled bindtap="showPicker" />{{showDate}}
+            <input placeholder-style="color:#999" placeholder="点击设置生日" style="display: {{showTips}}" disabled bindtap="showPicker" />{{showDate}}
         </view>
 
         <view class="input-items">
             <span>手机</span>
-            <input value="请输入您的手机号码" />
+            <input placeholder-style="color:#999" placeholder="请输入您的手机号码" />
         </view>
         <view class="input-items" data-id="../birthRelationship/birthRelationship" disabled bindtap="goToPage">
             <span>关系</span>
-            <input value="描述你们的关系" />
+            <input placeholder-style="color:#999" placeholder="描述你们的关系" />
         </view>
         <view class="input-items-sp" data-id="../addBirthdayDetail/addBirthdayDetail" bindtap="goToPage">
             <span>添加更多资料</span>
@@ -59,7 +59,6 @@
             </view>
         </view>
     </view>
-
     <view class="button-bottom">保存</view>
 
     <!--弹出日期选择器-->

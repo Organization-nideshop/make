@@ -34,7 +34,6 @@ page{
 }
 .input-items input{
     height: 40px;
-    color: #999;
     font-size: 12px;
 }
 .input-items span{
@@ -45,11 +44,11 @@ page{
 }
 .radio-style{
     height: 40px;
+    width: 70px;
     display: flex;
     align-items: center;
     font-size: 12px;
     border-bottom: 0.5px solid #f4f4f4;
-    margin-right: 40px;
 }
 .radio-style radio{
     transform:scale(.5);

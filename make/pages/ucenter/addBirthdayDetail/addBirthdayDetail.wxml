@@ -1,27 +1,27 @@
 <view class="container">
     <view class="input-items">
         <span>姓名</span>
-        <input value="请输入您的姓名" />
+        <input placeholder-style="color: #999" placeholder="请输入您的姓名" />
     </view>
     <view class="input-items">
         <span>现居地</span>
-        <input value="请填写现居地" />
+        <input placeholder-style="color: #999" placeholder="请填写现居地" />
     </view>
     <view class="input-items">
         <span>情感状况</span>
-        <input value="请选择情感状态" />
+        <input placeholder-style="color: #999" placeholder="请选择情感状态" />
     </view>
     <view class="input-items">
         <span>公司</span>
-        <input value="就职的公司" />
+        <input placeholder-style="color: #999" placeholder="就职的公司" />
     </view>
     <view class="input-items">
         <span>职务</span>
-        <input value="描述职位" />
+        <input placeholder-style="color: #999" placeholder="描述职位" />
     </view>
     <view class="input-items">
         <span>备注</span>
-        <input value="备注信息" />
+        <input placeholder-style="color: #999" placeholder="备注信息" />
     </view>
     <view class="cancel-btn" bindtap="backToPage">取消</view>
     <view class="ensure-btn">确定</view>

@@ -51,31 +51,37 @@ Page({
             },
             {
                 id:3,
+                uListTitle:'我的优惠券',
+                pageUrl: '../couponList/couponList'
+            },
+            {
+                id:4,
                 uListTitle:'余额充值',
                 pageUrl: '../charge/charge'
 
             },
             {
-                id:4,
+                id:5,
                 uListTitle:'购物车',
                 pageUrl: '../order/order'
 
             },
             {
-                id:5,
+                id:6,
                 uListTitle:'电子发票',
                 pageUrl:'../order/order'
             },
             {
-                id:6,
+                id:7,
                 uListTitle:'交易明细',
                 pageUrl:'../chargeDetail/chargeDetail'
             },
             {
-                id:7,
+                id:8,
                 uListTitle:'设置',
                 pageUrl: '../set/set'
             },
+
         ]
     },
     onLoad: function (options) {

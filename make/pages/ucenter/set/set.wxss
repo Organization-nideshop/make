@@ -20,7 +20,6 @@ page{
 }
 .input-items input{
     height: 40px;
-    color: #cdcdcd;
     font-size: 12px;
 }
 .input-items span{

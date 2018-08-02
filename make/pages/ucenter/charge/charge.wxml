@@ -38,13 +38,13 @@
     <view class="codeChargeModal" wx:if="{{codeModalShow}}" animation="{{animationData_}}">
         <span class="chargeModal-title">充值码充值</span>
         <view class="chargeItems">
-            <input value="请输入充值码"/>
+            <input placeholder-style="color:#e7e7e7" placeholder="请输入充值码"/>
         </view>
         <view class="chargeItems">
-            <input value="请输入密码"/>
+            <input placeholder-style="color:#e7e7e7" placeholder="请输入密码"/>
         </view>
         <view class="chargeItems">
-            <input value="请输入验证码"/>
+            <input placeholder-style="color:#e7e7e7" placeholder="请输入验证码"/>
         </view>
         <button class="ensurePay">确定</button>
     </view>

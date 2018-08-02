@@ -1,7 +1,25 @@
 <view class="container">
-    <view class="address-list">
-        <view class="list-items">
-            <input value="收货人姓名" />
+    <view class="input-list">
+        <view class="input-items">
+            <span>收货人</span>
+            <input />
+        </view>
+        <view class="input-items">
+            <span>收货人手机号码</span>
+            <input />
+        </view>
+        <view class="input-items">
+            <span>所在地区</span>
+            <span class="arrow-right"></span>
+        </view>
+        <view class="input-items-ad">
+            <span>详细地址</span>
+            <textarea placeholder-class="input-style" placeholder="请输入详细地址信息，如道路、门牌号、小区、楼栋号、单元室等"/>
+        </view>
+        <view class="input-items">
+            <span>设置默认地址</span>
+            <switch class="wx-switch-input" checked color="#c9a16d" height="20px" bindchange="switchChange"/>
         </view>
     </view>
+    <view class="btn-area">保存</view>
 </view>
