@@ -2,6 +2,7 @@
   "pages": [
     "pages/ucenter/addAddress/addAddress",
     "pages/ucenter/address/address",
+    "pages/ucenter/address1/address",
     "pages/ucenter/index/index",
     "pages/ucenter/addBirthdayDetail/addBirthdayDetail",
     "pages/ucenter/completeInfo/completeInfo",

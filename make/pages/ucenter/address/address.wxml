@@ -1,33 +1,20 @@
 <view class="container">
-    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
-        <view class="line-items">
-            <view class="line-items-top">
-                <view class="line-items-top-left">
-                    <image src="../../../static/images/address_icon_03.png"></image>
-                    收货人：<span>露露</span>
-                </view>
-                <span>15094012121</span>
-            </view>
-            <view class="line-items-bottom">
-                <span>收货地址：</span>
-                <span>[默认地址]</span>
-                <span>{{item.address}}</span>
-            </view>
-        </view>
-        <view class="del" catchtap="del" data-index="{{index}}">删除</view>
-    </view>
-    <view class="button-bottom" bindtap="">
-        <view class="btn-items">
-            新增地址<image src="../../../static/images/address_icon_07.png"></image>
-        </view>
-    </view>
+<view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+<view class="content">
+  <view class="line-items-top">
+      <view class="line-items-top-left">
+          <image src="../../../static/images/address_icon_03.png"></image>
+          收货人：<span>{{item.name}}</span>
+      </view>
+      <span>{{item.phone}}</span>
+  </view>
+  <view class="line-items-bottom">
+      <span>收货地址：</span>
+      <span wx:if="{{item.addressType}}">[默认地址]</span>
+      <span>{{item.address}}</span>
+  </view>
+
 </view>
-<!--
-<swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
-        <swiper-item>
-            <image src="{{item}}" class="slide-image" width="355" height="150"/>
-        </swiper-item>
-    </block>
-</swiper>-->
+<view class="del" catchtap="del" data-index="{{index}}">删除</view>
+</view>
+</view>
