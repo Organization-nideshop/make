@@ -1,6 +1,6 @@
 {
   "pages": [
-  
+    "pages/ucenter/address/address",
     "pages/ucenter/index/index",
     "pages/ucenter/addBirthdayDetail/addBirthdayDetail",
     "pages/ucenter/completeInfo/completeInfo",
@@ -9,7 +9,6 @@
     "pages/ucenter/birthRelationship/birthRelationship",
     "pages/ucenter/setBirthRemind/setBirthRemind",
     "pages/ucenter/set/set",
-    
     "pages/ucenter/signIn/signIn",
     "pages/index/index",
     "pages/goods/goods",
