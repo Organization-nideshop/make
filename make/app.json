@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/ucenter/addAddress/addAddress",
     "pages/ucenter/address/address",
     "pages/ucenter/index/index",
     "pages/ucenter/addBirthdayDetail/addBirthdayDetail",

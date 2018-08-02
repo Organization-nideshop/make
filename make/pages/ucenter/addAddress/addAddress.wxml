@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="address-list">
+        <view class="list-items">
+            <input value="收货人姓名" />
+        </view>
+    </view>
+</view>
