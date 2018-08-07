@@ -10,63 +10,62 @@ page {
     width: 100%;
 }
 .top{
-    height: 50px;
+    height: 100rpx;
 }
 .top-title{
     color: #999;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20rpx;
 }
 .currentBalance{
-    height: 50px;
+    height: 100rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .currentBalance-title{
     color: #999;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .currentBalance-detail{
     color: #c9a16d;
-    font-size: 20px;
+    font-size: 40rpx;
 }
 .balance-nav{
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10rpx;
     display: flex;
 }
 .nav-items{
-    height: 25px;
+    height: 50rpx;
     width: 50%;
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/
     align-items: center;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: 28rpx;
     color: #999;
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 2rpx solid #f4f4f4;
 }
 .nav-line{
-    border-bottom: 2px solid #c9a16d;
+    border-bottom: 4rpx solid #c9a16d;
     width: 20%;
-    margin-top: 3px;
+    margin-top: 6rpx;
 }
 .balance-list{
     width: 100%;
     background-color: #fff;
-    margin-bottom: 2px;
+    margin-bottom: 4rpx;
     display: flex;
-    border-bottom: 1px solid #f4f4f4;
-    padding: 0 15px;
+    border-bottom: 2rpx solid #f4f4f4;
+    padding: 0 30rpx;
 }
 .getBalance-detail{
-    height: 60px;
+    height: 120rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*align-items: center;*/
 }
 .getBalance-items{
     width: 50%;
@@ -75,11 +74,11 @@ page {
 }
 .consumeWay{
     color: #999;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .consume-time{
     color: #1A1A1A;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .new-balance{
     width: 50%;
@@ -88,5 +87,5 @@ page {
     justify-content: center;
     align-items: flex-end;
     color: #1A1A1A;
-    font-size: 16px;
+    font-size: 32rpx;
 }

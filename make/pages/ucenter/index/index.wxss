@@ -14,41 +14,41 @@ page{
 .icon-items{
     width: 100%;
     display: flex;
-    padding: 20px 0 10px 20px;
+    padding: 40rpx 0 20rpx 40rpx;
 }
 .top-info .icon{
-    height: 45px !important;
-    width: 45px;
+    height: 90rpx !important;
+    width: 90rpx;
     border-radius: 50%;
-    border: 1px solid #c9a16d;
+    border: 2rpx solid #c9a16d;
 }
 .userInfo{
     color: #333;
-    font-size: 12px;
+    font-size: 28rpx;
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 20rpx;
 }
 progress{
     width: 80%;
-    border: 1px solid #c9a16d;
-    border-radius: 5px;
-    margin-top: 5px;
+    border: 2rpx solid #c9a16d;
+    border-radius: 10rpx;
+    margin-top: 10rpx;
 
 }
 .infoTips{
-    font-size: 10px;
+    font-size: 24rpx;
 }
 .top-nav{
-    height: 35px;
+    height: 70rpx;
     width: 80%;
     margin-right: 5%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 60rpx;
     float: right;
-    border-radius: 20px;
-    border: 1px solid #c9a16d;
+    border-radius: 40rpx;
+    border: 2rpx solid #c9a16d;
     background: #fff;
 }
 .top-nav-items{
@@ -57,11 +57,11 @@ progress{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 24rpx;
     position: relative;
 }
 .top-nav-items:nth-child(2){
-    padding-left: 1px;
+    padding-left: 2rpx;
 }
 .top-nav-items:nth-child(2):after{
     content: '';
@@ -71,11 +71,11 @@ progress{
     bottom: 25%;
     right: auto;
     height: 50%;
-    width: 1px;
+    width: 2rpx;
     background-color: #c9a16d;
 }
 .top-nav-items:nth-child(3){
-    padding-left: 1px;
+    padding-left: 2rpx;
 }
 .top-nav-items:nth-child(3):after{
     content: '';
@@ -85,7 +85,7 @@ progress{
     bottom: 25%;
     right: auto;
     height: 50%;
-    width: 1px;
+    width: 2rpx;
     background-color: #c9a16d;
 }
 .top-nav-val{
@@ -96,36 +96,38 @@ progress{
 }
 .scroll-x{
     white-space:nowrap;
-    width: 100%;
-    background-color: #fff;
-    overflow: hidden;
-    margin-bottom: 10px;
-    display: flex;
-    height: 70px;
+    width:100%;
+    background-color:#fff;
+    overflow:hidden;
+    margin-bottom:20rpx;
+    display:flex;
+    height:180rpx;
+    padding-left:10rpx;
 }
 .scroll-x view{
-    display: inline-block;
-    height: 70px;
-    width: 200rpx;
+    display:inline-block;
+    height:160rpx;
+    width:230rpx;
 }
 .scrollTitle{
     color: #c9a16d;
-    font-size: 12px;
+    font-size: 28rpx;
     width: 100%;
-    height: 30px;
+    height: 60rpx;
     padding-left: 5%;
     display: flex;
     align-items: center;
 }
 .scrollTitle image{
-    height: 20px;
-    width: 22px;
-    margin-right: 5px;
+    height: 36rpx;
+    width: 40rpx;
+    margin-right: 10rpx;
 }
 .menu-icon{
-    height: 80%;
-    width: 100%;
+    width: 95%;
     display: block;
+    box-shadow: -2rpx 2rpx 10rpx 3rpx #dedede;
+    border-radius: 10rpx;
 }
 /* 隐藏scrollbar */
 ::-webkit-scrollbar{
@@ -136,54 +138,54 @@ progress{
 
 .user-list{
     width: 100%;
-    padding: 0 15px;
+    padding: 0 30rpx;
     background-color: #fff;
-    /*position: relative;*/
 }
 .list-items view{
-    height: 35px;
-    border-bottom: 1px solid #f4f4f4;
+    height: 90rpx;
+    border-bottom: 2rpx solid #f4f4f4;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #818181;
-    font-size: 12px;
-    padding-right: 15px;
+    font-size: 28rpx;
+    padding-right: 30rpx;
 }
 .arrow-right{
-    width: 5px;
-    height: 5px;
-    border-right: 2px solid #eee;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid #eee;
-    border-left: 2px solid transparent;
+    width: 10rpx;
+    height: 10rpx;
+    border-right: 2rpx solid #818181;
+    /*border-bottom: 2rpx solid transparent;*/
+    border-top: 2rpx solid #818181;
+    /*border-left: 2rpx solid transparent;*/
     transform:rotate(45deg);
 }
 .clickMe{
-    position: fixed;
-    right: 0;
-    top: 55%;
-    width: 20px;
-    height: 70px;
-    background: #c9a16d;
-    color: #fff;
-    font-size: 12px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
+    position:fixed;
+    right:0;
+    top:55%;
+    width:50rpx;
+    height:150rpx;
+    background:#c9a16d;
+    color:#fff;
+    font-size:28rpx;
+    border-radius:40rpx;
+    display:flex;
+    flex-direction:column;
 }
 .clickMe span{
     text-align: center;
+    line-height: 29rpx;
 }
 .clickMe-icon{
-    margin: 2px;
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin:4rpx;
+    width:42rpx;
+    height:42rpx;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 .clickMe-icon image{
     width: 70%;
@@ -207,28 +209,28 @@ progress{
     display: flex;
     flex-direction: column;
     z-index: 9999;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .chargeModal-title{
-    line-height: 30px;
+    line-height: 60rpx;
     text-align: center;
     background-color: #c9a16d;
     color: #fff;
     padding: 0 5%;
-    font-size: 14px;
+    font-size: 32rpx;
 }
 .chargeModal-title span{
-    margin-left: 10px;
-    font-size: 12px;
+    margin-left: 20rpx;
+    font-size: 28rpx;
 }
 .chargeItems{
     display: flex;
     align-items: center;
     float: left;
-    height: 30px;
+    height: 60rpx;
     margin: 0 5%;
     color: #818181;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .chargeItemsTitle{
     width: 25%;
@@ -237,19 +239,19 @@ progress{
 .chargeDetail{
     color: #818181;
     width: 50%;
-    height: 30px;
-    border-bottom: 0.5px solid #eee;
+    height: 60rpx;
+    border-bottom: 1rpx solid #eee;
 }
 .getCode{
-    font-size: 10px;
+    font-size: 20rpx;
     color: #fff;
     background: #c9a16d;
-    padding: 2px 5px;
-    border-radius: 10px;
+    padding: 4rpx 10rpx;
+    border-radius: 20rpx;
 }
 .btn-area{
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
     display: flex;
     padding: 0 25%;
     justify-content: space-between;
@@ -257,99 +259,99 @@ progress{
 
 .signIn{
     position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 50px;
-    width: 30px;
-    font-size: 12px;
+    top: 20rpx;
+    right: 20rpx;
+    height: 100rpx;
+    width: 60rpx;
+    font-size: 28rpx;
     text-align: center;
 }
 .signIn image{
-    height: 20px;
-    width: 20px;
-    margin: 2px auto;
+    height: 40rpx;
+    width: 40rpx;
+    margin: 4rpx auto;
     display: block;
 }
 
 .modal{
     position: fixed;
-    top: 50px;
+    top: 100rpx;
     width: 60%;
     margin: 0 20%;
     z-index: 9999;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .modal-title{
     width: 100%;
-    height: 90px;
+    height: 180rpx;
     display: flex;
     align-items: center;
-    border-bottom: 3px solid #c9a16d;
+    border-bottom: 6rpx solid #c9a16d;
 }
 .modal-title image{
     width: 100%;
 }
 .title-content{
     width: 100%;
-    font-size: 12px;
+    font-size: 28rpx;
     color: #c9a16d;
     text-align: center;
 }
 .title-content span{
-    font-size: 18px;
+    font-size: 36rpx;
     display: block;
-    margin-top: 5px;
+    margin-top: 10rpx;
 }
 .modalList{
     background: #fff;
-    padding-bottom: 20px;
-    border-bottom: 10px solid #c9a16d;
+    padding-bottom: 40rpx;
+    border-bottom: 20rpx solid #c9a16d;
 }
 .modalItems{
-    height: 45px;
+    height: 90rpx;
     margin: 0 5%;
     color: #888;
-    font-size: 10px;
+    font-size: 24rpx;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #c9a16d;
+    border-bottom: 2rpx solid #c9a16d;
 }
 .modalItemsTitle{
     color: #c9a16d;
-    font-size: 12px;
+    font-size: 28rpx;
 }
 .modalItems-content{
     display: flex;
     flex-direction: column;
     color: #888;
-    font-size: 10px;
+    font-size: 24rpx;
 }
 .arrow-right-gold{
-    width: 5px;
-    height: 5px;
-    border-right: 1px solid #c9a16d;
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid #c9a16d;
-    border-left: 1px solid transparent;
+    width: 10rpx;
+    height: 10rpx;
+    border-right: 2rpx solid #c9a16d;
+    border-bottom: 2rpx solid transparent;
+    border-top: 2rpx solid #c9a16d;
+    border-left: 2rpx solid transparent;
     transform:rotate(45deg);
 }
 .line{
-    width: 1px;
-    height: 30px;
+    width: 2rpx;
+    height: 60rpx;
     margin: auto;
     background-color: #fff;
 }
 .close-btn{
     margin: auto;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
     border-radius: 50%;
-    border: 1px solid #fff;
+    border: 2rpx solid #fff;
     text-align: center;
 }
 .close-btn image{
-    width: 10px;
-    height: 10px;
+    width: 20rpx;
+    height: 20rpx;
 }

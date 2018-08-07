@@ -13,42 +13,44 @@ page{
     display: flex;
     align-items: center;
     width: 90%;
-    height: 40px;
-    font-size: 14px;
-    border-bottom: 1px solid #e5e5e5;
+    height: 100rpx;
+    font-size: 29rpx;
+    border-bottom: 2rpx solid #e5e5e5;
     margin: 0 5%;
 }
 .input-items input{
-    height: 40px;
-    font-size: 12px;
+    height: 100rpx;
+    font-size: 29rpx;
 }
 .input-items span{
     width: 30%;
     color: #888;
 }
 .tips{
-    font-size: 14px;
+    font-size: 29rpx;
     color: #888;
-    margin: 10px 5% 20px 5%;
+    margin: 20rpx 5% 40rpx 5%;
     width: 90%;
 }
 
 .button-bottom{
-    margin: 30px 0 10px 0;
+    margin: 60rpx 0 20rpx 0;
 }
 .button-bottom button{
-    border-radius: 10px;
+    border-radius: 10rpx;
     width: 80%;
-    font-size: 14px;
+    font-size: 29rpx;
+    height: 70rpx;
+    line-height: 70rpx;
 }
 .ensure{
     color: #fff;
     background: #c9a16d;
 }
 .cancel{
-    font-size: 14px;
+    font-size: 29rpx;
     color: #c9a16d;
-    border: 1px solid #c9a16d;
+    border: 2rpx solid #c9a16d;
     background: #fff;
-    margin-top: 10px;
+    margin-top: 20rpx;
 }
