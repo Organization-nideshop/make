@@ -1,0 +1,60 @@
+<view class="container">
+  <!-- 如果购物车为空 -->
+  <view class="no-cart" wx:if="{{cartGoods.length <= 0}}">
+    <view class="c">
+      <image src="../../static/images/cart.png" />
+      <text class="tip1">购物车竟然是空的呀！</text>
+      <text class="tip2">再忙也要犒劳自己哦~</text>
+    </view>
+  </view>
+
+  <view class="cart-view" wx:if="{{cartGoods.length > 0}}">
+    <view class="list">
+      <view class="group-item">
+        <view class="goods">
+          <view class="item {{isEditCart ? 'edit' : ''}}" wx:for="{{cartGoods}}" wx:key="{{item.id}}">
+            <view class="cart-goods">
+              <image class="img" src="{{item.list_pic_url}}"></image>
+              <view id="tips" wx:if="{{item.actType>0}}"></view>
+              <span class="tips" wx:if="{{item.actType>0}}">{{item.activity}}</span>
+              <view class="info">
+                <view class="t type">
+                  <navigator class="num arrow-right" hover-class="navigator-hover" wx:if="{{item.type==0}}" url="../parts/parts">添加配件
+                    <text class="txt-more"></text>
+                  </navigator>
+                  <view class="num" wx:if="{{item.type>0}}">配件商品</view>
+                </view>
+                <view class="t">
+                  <text class="name">{{item.goods_name}}</text>
+                </view>
+                <view class="l">
+                  <view class="attr" wx:if="{{item.type==0}}">尺寸:{{item.size}}</view>
+                  <view class="attr" wx:if="{{item.distrType==0}}">支持:商家配送 到店自提</view>
+                  <view class="b">
+                    <view class="price"><span class="unit">￥</span>{{item.price_info}}</view>
+                    <text class="oldprice" wx:if="{{item.type==0}}">￥{{item.old_price_info}}</text>
+                  </view>
+                </view>
+                <view class="r">
+                  <view class="recycle">
+                    <image src="../../static/images/recycle.png" data-item-index="{{index}}" bindtap="del"></image>
+                  </view>
+                  <view class="selnum">
+                    <view class="cut" bindtap="cutNumber" data-item-index="{{index}}">-</view>
+                    <input value="{{item.number}}" class="number" disabled="true" type="number" />
+                    <view class="add" bindtap="addNumber" data-item-index="{{index}}">+</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cart-bottom">
+    <view class="total">实付:¥{{totalPrice}}</view>
+    <view class="discount">优惠:{{totalDisprice}}元</view>
+    <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">去结算</view>
+  </view>
+</view>

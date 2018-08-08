@@ -1,0 +1,17 @@
+<view class="container">
+  <view>
+    <image src="../../static/images/address_icon_03.png" /> 当前城市：西安
+    <view class="search">
+      <navigator url="/pages/search/search" class="input">
+        <image class="icon" src="../../static/images/search.png"></image>
+        <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
+      </navigator>
+    </view>
+  </view>
+  <block>
+  地图
+  </block>
+  <block>
+  详细门店
+  </block>
+</view>

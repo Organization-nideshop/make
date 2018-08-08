@@ -1,0 +1,151 @@
+<view class="container">
+  <view class="top">
+    <view class="checked-type">
+      <image class="logistics" src="../../static/images/logistics.jpg"></image>
+      <view class="typeTitle">物流方式：</view>
+      <view class="typeDistribution {{_typeDistribution==0?'checked':''}}"  data-key="0" bindtap='changeDistr'>商家配送</view>
+      <view class="typeDistribution {{_typeDistribution==1?'checked':''}}" data-key="1" bindtap='changeDistr'>到店自提</view>
+    </view>
+    <view class="remind" wx:if="{{_typeDistribution==1}}">
+      <image src="../../static/images/remind.jpg"/>米旗门店均可自提（商超店除外）
+    </view>
+  </view>
+  <!-- 商家配送弹出 start -->
+  <block wx:if="{{_typeDistribution==0}}">
+  <view class="address-box">
+    <view class="address-item" bindtap="selectAddress" wx:if="{{checkedAddress.id > 0}}">
+      <view class="l">
+        <text class="name">{{checkedAddress.name}}</text>
+        <text class="default" wx:if="{{checkedAddress.is_default === 1}}">默认</text>
+      </view>
+      <view class="m">
+        <text class="mobile">{{checkedAddress.mobile}}</text>
+        <text class="address">{{checkedAddress.full_region + checkedAddress.address}}</text>
+      </view>
+      <view class="r">
+        <image src="/static/images/address_right.png" bindtap="checkAdress"></image>
+      </view>
+    </view>
+    <view class="address-item address-empty" bindtap="addAddress" wx:if="{{checkedAddress.id <= 0}}">
+      <view class="l">
+        请输入收货地址
+      </view>
+      <view class="r">
+        <image class="address-edit" src="../../static/images/edit.jpg" bindtap="checkAdress"></image>
+      </view>
+    </view>
+  </view>
+  <view class="address-bg" style="background: url(../../static/images/address-bg.png) 0 0 repeat-x;"></view>
+  <view class="distr-time">
+    <view>
+      <view class="l">
+      <image src="../../static/images/time.jpg"></image>
+      </view>
+      <view class="m">配送时间</view>
+      <view class="m"><span class="triangle-down"></span></view>
+      <view class="r"><image src="../../static/images/remind.jpg"/>西安三环内满88配送</view>
+    </view>
+    
+  </view>
+  </block>
+  <!-- 商家配送弹出 end -->
+  <!-- 到店自提弹出 start -->
+  <block wx:if="{{_typeDistribution==1}}">
+    <view class="distr_self">
+      <view class="l">选择门店</view>
+      <view class="m">西安大明宫店</view>
+      <view class="r"><image src="/static/images/address_right.png"></image></view>
+    </view>
+    <view class="distr_self">
+      <view class="l">到货时间</view>
+      <view class="m">18.4.23. 12：00</view>
+      <view class="r"><image src="/static/images/address_right.png"></image></view>
+    </view>
+    <view class="distr_self">
+      <view class="l">提货信息</view>
+      <view class="m">
+        <view class="name">露露</view>
+        <view class="phone">1525****367</view>
+      </view>
+      <view class="r"><image src="/static/images/address_right.png"></image></view>
+    </view>
+  </block>
+  <!-- 到店自提弹出 end -->
+
+  <view class="birthday-card">
+    <view class="l">
+      <image src="../../static/images/card.jpg"></image>
+    </view>
+    <view class="m">
+      生日牌
+    </view>
+    <view class="r">
+      添加生日牌
+    </view>
+  </view>
+  <view class="goods-items">
+    <view class="item" wx:for="{{checkedGoodsList}}" wx:key="{{item.id}}">
+      <view class="img">
+        <image src="{{item.list_pic_url}}"></image>
+      </view>
+      <view class="info">
+        <view class="t">
+          <text class="name">{{item.goods_name}}</text>
+        </view>
+        <view class="t">
+          <image src="../../static/images/parts.jpg"/>
+          <view class="m">{{item.parts}}</view>
+          <view class="b">￥{{item.retail_price}}</view>
+        </view>
+        <view class="t">
+          <view class="selnum">
+            <view class="cut" bindtap="cutNumber" data-item-index="{{index}}">-</view>
+            <input value="{{item.number}}" class="number" disabled="true" type="number" />
+            <view class="add" bindtap="addNumber" data-item-index="{{index}}">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="remarks">
+    <view class="l">备注信息：</view>
+    <view class="r">
+      <view>(可输入26字)</view>
+      <input placeholder="给卖家留言" />
+    </view>
+  </view>
+  <view class="coupon-box">
+    <view class="coupon-item">
+      <view class="l">
+        <text class="name">优惠券</text>
+        <text class="txt">{{couponList.length}} 张可用</text>
+      </view>
+      <view class="r">
+        <image src="/static/images/address_right.png" bindtap="checkCoupon"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="order-box">
+    <view class="order-item">
+      <view class="l">
+        <text class="name">商品金额</text>
+      </view>
+      <view class="r">
+        <view class="txt"><span class="unit">￥</span>{{goodsTotalPrice}}</view>
+      </view>
+    </view>
+    <view class="order-item">
+      <view class="l">
+        <text class="name">运费</text>
+      </view>
+      <view class="r">
+        <view class="txt"><span class="unit">￥</span>{{freightPrice}}</view> 
+      </view>
+    </view>
+  </view>
+  <view class="order-total">
+    <view class="l">实付：￥{{actualPrice}}</view>
+    <view class="r" bindtap="submitOrder">结算</view>
+  </view>
+</view>

@@ -1,14 +1,14 @@
-<!--<script src="../../layer/layer.js" > </script>-->
+<!--<wxs src="../../layer/layer.js" > </wxs>-->
 <!--index.wxml-->
 <view class="container {{showModalStatus ? 'over-flow-hidden' : ''}}">
-<view class="cityandlogo" bindtap="showCity">
-  <view class="city">
-    <image class="cityImg" src="../../static/images/location.png"></image>
-    <text>{{showModalLocation}}</text>
+  <view class="cityandlogo" bindtap="showCity">
+    <view class="city">
+      <image class="cityImg" src="../../static/images/location.png"></image>
+      <text>{{showModalLocation}}</text>
+    </view>
+    <image class="logoImg" src="../../static/images/logo.png"></image>
   </view>
-  <image class="logoImg" src="../../static/images/logo.png"></image>
-</view>
-<swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
       <navigator url="{{item.link}}">
         <image src="{{item.image_url}}" background-size="cover"></image>
@@ -16,7 +16,7 @@
     </swiper-item>
   </swiper>
   <view class="m-menu">
-    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+    <navigator class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
       <view calss="icon-image">
         <image src="{{item.icon_url}}" background-size="cover"></image>
       </view>
@@ -27,46 +27,66 @@
     <view class="h">
       <navigator url="../topic/topic" open-type="switchTab">
         <text class="txt-content">新品</text>
-        <text class="txt-more">更多 ></text>
-        </navigator>
+        <view class="arrow-right">更多<text class="txt-more"></text></view>
+      </navigator>
     </view>
     <view class="b">
       <block wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
-        <!--<view class="item {{iindex % 2 == 0 ? '' : 'item-b'}}">-->
-          <navigator url="#">
-            <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
-            <view class="np">
-              <text class="name">{{item.title}}</text>
-              <text class="price">￥{{item.price_info}}元起</text>
+        <navigator url="#">
+          <view class="message-box" wx:if="{{item.type==1}}">
+            <span>抢购</span>
+            <view class="triangle-border tb-border"></view>
+            <view class="triangle-border tb-background"></view>
+          </view>
+          <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
+          <view class="np">
+            <text class="name">{{item.title}}</text>
+            <!-- type=0新品&type=1限时抢购&type=2拼团 -->
+            <text class="price" wx:if="{{item.type==0}}">{{item.price_info}}元\{{item.size}}英寸</text>
+            <text class="price" wx:if="{{item.type>0}}">{{item.subtitle}}</text>
+          </view>
+          <view class="np" wx:if="{{item.type>0}}">
+            <view class="activity">{{item.activity}}</view>
+            <view class="tip">距离结束仅剩:</view>
+            <view class="time"><!--{{item.time}}-->
+              <span id="t_d">{{day}}</span> 天
+              <span id="t_h">{{hour}}</span> 时
+              <span id="t_m">{{min}}</span> 分
+              <span id="t_s">{{second}}</span> 秒
             </view>
-            <text class="desc">{{item.subtitle}}</text>
-          </navigator>
-        <!--</view>-->
+          </view>
+          <view class="np">
+            <view class="content" wx:if="{{item.type==0}}">{{item.content}}</view>
+            <view class="price_info" wx:if="{{item.type>0}}">¥{{item.price_info}}</view>
+            <view class="old_price_info" wx:if="{{item.type>0}}">¥{{item.old_price_info}}</view>
+          </view>
+        </navigator>
       </block>
     </view>
   </view>
 </view>
 
 <!--弹出框 选择地址 start-->
-  <view class="commodity_screen" catchtouchmove='true'wx:if="{{showModalStatus}}"></view>
-  <view animation="{{animationData}}" class="commodity_attr_box"  wx:if="{{showModalStatus}}">
-    <view class="title-modal" catchtouchmove='true'>可订购城市</view>
-    <view class="now-location">当前定位城市: <span class="now-location-inf">{{showModalLocation}}</span></view>
-    <view class="more-location">更多城市可选择</view>
-    <!--
-    calss="{{ showModalLocation == city.name ? 'city-inf-hover' : ''}}"-->
-    <view class="city-inf" style="background-image:url('../../static/images/city-back.jpg')">
-       <block wx:for="{{city_list}}" wx:for-item="city" wx:key="city_id">
-        <span  data-key="{{index}}" data-name="{{city.name}}" class="{{showModalLocation==city.name?'active-tag':''}}" bindtap="selectCity">
-          <view>{{city.name}}</view>
-        </span>
-      </block>
-    </view>
+<view class="commodity_screen" catchtouchmove='true' wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="title-modal" catchtouchmove='true'>可订购城市</view>
+  <view class="now-location">当前定位城市:
+    <span class="now-location-inf">{{showModalLocation}}</span>
   </view>
+  <view class="more-location">更多城市可选择</view>
+  <view class="city-inf" style="background-image:url('../../static/images/city-back.jpg')">
+    <!--<view class="city-inf" style="background-image:url('../../static/images/city-back.jpg') no-repeat;background-size:cover;">-->
+    <block wx:for="{{city_list}}" wx:for-item="city" wx:key="city_id">
+      <span data-key="{{index}}" data-name="{{city.name}}" class="{{showModalLocation==city.name?'active-tag':''}}" bindtap="selectCity">
+        <view>{{city.name}}</view>
+      </span>
+    </block>
+  </view>
+</view>
 <!--弹出框 选择地址 end-->
 
 <!--footer-->
-<include src="../footer/footer.wxml"/>
+<include src="../footer/footer.wxml" />
 <!--弹出框
 <block wx:if="{{layLocation}}">
     <import src="../../layer/layer.wxml"/>

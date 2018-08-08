@@ -1,0 +1,47 @@
+<view class="container">
+  <!-- 如果配件为空 -->
+  <view class="no-parts" wx:if="{{parts.length <= 0}}">
+    <view class="c">
+      <text class="tip1">暂无配件~</text>
+    </view>
+  </view>
+  <!-- 如果配件不为空 -->
+  <view class="parts-view" wx:if="{{parts.length > 0}}">
+    <view class="list">
+      <view class="group-item">
+        <view class="tips">配件:标配一套餐具（6个人使用）、蜡烛</view>
+        <view class="goods">
+          <view class="item" wx:for="{{parts}}" wx:key="{{item.id}}">
+            <view class="parts">
+              <image class="img" src="{{item.list_pic_url}}"></image>
+              <view id="tips" wx:if="{{item.actType>0}}"></view>
+              <span wx:if="{{item.actType>0}}">{{item.activity}}</span>
+              <view class="info">
+                <view class="t">
+                  <text class="name">{{item.parts_name}} {{item.spec}}</text>
+                  <view class="price"><span class="unit">￥</span>{{item.price_info}}</view>
+                </view>
+                <view class="b">
+                  <text class="attr">{{item.content}}</text>
+                  <view class="selnum">
+                  <view class="cut" bindtap="cutNumber" data-item-index="{{index}}" data-price='{{item.price_info}}'>-</view>
+                  <input value="{{item.number}}" class="number" disabled="true" type="number" />
+                  <view class="add" bindtap="addNumber" data-item-index="{{index}}" data-price='{{item.price_info}}' >+</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="tips">生日牌PS:最多6个汉字或12个字符</view>
+        <view class="blessTips">请填写生日祝福</view>
+        <textarea class="bless" placeholder="" auto-focus />
+      </view>
+
+    </view>
+  </view>
+  <view class="parts-bottom">
+    <view class="total">合计:<span class="unit">￥</span>{{totalPrice}}</view>
+    <view class="checkout">确认提交</view>
+  </view>
+</view>
