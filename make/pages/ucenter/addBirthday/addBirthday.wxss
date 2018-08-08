@@ -13,11 +13,11 @@ page{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 40rpx 0;
 }
 .top-icon image{
-    width: 70px;
-    height: 70px;
+    width: 140rpx;
+    height: 140rpx;
     border-radius: 50%;
 }
 .input-list{
@@ -28,13 +28,13 @@ page{
     display: flex;
     align-items: center;
     width: 100%;
-    height: 40px;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
+    height: 100rpx;
+    font-size: 28rpx;
+    border-bottom: 2rpx solid #eee;
 }
 .input-items input{
-    height: 40px;
-    font-size: 12px;
+    height: 100rpx;
+    font-size: 26rpx;
 }
 .input-items span{
     width: 20%;
@@ -43,16 +43,16 @@ page{
     display: flex;
 }
 .radio-style{
-    height: 40px;
-    width: 70px;
+    height: 100rpx;
+    width: 140rpx;
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 26rpx;
     border-bottom: 0.5px solid #f4f4f4;
 }
 .radio-style radio{
     transform:scale(.5);
-    border: 1px solid #c9a16d;
+    border: 2rpx solid #c9a16d;
     background: transparent;
     border-radius: 50%;
     width: 40rpx;
@@ -83,31 +83,31 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 40px;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
+    height: 100rpx;
+    font-size: 28rpx;
+    border-bottom: 2rpx solid #eee;
 }
 .sp-right{
     display: flex;
     align-items: center;
     color: #999;
-    font-size: 12px;
+    font-size: 26rpx;
 }
 .triangle{
     width: 0; 
     height: 0;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-top: 5px solid transparent;
-    border-left: 5px solid #333;
-    margin-left: 5px;
+    border-right: 10rpx solid transparent;
+    border-bottom: 10rpx solid transparent;
+    border-top: 10rpx solid transparent;
+    border-left: 10rpx solid #333;
+    margin-left: 10rpx;
 }
 
 .button-bottom{
     color: #fff;
     background: #c9a16d;
-    font-size: 14px;
-    line-height: 40px;
+    font-size: 28rpx;
+    line-height: 80rpx;
     text-align: center;
     position: absolute;
     bottom: 0;
@@ -116,7 +116,7 @@ radio .wx-radio-input.wx-radio-input-checked::before{
 
 picker-view{
     width: 100%;
-    height: 160px;
+    height: 320rpx;
     position: absolute;
     bottom: 0;
 }
@@ -140,30 +140,30 @@ picker-view-column{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 230px;
+    height: 460rpx;
     display: flex;
     flex-direction: column;
     z-index: 9999;
-    font-size: 12px;
+    font-size: 24rpx;
     background-color: #eee;
 }
 .btn-area{
     width: 100%;
     padding: 0 5%;
-    height: 40px;
+    height: 80rpx;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .btn-area span{
-    height: 25px;
-    width: 50px;
-    font-size: 12px;
-    border: 1px solid #DCDCDC;
+    height: 50rpx;
+    width: 100rpx;
+    font-size: 24rpx;
+    border: 2rpx solid #DCDCDC;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10rpx;
 }
 .btn-area span:nth-child(2){
     background: #c9a16d;
@@ -172,11 +172,11 @@ picker-view-column{
 }
 .modal-title{
     width: 100%;
-    height: 30px;
+    height: 60rpx;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #DCDCDC;
+    border-top: 2rpx solid #DCDCDC;
 }
 .modal-title span{
     width: 30%;
@@ -184,7 +184,7 @@ picker-view-column{
     text-align: center;
 }
 .selectedItems{
-    height: 30px;
+    height: 60rpx;
     text-align:center;
     color:#c9a16d;
 }

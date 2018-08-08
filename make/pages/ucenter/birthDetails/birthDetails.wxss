@@ -13,9 +13,9 @@ page{
     background: #fff;
     display: flex;
     align-items: center;
-    height: 40px;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
+    height: 100rpx;
+    font-size: 28rpx;
+    border-bottom: 2rpx solid #eee;
     margin: 0 5%;
 }
 .birthInfo-content{
@@ -27,8 +27,8 @@ page{
 .button-bottom{
     color: #fff;
     background: #c9a16d;
-    font-size: 14px;
-    line-height: 40px;
+    font-size: 28rpx;
+    line-height: 80rpx;
     text-align: center;
     position: absolute;
     bottom: 0;

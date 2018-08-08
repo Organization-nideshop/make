@@ -32,15 +32,15 @@ page{
 }
 .tips-left-top{
     color: #c9a16d;
-    font-size: 16px;
+    font-size: 32rpx;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10rpx;
 }
 .tips-left-top span{
-    font-size: 14px;
+    font-size: 28rpx;
 }
 .tips-left-bottom{
-    font-size: 12px;
+    font-size: 26rpx;
     color: #888;
 }
 .tips-right{
@@ -52,29 +52,29 @@ page{
 .tips-right-top{
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 26rpx;
     color: #c9a16d;
 }
 .tips-right-top image{
-    width: 10px;
-    margin-right: 5px;
+    width: 20rpx;
+    margin-right: 10rpx;
 }
 .tips-right-bottom{
     color: #fff;
     background: #c9a16d;
-    border-radius: 10px;
-    width: 60px;
+    border-radius: 20rpx;
+    width: 120rpx;
     text-align: center;
-    padding: 2px 0;
-    margin: 5px auto;
-    font-size: 12px;
+    padding: 4rpx 0;
+    margin: 10rpx auto;
+    font-size: 26rpx;
 }
 
 .addBirthday{
     color: #fff;
     background: #c9a16d;
-    font-size: 14px;
-    line-height: 40px;
+    font-size: 28rpx;
+    line-height: 80rpx;
     text-align: center;
     position: absolute;
     bottom: 0;
@@ -83,7 +83,7 @@ page{
 
 .birthTips-none{
     text-align: center;
-    font-size: 12px;
+    font-size: 26rpx;
     color: #666;
-    padding-top: 15px;
+    padding-top: 30rpx;
 }

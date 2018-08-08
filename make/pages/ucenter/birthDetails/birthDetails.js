@@ -58,10 +58,9 @@ Page({
             },
         ]
     },
-    backToList:function (e) {
-        var url = e.currentTarget.dataset.id;
-        wx.navigateTo({
-            url:url
+    backToList:function () {
+        wx.navigateBack({
+            delta:1
         })
     }
 })

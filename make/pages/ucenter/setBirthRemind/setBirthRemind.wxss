@@ -13,24 +13,24 @@ page{
 .title{
     background: #EBEBEB;
     color: #999;
-    font-size: 12px;
-    line-height: 40px;
+    font-size: 24rpx;
+    line-height: 80rpx;
     padding-left: 5%;
 }
 
 .radio-group{
-    padding: 0 15px 0 15px;
-    margin-bottom: 30px;
+    padding: 0 30rpx 0 30rpx;
+    margin-bottom: 60rpx;
 }
 .radio-style{
     width: 100%;
-    height: 40px;
+    height: 100rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #666;
-    font-size: 12px;
-    border-bottom: 0.5px solid #f4f4f4;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #f4f4f4;
 }
 .radio-style radio{
     transform:scale(.8);
@@ -40,15 +40,16 @@ page{
 }
 /* 未选中的 背景样式 */
 radio .wx-radio-input{
-    border: 1px solid #c9a16d !important;
+    border: 1px solid #fff !important;
     background: transparent !important;
     border-radius: 50%;
+}
+/* 选中后的 背景样式*/
+radio .wx-radio-input.wx-radio-input-checked{
+    border: 1px solid #c9a16d !important;
 }
 /* 选中后的 对勾样式 */
 radio .wx-radio-input.wx-radio-input-checked::before{
     color: #c9a16d;
     /*border: 1px solid #c9a16d;*/
-    /*border-radius: 50%;*/
-    /*width: 40rpx;
-    height: 40rpx;*/
 }

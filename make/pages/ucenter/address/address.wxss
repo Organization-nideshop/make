@@ -1,7 +1,6 @@
 page {
     background-color: #F4F4F4;
 }
-
 .container {
     height: auto;
     overflow: hidden;
@@ -11,7 +10,7 @@ page {
 .touch-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2px;
+    margin-bottom: 4rpx;
     width: 100%;
     overflow: hidden;
     background: #fff;
@@ -19,29 +18,29 @@ page {
 
 .content {
     width: 100%;
-    padding: 10px;
-    line-height: 25px;
+    padding: 20rpx;
+    line-height: 50rpx;
     margin-right:0;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
-    -webkit-transform: translateX(90px);
-    transform: translateX(90px);
-    margin-left: -90px
+    -webkit-transform: translateX(180rpx);
+    transform: translateX(180rpx);
+    margin-left: -180rpx
 }
 
 .del {
     background-color: #c9a16d;
-    width: 90px;
+    width: 180rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
-    -webkit-transform: translateX(90px);
-    transform: translateX(90px);
+    -webkit-transform: translateX(180rpx);
+    transform: translateX(180rpx);
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
-    font-size: 14px;
+    font-size: 28rpx;
 }
 
 .touch-move-active .content,
@@ -58,22 +57,22 @@ page {
     color: #898989;
 }
 .line-items-top-left{
-    font-size: 14px;
+    font-size: 28rpx;
 }
 .line-items-top-left span:nth-child(3){
     color: #898989;
 }
 .line-items-top-left image{
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
 }
 .line-items-bottom{
     display: flex;
     align-items: center;
     padding-left: 10%;
     width: 100%;
-    font-size: 14px;
+    font-size: 28rpx;
 }
 .address-style{
     color: #898989;
@@ -84,8 +83,8 @@ page {
 
 .button-bottom{
     background: #c9a16d;
-    font-size: 14px;
-    height: 40px;
+    font-size: 28rpx;
+    height: 80rpx;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -99,7 +98,7 @@ page {
     justify-content: center;
 }
 .button-bottom image{
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 10rpx;
 }

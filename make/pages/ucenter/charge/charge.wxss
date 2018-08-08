@@ -10,72 +10,72 @@ page{
     width: 100%;
 }
 .chargeTitle{
-    font-size: 14px;
-    padding-left: 15px;
-    margin-bottom: 10px;
+    font-size: 28rpx;
+    padding-left: 30rpx;
+    margin-bottom: 20rpx;
     color: #c9a16d;
 }
 .chargeTips{
-    font-size: 14px;
-    padding-left: 15px;
-    margin-top: 10px;
+    font-size: 28rpx;
+    padding-left: 30rpx;
+    margin-top: 20rpx;
     color: #c9a16d;
 }
 li{
     display: flex;
     align-items: center;
-    height: 25px;
-    padding-left: 15px;
+    height: 50rpx;
+    padding-left: 30rpx;
     color: grey;
-    font-size: 12px;
+    font-size: 24rpx;
 }
 .dot{
-    width: 5px;
-    height: 5px;
+    width: 10rpx;
+    height: 10rpx;
     border-radius: 50%;
     background: #c9a16d;
-    margin-right: 5px;
+    margin-right: 10rpx;
 }
 .buttonCharge{
-    margin: 30px 0 10px 0;
+    margin: 60rpx 0 20rpx 0;
 }
 .buttonCharge button{
-    border-radius: 10px;
+    border-radius: 20rpx;
 }
 .ensureCharge{
-    font-size: 14px;
+    font-size: 28rpx;
     color: #fff;
     background: #c9a16d;
     width: 90%;
-    margin-bottom: 10px;
+    margin-bottom: 20rpx;
 
 }
 .foot{
     color: grey;
     text-align: center;
-    font-size: 14px;
+    font-size: 28rpx;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20rpx;
 }
 
 .radio-group{
-    padding: 0 15px 0 15px;
-    margin-bottom: 30px;
+    padding: 0 30rpx 0 30rpx;
+    margin-bottom: 60rpx;
 }
 .radio-style{
     width: 100%;
-    height: 40px;
+    height: 80rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #666;
     font-weight: bold;
-    font-size: 12px;
-    border-bottom: 0.5px solid #f4f4f4;
+    font-size: 24rpx;
+    border-bottom: 1rpx solid #f4f4f4;
 }
 .radio-style radio{
     transform:scale(.5);
-    border: 1px solid #c9a16d;
+    border: 2rpx solid #c9a16d;
     background: transparent;
     border-radius: 50%;
     width: 40rpx;
@@ -85,7 +85,7 @@ li{
 }
 /* 未选中的 背景样式 */
 radio .wx-radio-input{
-    border: 1px solid #c9a16d;
+    border: 2rpx solid #c9a16d;
     background: transparent;
     border-radius: 50%;
     width: 36rpx;
@@ -102,10 +102,10 @@ radio .wx-radio-input.wx-radio-input-checked::before{
 }
 
 .codeCharge{
-    font-size: 14px;
+    font-size: 28rpx;
     color: #c9a16d;
     width: 90%;
-    border: 1px solid #c9a16d;
+    border: 2rpx solid #c9a16d;
     background: #fff;
 }
 .modal-screen{
@@ -122,31 +122,31 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 250px;
+    height: 500rpx;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     z-index: 9999;
-    font-size: 12px;
+    font-size: 24rpx;
 }
 .chargeModal-title{
-    line-height: 40px;
+    line-height: 80rpx;
     background-color: #eee;
     color: #888;
     padding: 0 5%;
 }
 .chargeItems{
-    border-bottom: 0.5px solid #eee;
+    border-bottom: 1rpx solid #eee;
     display: flex;
-    line-height: 40px;
+    line-height: 80rpx;
     padding: 0 5%;
     color: #888;
-    font-size: 12px;
+    font-size: 24rpx;
 }
 .chargeItems-sp{
-    border-bottom: 0.5px solid #eee;
+    border-bottom: 1rpx solid #eee;
     display: flex;
-    line-height: 40px;
+    line-height: 80rpx;
     color: #c9a16d;
     padding: 0 5%;
 }
@@ -160,28 +160,28 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     color: #888;
 }
 .ensurePay{
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 20rpx;
+    font-size: 28rpx;
     color: #fff;
     background: #c9a16d;
     width: 80%;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    margin-bottom: 20rpx;
+    border-radius: 20rpx;
 }
 
 .codeChargeModal{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 250px;
+    height: 500rpx;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     z-index: 9999;
     color: #999;
-    font-size: 12px;
+    font-size: 24rpx;
 }
 .codeChargeModal .chargeItems input{
-    font-size: 12px;
-    height: 40px;
+    font-size: 24rpx;
+    height: 80rpx;
 }
