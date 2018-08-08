@@ -63,7 +63,7 @@ Page({
             {
                 id:5,
                 uListTitle:'购物车',
-                pageUrl: '../order/order'
+                pageUrl: '../../../pages/cart/cart'
 
             },
             {
