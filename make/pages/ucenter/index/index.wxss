@@ -152,11 +152,27 @@ progress{
     padding-right: 30rpx;
 }
 .arrow-right{
-    border-left: 2px solid transparent;
-    border-top: 2rpx solid #818181;    transform:rotate(45deg);
-}
+    width: 10rpx;
+    height: 10rpx;
+    border-right: 2rpx solid #818181;
+    border-top: 2rpx solid #818181;
+    transform:rotate(45deg);
+    }
+    
 .clickMe{
-    align-items:center;}
+    position:fixed;
+    right:0;
+    top:55%;
+    width:50rpx;
+    height:150rpx;
+    background:#c9a16d;
+    color:#fff;
+    font-size:28rpx;
+    border-radius:40rpx;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
 .clickMe span{
     text-align: center;
     line-height: 29rpx;
