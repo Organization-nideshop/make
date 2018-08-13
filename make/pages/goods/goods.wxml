@@ -1,3 +1,86 @@
 <view class="container">
- 商城
+  <swiper class="goodsimgs" indicator-dots="true" indicator-active-color="#c9a16d" indicator-color="rgba(201,161,109,0.3)" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{gallery}}" wx:key="{{item.id}}">
+      <image src="{{item.img_url}}" background-size="contain"></image>
+    </swiper-item>
+  </swiper>
+
+  <scroll-view scroll-x class="scroll-x">
+      <block wx:for-items="{{menuList}}" wx:for-item="item" wx:key="{{index}}">
+          <view class="gSize {{item.id==selected?'selected':''}}" data-id="{{item.id}}" bindtap="selectGoodsSize">
+              <view class="sizeContent">
+                  <text>{{item.tips}}</text>
+                  <text class="menu-size">{{item.size}}</text>
+              </view>
+          </view>
+      </block>
+  </scroll-view>
+
+  <view class="goods-info">
+      <view class="infoTitle">
+          产品信息
+          <text>Product information</text>
+      </view>
+      <view class="infoContent">
+          <view class="list-items">
+              <view class="list-items-left">
+                  <view class="goodsTitle">草莓洛丽塔</view>
+                  <view class="gPrice">¥189
+                      <view>¥199</view>
+                  </view>
+                  <view class="actvInfo">
+                      <view>满减</view>
+                      <text>满88减10</text>
+                  </view>
+              </view>
+              <view class="list-items-right">
+                  <view class="minus">-</view>
+                  <text>2</text>
+                  <view class="plus">+</view>
+              </view>
+          </view>
+          <view class="list-items-m">
+              <view class="list-items-tr">
+                  <view class="list-items-td">
+                      <image class="icon-img" src="../../static/img/goods-icon_02.png"></image>
+                      <text>：水果蛋糕</text>
+                  </view>
+                  <view class="list-items-td">
+                      <image class="icon-img" src="../../static/img/goods-icon_05.png"></image>
+                      <text>：内含6套餐具</text>
+                  </view>
+              </view>
+              <view class="list-items-tr">
+                  <view class="list-items-td">
+                      甜度
+                      <text>：○○</text>
+                  </view>
+                  <view class="list-items-td">
+                      <image class="icon-img" src="../../static/img/goods-icon_04.png"></image>
+                      <text>：情人节、生日、聚会</text>
+                  </view>
+              </view>
+          </view>
+          <view class="list-items">
+              <view class="list-items-td">
+                  <image class="icon-img-sp" src="../../static/img/goods-icon_11.png"></image>
+                  <text>：商家配送 用户自提</text>
+              </view>
+              <view class="list-items-td">
+                  温馨提示：提前<text class="highlight">2小时</text>预定
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
+
+
+<view class="bottom-btn">
+  <!--<view class="l l-cart">
+    <view class="box">
+      <text class="cart-count">{{cartGoodsCount}}</text>
+    </view>
+  </view>-->
+  <view class="r" bindtap="addToCart">加入购物车</view>
+  <view class="c">立即购买</view>
 </view>
