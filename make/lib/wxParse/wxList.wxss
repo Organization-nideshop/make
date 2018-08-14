@@ -1,0 +1,215 @@
+.goodsItem {
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
+.goodsItem.navigator-hover {
+  background-color: #fff;
+}
+
+.goodsItem.last {
+  margin-right: 0;
+}
+
+.goodsItem .icon {
+  height: 180rpx;
+  width: 210rpx;
+}
+
+.goodsItem .np {
+  height: 35rpx;
+  color: #333;
+  font-size: 30rpx;
+  margin: 0 20rpx 8rpx 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.goodsItem .np .title {
+  color: #333;
+  font-family: PingFang SC Heavy;
+}
+
+.goodsItem .np .activity {
+  margin-left: 5rpx;
+  color: #c9a16d;
+  font-size: 22rpx;
+  border: 1px solid #c9a16d;
+  border-radius: 5rpx;
+  padding: 0 5rpx;
+}
+
+.goodsItem .np .price {
+  color: #c9a16d;
+  font-family: PingFang SC Medium;
+}
+
+.goodsItem .np .oldPrice, .goodsItem .np .subTitle {
+  margin-left: 5rpx;
+  color: #999;
+  font-family: PingFang SC Medium;
+  font-size: 24rpx;
+}
+
+.goodsItem .np .oldPrice {
+  text-decoration: line-through;
+}
+
+/* 加减数量 */
+
+.goodsItem .np .selnum {
+  width: 100rpx;
+  height: 30rpx;
+  float: right;
+  color: #b99567;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.selnum .cut {
+  width: 27rpx;
+  height: 27rpx;
+  text-align: center;
+  line-height: 27rpx;
+  color: #b99567;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 1px #b99567;
+}
+
+.selnum .number {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  float: left;
+  color: #b99567;
+  font-size: 30rpx;
+}
+
+.selnum .add {
+  width: 27rpx;
+  height: 27rpx;
+  text-align: center;
+  line-height: 27rpx;
+  color: #fff;
+  background-color: #b99567;
+  border-radius: 27rpx;
+  box-shadow: 0px 0px 0px 1px #b99567;
+}
+
+/* 图标 */
+
+.tips {
+  background: #fff;
+  color: #b99567;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  position: absolute;
+  display: block;
+  margin: 10rpx -5rpx;
+  font-size: 18rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+#tips {
+  background: #b99567;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  text-align: center;
+  margin: 10rpx -5rpx;
+}
+
+#tips:before, #tips:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40rpx;
+  width: 40rpx;
+  background: #b99567;
+}
+
+#tips:before {
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  -ms-transform: rotate(18deg);
+  -o-transform: rotate(18deg);
+  transform: rotate(18deg);
+}
+
+#tips:after {
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  -o-transform: rotate(36deg);
+  transform: rotate(36deg);
+}
+
+#tips2 {
+  background: #b99567;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  text-align: center;
+  margin: 10rpx -5rpx;
+}
+
+#tips2:before, #tips2:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40rpx;
+  width: 40rpx;
+  background: #b99567;
+}
+
+#tips2:before {
+  -webkit-transform: rotate(54deg);
+  -moz-transform: rotate(54deg);
+  -ms-transform: rotate(54deg);
+  -o-transform: rotate(54deg);
+  transform: rotate(54deg);
+}
+
+#tips2:after {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
+}
+
+#tips3 {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 44rpx;
+  position: absolute;
+  background: #b99567;
+  color: #fff;
+  display: block;
+  margin: 12rpx -7rpx;
+  font-size: 18rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+#tips4 {
+  width: 0;
+  height: 0;
+  border-bottom: 6rpx solid #b99567;
+  border-right: 30rpx solid transparent;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}

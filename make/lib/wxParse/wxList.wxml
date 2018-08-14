@@ -1,0 +1,39 @@
+<!-- 商品列表template -->
+<template name="goodsList">
+  <navigator url="/pages/goods/goods?id={{item.id}}" class="goodsItem {{(index+1) % 3 == 0 ? 'last' : ''}}">
+    <!--活动标签1-->
+    <block wx:if="{{item.actType==1}}">
+      <view id="tips"></view>
+      <view id="tips2"></view>
+      <span class="tips">{{item.activity}}</span>
+    </block>
+    <!--活动标签1-->
+    <!--活动标签2-->
+    <block wx:if="{{item.actType==2}}">
+      <view id="tips3">{{item.activity}}
+        <view id="tips4"></view>
+      </view>
+
+    </block>
+    <!--活动标签2-->
+    <image class="icon" src="{{item.pic_url}}"></image>
+    <view class="np">
+      <text class="title">{{item.title}}</text>
+      <text class="activity" wx:if="{{item.actType>0}}">{{item.activity}}</text>
+    </view>
+    <view class="np">
+      <text class="price">¥{{item.price_info}}</text>
+      <block>
+        <text class="oldPrice" wx:if="{{item.actType>0}}">¥{{item.old_price_info}}</text>
+        <text class="subTitle" wx:if="{{item.actType>0}}">{{item.subtitle}}</text>
+      </block>
+    </view>
+    <view class="np">
+      <view class="selnum">
+        <view class="cut" bindtap="cutNumber" data-item-index="{{index}}">-</view>
+        <input value="{{item.number}}" class="number" disabled="true" type="number" />
+        <view class="add" bindtap="addNumber" data-item-index="{{index}}">+</view>
+      </view>
+    </view>
+  </navigator>
+</template>

@@ -1,0 +1,11 @@
+<!-- 商品列表template -->
+<template name="cart">
+  <view class="cartAdd">
+    <view class="icon_dot_notices">
+      <view class="icon_dot_notices_inner cartNumber">{{cartNumber}}</view>
+      <view class="icon_dot_notices_left"></view>
+      <view class="icon_dot_notices_right"></view>
+    </view>
+    <image src="../../static/images/icon1_07.png" />
+  </view>
+</template>
