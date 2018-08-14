@@ -15,8 +15,13 @@
           <view class="item {{isEditCart ? 'edit' : ''}}" wx:for="{{cartGoods}}" wx:key="{{item.id}}">
             <view class="cart-goods">
               <image class="img" src="{{item.list_pic_url}}"></image>
-              <view id="tips" wx:if="{{item.actType>0}}"></view>
-              <span class="tips" wx:if="{{item.actType>0}}">{{item.activity}}</span>
+         <!--活动标签-->
+          <block wx:if="{{item.actType>0}}">
+            <view id="tips"></view>
+            <view id="tips2"></view>
+            <span class="tips">{{item.activity}}</span>
+          </block>
+          <!--活动标签-->
               <view class="info">
                 <view class="t type">
                   <navigator class="num arrow-right" hover-class="navigator-hover" wx:if="{{item.type==0}}" url="../parts/parts">添加配件

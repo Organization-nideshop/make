@@ -33,10 +33,13 @@
     <view class="b">
       <block wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
         <navigator url="#">
-          <view class="message-box" wx:if="{{item.type==1}}">
+          <!-- <view class="message-box" wx:if="{{item.type==1}}">
             <span>抢购</span>
             <view class="triangle-border tb-border"></view>
             <view class="triangle-border tb-background"></view>
+          </view> -->
+          <view class="message-box" wx:if="{{item.type==1}}">
+            <view>抢购</view>
           </view>
           <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
           <view class="np">

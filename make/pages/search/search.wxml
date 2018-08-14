@@ -1,0 +1,87 @@
+<import src="../../lib/wxParse/wxList.wxml"/>
+<import src="../../lib/wxParse/wxCart.wxml"/>
+<scroll-view class="container" style="height: 100%;">
+  <view class="search-header">
+    <view class="input-box">
+      <image class="icon" src="../../static/images/search2.png"></image>
+      <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" confirm-type="search" placeholder="请输入您要搜索的内容或关键字" />
+      <!-- <image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/clearIpt-f71b83e3c2.png"></image> -->
+    </view>
+    <view class="right" bindtap="closeSearch">取消</view>
+  </view>
+  <view class="no-search" wx:if="{{ !searchStatus}}">
+    
+    <view class="serach-keywords search-hot" wx:if="{{!keyword}}">
+      <view class="h">
+        <view>
+          <image src="../../static/images/icon1_04.png"/>
+        </view>
+        <text class="title">热门搜索</text>
+      </view>
+      <view class="b">
+        <view class="item {{item.is_hot === 1 ? 'active' : ''}}" hover-class="navigator-hover" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{hotKeyword}}">{{item.keyword}}</view>
+      </view>
+    </view>
+    <view class="serach-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
+      <view class="h">
+        <view>
+          <image src="../../static/images/icon1_05.png"/>
+        </view>
+        <text class="title">历史搜索</text>
+        <text class="clear" bindtap="clearHistory" >清理历史</text>
+      </view>
+      <view class="b">
+        <view class="item" bindtap="onKeywordTap" data-keyword="{{item}}" wx:for="{{historyKeyword}}" hover-class="navigator-hover">{{item}}</view>
+      </view>
+    </view>
+    <view class="shelper-list" wx:if="{{keyword}}">
+      <view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" bindtap="onKeywordTap" data-keyword="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="search-result" wx:if="{{ searchStatus && goodsList.length}}">
+    <view class="sort">
+        <view class="sort-box">
+          <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
+            <view class="txt">综合</view>
+            <view>
+              <!-- <view class="triangle-asc"></view>
+              <view class="triangle-desc"></view> -->
+            </view>
+          </view>
+          <view class="item by-price {{currentSortType == 'price' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="priceSort">
+            <view class="txt">价格</view>
+            <view>
+              <!-- <view class="triangle-asc"></view>
+              <view class="triangle-desc"></view> -->
+            </view>
+          </view>
+          <view class="item {{currentSortType == 'num' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="numSort">
+            <view class="txt">销量</view>
+            <view>
+              <!-- <view class="triangle-desc"></view>
+              <view class="triangle-asc"></view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    <view class="cate-item"> 
+      <view class="b">
+        <template wx:for="{{goodsList}}" is="goodsList" data="{{item}}"></template>
+        <!-- 购物车 -->
+        <template is="cart" data="{{cartNumber}}"></template>
+        <!-- 购物车 -->
+        <block wx:if="{{goodsList.length<allNum}}">
+          <text class="tip1_text" bindtap="moreLoad">戳我加载更多</text>
+        </block>
+        <block wx:else>
+          <text class="tip2_text">嘿!我可是有底线的哦!</text>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
+    <text class="text">偷懒的miao未添加~</text>
+  </view>
+</scroll-view>

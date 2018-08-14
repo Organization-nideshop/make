@@ -1,29 +1,47 @@
 /* pages/store/store.wxss */
 
-.search {
-  height: 88rpx;
-  width: 100%;
-  padding: 0 30rpx;
-  background: #fff;
-  display: flex;
-  align-items: center;
+.container {
+  background-color: #fff;
 }
 
-.search .input {
-  width: 690rpx;
-  height: 56rpx;
-  background: #ededed;
-  border-radius: 8rpx;
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20rpx;
+}
+
+.header image {
+  width: 28rpx;
+  height: 31rpx;
+}
+
+.search {
+  height: 70rpx;
+  flex: 1;
+  padding: 0 30rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.search .input {
+  flex: 1;
+  width: 100%;
+  background: #ededed;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+
 .search .icon {
-  background: url(../../static/images/search.png) center no-repeat;
-  background-size: 100%;
-  width: 28rpx;
-  height: 28rpx;
+  width: 35rpx;
+  height: 37rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 
 .search .txt {
@@ -32,4 +50,178 @@
   color: #666;
   padding-left: 10rpx;
   font-size: 30rpx;
+}
+
+.remind {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: left;
+  color: #666;
+  font-size: 24rpx;
+  padding: 0 50rpx;
+  margin-bottom: 30rpx;
+}
+
+/* 地图 start */
+
+.page-section-gap {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.page-body-button {
+  margin-bottom: 30rpx;
+}
+
+/* 折叠 */
+
+.detail-store {
+  z-index: 9999;
+  position: absolute;
+  bottom: 90rpx;
+  width: 100%;
+  height: 84%;
+}
+
+.detail-store-content {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+.detail-store-content.show-store{
+  height:   100%;
+}
+
+.long-dec {
+  display: -webkit-box; /*关键属性*/
+  font-size: 28rpx;
+  color: #cfcfd0;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical; /* 关键属性 */
+  -webkit-line-clamp: 6; /* 关键属性 */
+  overflow: hidden; /* 关键属性 */
+  text-overflow: ellipsis; /* 超出内容显示省略号*/
+  background-color: #fff;
+}
+
+.hide {
+  display: -webkit-box;
+  height: 150rpx;
+}
+
+.show {
+  display: block;
+  height: 100%;
+  overflow-y:auto;
+}
+
+.Mhide {
+  display: none;
+}
+
+.Mshow {
+  display: block;
+}
+
+.arrow {
+  width: 30rpx;
+  height: 34rpx;
+}
+
+.detail-store .top {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 26rpx;
+  padding: 6rpx 20rpx;
+  background-color: #fff;
+}
+
+.detail-store .bottom {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  bottom: 0;
+  position: fixed;
+  height: 80rpx;
+  background-color: #b99567;
+}
+
+.detail-store .item {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  border-top: 1rpx solid #e9e9e9;
+  padding: 0 20rpx;
+}
+
+.detail-store .item.checked {
+  border-left: 10rpx solid #b99567;
+}
+
+.detail-store .item .img {
+  width: 180rpx;
+  height: 135rpx;
+  margin-right: 20rpx;
+}
+
+.detail-store .item image {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-store .item .info {
+  flex: 1;
+  height: 135rpx;
+}
+
+.detail-store .item .info .t {
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-top: 10rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: left;
+}
+
+.detail-store .item .info .tt {
+  height: 65rpx;
+  line-height: 33rpx;
+  margin-top: 10rpx;
+  overflow: hidden;
+}
+
+.detail-store .item .info .t .name {
+  flex: 1;
+}
+
+.detail-store .item .info .t .distance {
+  width: 100rpx;
+  float: right;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.detail-store .item .info .tt .m, .detail-store .item .info .tt .b {
+  width: 100%;
+  font-size: 24rpx;
+  color: #666;
 }

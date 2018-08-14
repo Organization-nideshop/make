@@ -1,0 +1,54 @@
+/* pages/ucenter/invoice/invoice.wxss */
+
+.tui-accordion-content {
+  margin: 10px;
+  border: 1px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tui-accordion-from {
+  padding-left: 0;
+}
+
+.tui-accordion-from input {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.tui-input-name {
+  height: 80rpx;
+  float: left;
+  width: 200rpx;
+}
+
+.message2 {
+  width: 42px;
+  height: 42px;
+  margin: 100px auto;
+  background-color: green;
+  border-bottom-color: green;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial;
+  line-height: 18px;
+  padding: 5px 12px 5px 12px;
+  box-sizing: border-box;
+  position: relative;
+  word-break: break-all;
+  border-radius: 42rpx;
+}
+
+.message2::after {
+  content: '';
+  position: absolute;
+  width: 10rpx;
+  height: 2rpx;
+  right: 3rpx;
+  bottom: 0px;
+  border-width: 0 0 2rpx 6rpx;
+  border-style: solid;
+  border-left-color: transparent;
+  border-bottom-color: inherit;
+  border-bottom-right-radius: 180rpx;
+}

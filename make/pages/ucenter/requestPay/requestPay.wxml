@@ -1,0 +1,4 @@
+<view class="container">
+  <image src="../../../static/img/codeQr.jpg"/>
+  <view>给收银员扫一扫完成线下购物</view>
+</view>

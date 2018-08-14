@@ -6,9 +6,11 @@ Page({
    */
   
   data: {
-
+    typeAdress:1,
+    checkedId: null,
     items: [
       {
+        id:'0',
         isTouchMove: false, //默认隐藏删除
         name:'露露',
         phone:'15438291976',
@@ -16,6 +18,7 @@ Page({
         address: "陕西省 西安市 xxxxx ",
       },
       {
+        id:'1',
         isTouchMove: false, //默认隐藏删除
         name: '甜甜',
         phone: '15251634988',
@@ -31,6 +34,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var type_address = options.type;
+    var id = options.id;
+    var that = this;
+    if (type_address==0){//结算页请求的
+      that.setData({
+        typeAdress: type_address,
+        checkedId:id
+      });
+    }
   },
 
   /**

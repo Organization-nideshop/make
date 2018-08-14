@@ -210,17 +210,18 @@ page {
   line-height: 34rpx;
   color: #b99567;
   border-radius: 34rpx;
-  border: 1rpx solid #b99567;
+  /* border: 1rpx solid #b99567; */
+  box-shadow:0px 0px 0px 1px #b99567;
 }
 
 .selnum .number {
   flex: 1;
   height: 100%;
   text-align: center;
-  /* line-height: 68.75rpx; */
   float: left;
   color: #b99567;
-  font-size: 30rpx;
+  font-size: 32rpx;
+  
 }
 
 .selnum .add {
@@ -231,6 +232,8 @@ page {
   color: #fff;
   background-color: #b99567;
   border-radius: 34rpx;
+  box-shadow:0px 0px 0px 1px #b99567;
+
 }
 
 .cart-view .get {
@@ -291,6 +294,21 @@ page {
 
 /* 图标 */
 
+.tips {
+  background:#fff;
+color:#b99567;
+width:40rpx;
+height:40rpx;
+border-radius:40rpx;
+position:absolute;
+display:block;
+margin:10rpx -5rpx;
+font-size:18rpx;
+line-height:40rpx;
+text-align:center;
+
+}
+
 #tips {
   background: #b99567;
   width: 40rpx;
@@ -298,20 +316,6 @@ page {
   position: absolute;
   text-align: center;
   margin: 10rpx -5rpx;
-}
-
-.tips {
-  background: #fff;
-  color: #b99567;
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 40rpx;
-  position: absolute;
-  display: block;
-  margin: 10rpx -5rpx;
-  font-size: 18rpx;
-  line-height: 40rpx;
-  text-align: center;
 }
 
 #tips:before, #tips:after {
@@ -325,19 +329,54 @@ page {
 }
 
 #tips:before {
-  -webkit-transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  -ms-transform: rotate(18deg);
+  -o-transform: rotate(18deg);
+  transform: rotate(18deg);
 }
 
 #tips:after {
-  -webkit-transform: rotate(60deg);
-  -moz-transform: rotate(60deg);
-  -ms-transform: rotate(60deg);
-  -o-transform: rotate(60deg);
-  transform: rotate(60deg);
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  -o-transform: rotate(36deg);
+  transform: rotate(36deg);
+}
+
+#tips2 {
+  background: #b99567;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  text-align: center;
+  margin: 10rpx -5rpx;
+}
+
+#tips2:before, #tips2:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40rpx;
+  width: 40rpx;
+  background: #b99567;
+}
+
+#tips2:before {
+  -webkit-transform: rotate(54deg);
+  -moz-transform: rotate(54deg);
+  -ms-transform: rotate(54deg);
+  -o-transform: rotate(54deg);
+  transform: rotate(54deg);
+}
+
+#tips2:after {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
 }
 
 .arrow-right {

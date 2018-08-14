@@ -1,17 +1,47 @@
 <view class="container">
-  <view>
-    <image src="../../static/images/address_icon_03.png" /> 当前城市：西安
+  <view class="header">
+    <image src="../../static/images/address_icon_03.png" /> 当前城市: {{currentCity}}
     <view class="search">
-      <navigator url="/pages/search/search" class="input">
+      <view class="input">
         <image class="icon" src="../../static/images/search.png"></image>
-        <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
-      </navigator>
+        <input class="input" placeholder="请输入门店名称/地址" bindinput="searchStore" />
+      </view>
     </view>
   </view>
+  <view class="remind {{isFold?'Mshow':'Mhide'}}">若要配送到其他城市，需在首页切换城市</view>
   <block>
-  地图
+    <view class="page-section page-section-gap {{isFold?'Mshow':'Mhide'}}">
+      <map id="myMap" style="width: 100%; height: 770rpx;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
+    </view>
   </block>
   <block>
-  详细门店
+    <view class="detail-store">
+      <view class="detail-store-content {{isFold?'':'show-store'}}">
+        <view class="top"  bindtap="showAll">
+          <block wx:if="{{isFold}}">查看所有门店</block>
+          <block wx:if="{{!isFold}}">返回查看地图</block>
+          <image class="arrow" src="{{isFold?'../../static/images/up.png':'../../static/images/down.png'}}"></image>
+        </view>
+        <view class="long-dec {{isFold?'hide':'show'}}">
+          <view class="item {{checkedIndex==index?'checked':''}}" wx:for="{{storeList}}" wx:key="{{item.id}}" data-item-index="{{index}}" bindtap='checkedIndex'>
+            <view class="img">
+              <image src="{{item.list_pic_url}}"></image>
+            </view>
+            <view class="info">
+              <view class="t">
+                <text class="name">{{item.store_name}}</text>
+                <text class="distance">{{item.distance}}千米</text>
+              </view>
+              <view class="tt">
+                <view class="m">{{item.adress}}</view>
+                <view class="b">{{item.store_name}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="bottom" bindtap="checkedStore">确定</view>
+      </view>
+    </view>
   </block>
+
 </view>

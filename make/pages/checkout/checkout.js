@@ -1,4 +1,5 @@
 // pages/checkout/checkout.js
+var user = require('../../services/user.js');
 Page({
 
   /**
@@ -7,7 +8,7 @@ Page({
   data: {
     actualPrice:'179',
     checkedAddress:{
-      id:'0',
+      id:'1',
       name:"莉莉",
       is_default:1,
       mobile:'15251639367',
@@ -33,7 +34,7 @@ Page({
     couponList:[],
     goodsTotalPrice:'179',
     freightPrice:'0.00',
-     _typeDistribution:0
+     _typeDistribution:1
   },
 
   /**
@@ -103,11 +104,31 @@ Page({
   },
   checkAdress:function(){
     wx.navigateTo({
-      url: '../../pages/ucenter/address/address',
+      url: '../../pages/ucenter/address/address?type=0&id=0',
     })
-  }, checkCoupon:function(){
+  }, 
+  checkCoupon:function(){
     wx.navigateTo({
       url: '../../pages/ucenter/couponList/couponList',
+    })
+  },
+  checkStore:function(){
+    var that = this;
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        console.log("latitude", latitude);
+        console.log("longitude", longitude);
+        that.setData({
+          latitude: latitude,
+          longitude: longitude
+        });
+        wx.navigateTo({
+          url: '../../pages/store/store?latitude=' + latitude +'&longitude=' + longitude
+        })
+      }
     })
   }
 })

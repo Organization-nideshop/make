@@ -1,59 +1,77 @@
-<view class="top-nav">
-    <view class="search">
-        <view class="search-bg"></view>
-        <text>搜索关键词</text>
-    </view>
+<import src="../../lib/wxParse/wxList.wxml" />
+<import src="../../lib/wxParse/wxCart.wxml" />
+<view class="container">
+  <view class="search">
+    <navigator url="/pages/search/search" class="input">
+      <text class="txt">搜索关键词</text>
+    </navigator>
     <view class="city">
-        <image class="cityImg" src="../../static/images/location_03.png"></image>
-        <text>西安</text>
+      <image class="cityImg" src="../../static/images/location_03.png"></image>
+      <text>西安</text>
     </view>
-</view>
+  </view>
+  <view class="catalog">
 
-<view class="listContent">
-    <!--<view class="catalog">
-        <view class="rec">人气推荐</view>
-        <view class="cata1">人气推荐</view>
-    </view>-->
-    <view class="catalog">
-        <scroll-view class="nav" scroll-y="true">
-            <view class="rec">人气推荐</view>
-            <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{navList}}"  data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
-        </scroll-view>
-        <scroll-view class="cate" scroll-y="true">
-            <view class="order-nav">
-                <view>综合</view>
-                <view>
-                    <text>价格</text>
-                    <image src="../../static/images/goods-icon_03.png"></image>
-                </view>
-                <view>销量</view>
+    <scroll-view class="nav" scroll-y="true">
+      <block wx:for="{{navList}}">
+        <view class="item" data-id="{{item.id}}" data-index="{{index}}" data-subnumber="{{item.subNumber}}" bindtap="switchCate">
+          <view class="itemContent {{ currentCategory.id == item.id ? 'active' : ''}}">{{item.name}}</view>
+        </view>
+        <block wx:if="{{item.id==currentCategory.id}}">
+        <view class="subitem" wx:if="{{item.subNavList.length>0}}">
+          <view class="subitemContent {{ currentCategory.subId == items.id ? 'active' : ''}}" wx:for="{{item.subNavList}}" data-id="{{item.id}}" data-subid="{{items.id}}" wx:for-item="items" bindtap="switchSubCate">
+            {{items.name}}
+          </view>
+        </view>
+        </block>
+      </block>
+    </scroll-view>
+
+    <scroll-view class="cate" scroll-y="true">
+      <view class="sort">
+        <view class="sort-box">
+          <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
+            <view class="txt">综合</view>
+            <view>
+              <!-- <view class="triangle-asc"></view>
+              <view class="triangle-desc"></view> -->
             </view>
-            <view class="bd">
-                <navigator url="/pages/category/category?id={{item.id}}" class="item {{(index+1) % 3 == 0 ? 'last' : ''}}" wx:for="{{currentCategory.subCategoryList}}">
-                    <image class="icon" src="../../static/images/goods-icon_07.jpg" mode='widthFix'></image>
-                    <view class="goodsTitle">
-                      <view>{{item.name}}</view>
-                      <text class="txt" wx:if="{{item.status.id==1||item.status.id==2}}">{{item.status.name}}</text>
-                    </view>
-                    <view class='price-items'>
-                      <text>¥{{item.price}}</text>
-                      <view class='actInfo'>
-                        <view class='pre_price'>¥{{item.pre_price}} </view>
-                        <view>{{item.priceChange}}</view>
-                      </view>
-                    </view>
-                    <view class='changeNum'>
-                      <view class='minus'>
-                        <text>-</text>
-                      </view>0
-                      <view class='plus'>
-                        <text>+</text>
-                      </view>
-                    </view>
-                    <view id='tips'></view>
-                    <view class='tips'>直降</view>
-                </navigator>
+          </view>
+          <view class="item by-price {{currentSortType == 'price' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="priceSort">
+            <view class="txt">价格</view>
+            <view>
+              <!-- <view class="triangle-asc"></view>
+              <view class="triangle-desc"></view> -->
             </view>
-        </scroll-view>
-    </view>
+          </view>
+          <view class="item {{currentSortType == 'category' ? 'active' : ''}}" bindtap="openSortFilter" id="categoryFilter">
+            <view class="txt">销量</view>
+            <view>
+              <!-- <view class="triangle-desc"></view>
+              <view class="triangle-asc"></view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bd">
+        <!-- 商品列表 -->
+        <block wx:if="{{currentCategory.goodList.length}}">
+          <template wx:for="{{currentCategory.goodList}}" is="goodsList" data="{{item}}"></template>
+        </block>
+        <block wx:if="{{!currentCategory.goodList.length}}">
+          <text class="text">偷懒的miao未添加~</text>
+        </block>
+        <!-- 商品列表 -->
+        <!-- 购物车 -->
+        <template is="cart" data="{{cartNumber}}"></template>
+        <!-- 购物车 -->
+        <block wx:if="{{currentCategory.goodList.length<allNum}}">
+          <text class="tip1_text" bindtap="moreLoad">戳我加载更多</text>
+        </block>
+        <block wx:else>
+          <text class="tip2_text">嘿!我可是有底线的哦!</text>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
 </view>

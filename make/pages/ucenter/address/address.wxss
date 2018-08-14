@@ -16,6 +16,10 @@ page {
     background: #fff;
 }
 
+.touch-item.checked{
+  border-left:10rpx solid #c9a16d;
+}
+
 .content {
     width: 100%;
     padding: 20rpx;

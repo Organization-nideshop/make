@@ -26,7 +26,7 @@
         <image src="/static/images/address_right.png" bindtap="checkAdress"></image>
       </view>
     </view>
-    <view class="address-item address-empty" bindtap="addAddress" wx:if="{{checkedAddress.id <= 0}}">
+    <view class="address-item address-empty" wx:if="{{checkedAddress.id <= 0}}">
       <view class="l">
         请输入收货地址
       </view>
@@ -54,7 +54,7 @@
     <view class="distr_self">
       <view class="l">选择门店</view>
       <view class="m">西安大明宫店</view>
-      <view class="r"><image src="/static/images/address_right.png"></image></view>
+      <view class="r"><image src="/static/images/address_right.png" bindtap="checkStore"></image></view>
     </view>
     <view class="distr_self">
       <view class="l">到货时间</view>

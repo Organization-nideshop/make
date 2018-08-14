@@ -41,7 +41,7 @@ Page({
             {
                 id:1,
                 uListTitle:'门店支付',
-                pageUrl: '../order/order'
+                pageUrl: '../requestPay/requestPay'
 
             },
             {
@@ -69,7 +69,7 @@ Page({
             {
                 id:6,
                 uListTitle:'电子发票',
-                pageUrl:'../order/order'
+                pageUrl:'../invoice/invoice'
             },
             {
                 id:7,
@@ -81,7 +81,11 @@ Page({
                 uListTitle:'设置',
                 pageUrl: '../set/set'
             },
-
+            {
+              id: 8,
+              uListTitle: '地址管理',
+              pageUrl: '../address/address'
+            },
         ]
     },
     onLoad: function (options) {
