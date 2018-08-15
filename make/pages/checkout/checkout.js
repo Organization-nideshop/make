@@ -17,14 +17,14 @@ Page({
     },
     checkedGoodsList:[{
       id:'0',
-      list_pic_url:'../../static/img/good_pic.jpg',
+      list_pic_url:'../../static/img/good-item3.jpg',
       goods_name:'草莓蛋糕',
       number:'1',
       parts:'每份含6套餐具',
       retail_price:'168',
     }, {
         id: '1',
-        list_pic_url: '../../static/img/good_pic.jpg',
+        list_pic_url: '../../static/img/good-item3.jpg',
         goods_name: '黑森林',
         number: '2',
         parts: '每份含6套餐具',

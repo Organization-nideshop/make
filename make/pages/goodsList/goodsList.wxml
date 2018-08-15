@@ -56,7 +56,7 @@
       <view class="bd">
         <!-- 商品列表 -->
         <block wx:if="{{currentCategory.goodList.length}}">
-          <template wx:for="{{currentCategory.goodList}}" is="goodsList" data="{{item}}"></template>
+          <template wx:for="{{currentCategory.goodList}}" is="goodsList" data="{{index:index,categoryId:currentCategory.id,subId:currentCategory.subId,item}}"></template> 
         </block>
         <block wx:if="{{!currentCategory.goodList.length}}">
           <text class="text">偷懒的miao未添加~</text>

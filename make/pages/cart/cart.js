@@ -9,7 +9,7 @@ Page({
     cartGoods: [{
       'id':'2dedfweopndgfds213213231',
       'goods_name': '草莓洛丽塔',
-      'list_pic_url': '../../static/img/good_pic.jpg',
+      'list_pic_url': '../../static/img/good-item3.jpg',
       'size': '6英寸',
       'type': '0',
       'distrType': '0',

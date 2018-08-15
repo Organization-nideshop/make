@@ -1,6 +1,8 @@
 // pages/goodsList/goodsList.js
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
+var wxList = require('../../lib/wxParse/wxList.js');
+
 Page({
 
   /**
@@ -65,7 +67,7 @@ Page({
     ],
     categoryList: [],
     currentCategory: {
-      id: 1,
+      id: 0,
       subId: 1,
       goodList: [{
           id: 0,
@@ -76,7 +78,25 @@ Page({
           old_price_info:189,
           actType: 1,
           activity: '直降',
-          number: 1
+          number: 2,
+          spec:[
+            {
+              name: "卡布奇诺",
+              size:'6寸',
+              price:'188',
+              number:'1'
+            }, {
+              name: "卡布奇诺",
+              size: '8寸',
+              price: '238',
+              number: '1'
+            }, {
+              name: "卡布奇诺",
+              size: '10寸',
+              price: '288',
+              number: '0'
+            }
+          ]
         },
         {
           id: 1,
@@ -358,5 +378,26 @@ Page({
           }
         ]}
     });
+  }, cutNumber:function(event){
+    let itemIndex = event.target.dataset.itemIndex;
+    let categoryId = event.target.dataset.categoryId;
+    let subId = event.target.dataset.subId;
+    var spec = currentCategory.goodList[itemIndex].spec;
+    if (spec.length>0){
+      console.log("规格弹出框");
+    }else{
+      console.log("添加数量");
+    }
+    wxList.cutNumber(itemIndex);
+  }, addNumber: function (event) {
+    let itemIndex = event.target.dataset.itemIndex;
+    let categoryId = event.target.dataset.categoryId;
+    let subId = event.target.dataset.subId;
+    var spec = currentCategory.goodList[itemIndex].spec;
+    if (spec.length > 0) {
+      console.log("规格弹出框");
+    } else {
+      console.log("减少数量");
+    }
   }
 })

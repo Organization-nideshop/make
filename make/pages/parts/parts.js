@@ -134,5 +134,11 @@ Page({
       parts: this.data.parts
     });
      this.updateParts(cartItem.id, number);
+  }, addPart:function(){
+    //1、添加配件
+    //2、返回上一页面
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

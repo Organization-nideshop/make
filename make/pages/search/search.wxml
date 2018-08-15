@@ -67,7 +67,7 @@
       </view>
     <view class="cate-item"> 
       <view class="b">
-        <template wx:for="{{goodsList}}" is="goodsList" data="{{item}}"></template>
+        <template wx:for="{{goodsList}}" is="goodsList" data="{{index:index,categoryId:'',subId:'',item}}"></template>
         <!-- 购物车 -->
         <template is="cart" data="{{cartNumber}}"></template>
         <!-- 购物车 -->

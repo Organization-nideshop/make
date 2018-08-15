@@ -42,6 +42,6 @@
   </view>
   <view class="parts-bottom">
     <view class="total">合计:<span class="unit">￥</span>{{totalPrice}}</view>
-    <view class="checkout">确认提交</view>
+    <view class="checkout" bindtap="addPart">确认提交</view>
   </view>
 </view>
