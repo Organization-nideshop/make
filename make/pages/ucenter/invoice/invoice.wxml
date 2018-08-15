@@ -9,10 +9,10 @@
 <view class="title">电子发票常见的问题解答</view>
 <view class="qList">
     <block wx:for="{{qnaList}}">
-        <view class="list-items" data-id="{{item.id}}" bindtap="showAnswer">{{item.question}}
+        <view class="list-items" data-id="{{item.id}}" data-index="{{index}}" bindtap="showAnswer">{{item.question}}
             <view class="arrow-up" wx:if="{{showAnswer==item.id}}"></view>
             <view class="arrow-down" wx:else></view>
         </view>
-        <view class="answer show+{{item.id}}">{{item.answer}}</view>
+        <view class="answer {{item.show?'':'showInvoice'}}">{{item.answer}}</view>
     </block>
 </view>
