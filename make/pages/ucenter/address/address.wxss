@@ -106,3 +106,9 @@ page {
     height: 30rpx;
     margin-left: 10rpx;
 }
+
+.edit{
+  font-size:24rpx;
+  color:#c9a16d;
+  margin-left:20rpx;
+}

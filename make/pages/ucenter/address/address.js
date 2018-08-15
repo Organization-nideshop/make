@@ -161,8 +161,22 @@ Page({
   editOrAdd: function (e) {
     var pageUrl ="../addAddress/addAddress?id=";
       var id = e.currentTarget.dataset.id;
+    var type_address = this.data.typeAdress
+    if (type_address==1){
       wx.navigateTo({
-          url: pageUrl+id,
+        url: pageUrl + id,
       })
+    } else if (type_address == 0){
+      wx.navigateBack({
+        delta:1
+      })
+    }
+      
+  }, checkAddress: function (e){
+    var id = e.currentTarget.dataset.id;
+    var that= this;
+    that.setData({
+      checkedId: id
+    })
   }
 })

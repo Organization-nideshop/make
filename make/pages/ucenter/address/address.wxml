@@ -1,11 +1,12 @@
 <view class="container">
-    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}} {{typeAdress==0 && checkedId==item.id ? 'checked':''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove"  bindtap="editOrAdd" data-id="{{item.id}}" wx:for="{{items}}" wx:key="">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}} {{typeAdress==0 && checkedId==item.id ? 'checked':''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtap='checkAddress' data-id="{{item.id}}" wx:for="{{items}}" wx:key="">
         <view class="content">
             <view class="line-items-top">
                 <view class="line-items-top-left">
                     <image src="../../../static/images/address_icon_03.png"></image>
                     <span>收货人：</span>
                     <span>{{item.name}}</span>
+                    <span class="edit" bindtap="editOrAdd">编辑</span>
                 </view>
                 <span>{{item.phone}}</span>
             </view>
@@ -17,9 +18,12 @@
         </view>
         <view class="del" catchtap="del" data-index="{{index}}">删除</view>
     </view>
-    <view class="button-bottom" bindtap="editOrAdd" data-id="">
+    <view class="button-bottom" bindtap="editOrAdd" data-id="" wx:if="{{typeAdress}}==1">
         <view class="btn-items">
             新增地址<image src="../../../static/images/address_icon_07.png"></image>
         </view>
+    </view>
+    <view class="button-bottom" bindtap="editOrAdd" data-id="" wx:if="{{typeAdress}}==0">
+        <view class="btn-items">确认</view>
     </view>
 </view>
