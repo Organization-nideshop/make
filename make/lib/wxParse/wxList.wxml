@@ -1,6 +1,8 @@
 <!-- 商品列表template -->
 <template name="goodsList">
-  <navigator url="/pages/goods/goods?id={{item.id}}" class="goodsItem {{(index+1) % 3 == 0 ? 'last' : ''}}">
+  <!-- <navigator url="/pages/goods/goods?id={{item.id}}" class="goodsItem"> -->
+  <view url="#" class="goodsItem">
+    <navigator url="/pages/goods/goods?id={{item.id}}">
     <!--活动标签1-->
     <block wx:if="{{item.actType==1}}">
       <view id="tips"></view>
@@ -28,12 +30,14 @@
         <text class="subTitle" wx:if="{{item.actType>0}}">{{item.subtitle}}</text>
       </block>
     </view>
+    </navigator>
     <view class="np">
       <view class="selnum">
-        <view class="cut" bindtap="cutNumber" data-item-index="{{index}}">-</view>
+        <view class="cut" bindtap="cutNumber" data-item-index="{{index}}" data-item-categoryId="{{categoryId}}" data-item-subId="{{subId}}">-</view> 
         <input value="{{item.number}}" class="number" disabled="true" type="number" />
-        <view class="add" bindtap="addNumber" data-item-index="{{index}}">+</view>
+        <view class="add" bindtap="addNumber" data-item-index="{{index}}" data-item-categoryId="{{categoryId}}" data-item-subId="{{subId}}">+</view>
       </view>
     </view>
-  </navigator>
+    </view>
+  <!-- </navigator> -->
 </template>
