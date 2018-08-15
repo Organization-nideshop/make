@@ -1,24 +1,29 @@
 <view class="container">
     <view class="input-list">
         <view class="input-items">
-            <span>收货人</span>
-            <input />
+            <text>收货人</text>
+            <input value='{{address.name}}'/>
         </view>
         <view class="input-items">
-            <span>收货人手机号码</span>
-            <input />
+            <text>收货人手机号码</text>
+            <input value='{{address.phone}}'/>
         </view>
-        <view class="input-items">
-            <span>所在地区</span>
-            <span class="arrow-right"></span>
-        </view>
+
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="input-items">
+                <text>所在地区</text>
+                <view class="region">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+                <text class="arrow-right"></text>
+            </view>
+        </picker>
+
         <view class="input-items-ad">
-            <span>详细地址</span>
-            <textarea placeholder-class="input-style" placeholder="请输入详细地址信息，如道路、门牌号、小区、楼栋号、单元室等"/>
+            <text>详细地址</text>
+            <textarea placeholder-class="input-style" placeholder="请输入详细地址信息，如道路、门牌号、小区、楼栋号、单元室等" value='{{address.address}}'/>
         </view>
         <view class="input-items">
-            <span>设置默认地址</span>
-            <switch class="wx-switch-input" checked color="#c9a16d" height="20px" bindchange="switchChange"/>
+            <text>设置默认地址</text>
+            <switch class="wx-switch-input" checked="{{address.addressType}}" color="#c9a16d" height="20px" bindchange="switchChange"/>
         </view>
     </view>
     <view class="btn-area">保存</view>

@@ -158,11 +158,11 @@ Page({
           items: this.data.items
       })
   },
-
-  goToPage: function (e) {
-      var pageUrl = e.currentTarget.dataset.id;
+  editOrAdd: function (e) {
+    var pageUrl ="../addAddress/addAddress?id=";
+      var id = e.currentTarget.dataset.id;
       wx.navigateTo({
-          url: pageUrl,
+          url: pageUrl+id,
       })
   }
 })

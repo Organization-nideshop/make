@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}} {{typeAdress==0 && checkedId==item.id ? 'checked':''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}} {{typeAdress==0 && checkedId==item.id ? 'checked':''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove"  bindtap="editOrAdd" data-id="{{item.id}}" wx:for="{{items}}" wx:key="">
         <view class="content">
             <view class="line-items-top">
                 <view class="line-items-top-left">
@@ -17,7 +17,7 @@
         </view>
         <view class="del" catchtap="del" data-index="{{index}}">删除</view>
     </view>
-    <view class="button-bottom" data-id="../addAddress/addAddress" bindtap="goToPage">
+    <view class="button-bottom" bindtap="editOrAdd" data-id="">
         <view class="btn-items">
             新增地址<image src="../../../static/images/address_icon_07.png"></image>
         </view>

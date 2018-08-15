@@ -4,16 +4,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    address: {},
+      region: ['广东省', '广州市', '海珠区'],
+      customItem: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var obj=options.id;
+    if(obj!=""){
+      var that=this;
+      that.setData({
+        address: {
+          id: '0',
+          isTouchMove: false, //默认隐藏删除
+          name: '露露',
+          phone: '15438291976',
+          addressType: true,
+          address: "陕西省 西安市 xxxxx ",
+        }
+      });
+    }
+    console.log("传参：：：：：：",options.id);
   },
-
+    bindRegionChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            region: e.detail.value
+        })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
