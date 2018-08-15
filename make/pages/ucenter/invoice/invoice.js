@@ -25,13 +25,61 @@ Page({
         answer: '不可以，根据税法相关规定开票内容为实际购买产品明细。',
         show: false
       },
+      {
+        id: 4,
+        question: '4.开票金额就是订单金额吗？',
+        answer: '所有商品仅按顾客实际支付现金、支付宝、微信支付、银行卡的支付方式开具发票，不包括蛋糕卡、优惠券、储值卡、积分等方式支付的金额部分。',
+        show: false
+      },
+      {
+        id: 5,
+        question: '5.多个订单合并开电子发票是否支持？',
+        answer: '不支持，暂时无法满足您的需求',
+        show: false
+      },
+      {
+        id: 6,
+        question: '6.我的电子发票抬头写错了，需要重开发票如何操作？',
+        answer: '不可以，已开具的电子发票不支持重开发票',
+        show: false
+      },
+      {
+        id: 7,
+        question: '7.开具电子发票后是否可以换开纸质发票？',
+        answer: '不可以，已开具的电子发票不可以换纸质发票',
+        show: false
+      },
+      {
+        id: 8,
+        question: '8.顾客下单后，什么时间能申请电子发票？',
+        answer: '一般在提货,签收后0-2个工作日即可申请电子发票',
+        show: false
+      },
+      {
+        id: 9,
+        question: '9.已经收到的电子发票，请问还可以修改发票内容吗？',
+        answer: '不可以，已收到的电子发票是不能再修改发票',
+        show: false
+      },
+      {
+        id: 10,
+        question: '10.申请电子发票有效期时间为多久？',
+        answer: '一个月',
+        show: false
+      },
+      {
+        id: 11,
+        question: '11.纸质发票说明',
+        answer: '纸质发票可在申请开具后15个工作日（节假日除外）至申请领取发票门店进行发票认领，如有特殊情况请及时与领取门店进行联系',
+        show: false
+      },
     ]
   },
 
   showAnswer: function(e) {
     var that = this;
     var index = e.currentTarget.dataset.index;
-    var show = true;
+    // var show = true;
     if (that.data.qnaList[index].show) {
       that.data.qnaList[index].show = false;
     } else {
