@@ -5,9 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShowFrom: false
+      showAnswer:false,
+      itemIndex:'',
+      qnaList:[
+          {
+              id:1,
+              question:'1.什么是电子发票？',
+              answer:'电子发票是税务局认可的有效付款凭证,支持企业报销，请先确认所属公司是否支持电子发票报销。'
+          },
+          {
+              id:2,
+              question:'2.我是否可以使用电子发票报销？',
+              answer:'电子发票是税务局认可的有效付款凭证,支持企业报销，请先确认所属公司是否支持电子发票报销。'
+          },
+          {
+              id:3,
+              question:'3.我可否定义电子发票的开票内容，如购买商品选择餐饮消费？',
+              answer:'不可以，根据税法相关规定开票内容为实际购买产品明细。'
+          },
+      ]
   },
 
+  showAnswer:function (e) {
+      var that = this;
+      var id = e.currentTarget.dataset.id;
+       
+         "show" + id
+      /*if (that.data.showAnswer===id){
+          that.setData({
+              showAnswer: null
+          })
+      }else{
+          that.setData({
+              showAnswer: id
+          })
+      }*/
+      that.setData({
+          itemIndex:id
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -63,10 +99,10 @@ Page({
   onShareAppMessage: function () {
   
   },
-  showFrom(e) {
+  /*showFrom(e) {
     var param = e.currentTarget.dataset.param;
     this.setData({
       isShowFrom: param == 1 ? (this.data.isShowFrom ? false : true) : false
     });
-  }
+  }*/
 })

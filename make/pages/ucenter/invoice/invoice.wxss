@@ -1,54 +1,86 @@
-/* pages/ucenter/invoice/invoice.wxss */
-
-.tui-accordion-content {
-  margin: 10px;
-  border: 1px solid #c8c7cc;
-  border-radius: 5px;
-  overflow: hidden;
+page{
+    height: 100%;
+    background: #fff;
+}
+.btn-top{
+    width: 100%;
+    height: 400rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.applyInvoice{
+    background: #c9a16d;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    margin-right: 50rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.applyInvoice text{
+    color: #fff;
+    font-size: 32rpx;
+    width: 70rpx;
+    line-height: 50rpx;
+}
+.historyInvoice{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    border: 1px solid #c9a16d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.historyInvoice text{
+    color: #c9a16d;
+    font-size: 32rpx;
+    width: 70rpx;
+    line-height: 50rpx;
 }
 
-.tui-accordion-from {
-  padding-left: 0;
+.title{
+    font-size: 30rpx;
+    color: #c9a16d;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+.qList{
+    width: 100%;
+    padding: 0 20rpx;
+}
+.list-items{
+    /*height: 60rpx;*/
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10rpx 10rpx;
+}
+.arrow-down{
+    width: 15rpx;
+    height: 15rpx;
+    border-right: 2rpx solid #666;
+    border-bottom: 2rpx solid #666;
+    transform:rotate(45deg);
+    margin-bottom: 6rpx;
+}
+.arrow-up{
+    width: 15rpx;
+    height: 15rpx;
+    border-left: 2rpx solid #666;
+    border-top: 2rpx solid #666;
+    transform:rotate(45deg);
+    margin-top: 6rpx;
 }
 
-.tui-accordion-from input {
-  height: 80rpx;
-  line-height: 80rpx;
-}
-
-.tui-input-name {
-  height: 80rpx;
-  float: left;
-  width: 200rpx;
-}
-
-.message2 {
-  width: 42px;
-  height: 42px;
-  margin: 100px auto;
-  background-color: green;
-  border-bottom-color: green;
-  color: #fff;
-  font-size: 12px;
-  font-family: Arial;
-  line-height: 18px;
-  padding: 5px 12px 5px 12px;
-  box-sizing: border-box;
-  position: relative;
-  word-break: break-all;
-  border-radius: 42rpx;
-}
-
-.message2::after {
-  content: '';
-  position: absolute;
-  width: 10rpx;
-  height: 2rpx;
-  right: 3rpx;
-  bottom: 0px;
-  border-width: 0 0 2rpx 6rpx;
-  border-style: solid;
-  border-left-color: transparent;
-  border-bottom-color: inherit;
-  border-bottom-right-radius: 180rpx;
+.answer{
+    padding: 0 5%;
+    background: #eee;
+    color: #666;
+    font-size: 24rpx;
+    line-height: 40rpx;
 }

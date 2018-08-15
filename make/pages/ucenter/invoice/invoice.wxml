@@ -1,38 +1,18 @@
-<view class="container">
-  <text>发票</text>
-</view>
-<!--pages/accordion/accordion.wxml-->
-<view class="tui-accordion-content">
-  <view class="tui-menu-list {{isShowFrom ? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
-    <view bindtap="showFrom" data-param="1">
-      <text>文字排版</text>
+<view class="btn-top">
+    <view class="applyInvoice">
+        <text>申请开票</text>
     </view>
-    <view class="{{isShowFrom ? '' : 'tui-hide'}}">
-      <view class="tui-h1">
-        <text>H1 标签内文字大小及加粗样式</text>
-      </view>
-      <view class="tui-h2">
-        <text>H2 标签内文字大小及加粗样式</text>
-      </view>
-      <view class="tui-h3">
-        <text>H3 标签内文字大小及加粗样式</text>
-      </view>
-      <view class="tui-h4">
-        <text>H4 标签内文字大小及加粗样式</text>
-      </view>
-      <view class="tui-h5">
-        <text>H5 标签内文字大小及加粗样式</text>
-      </view>
-      <view class="tui-h6">
-        <text>H6 标签内文字大小及加粗样式</text>
-      </view>
-      <view class="tui-p">
-        <text>P 标签内文字大小及加粗样式</text>
-      </view>
+    <view class="historyInvoice">
+        <text>开票历史</text>
     </view>
-  </view>
 </view>
-
-  <view class="message2">
-    Demos 代码演示、代码片段 - 读你，欢迎来到读你，http://dunizb.com/demo/
-  </view>
+<view class="title">电子发票常见的问题解答</view>
+<view class="qList">
+    <block wx:for="{{qnaList}}">
+        <view class="list-items" data-id="{{item.id}}" bindtap="showAnswer">{{item.question}}
+            <view class="arrow-up" wx:if="{{showAnswer==item.id}}"></view>
+            <view class="arrow-down" wx:else></view>
+        </view>
+        <view class="answer show+{{item.id}}">{{item.answer}}</view>
+    </block>
+</view>
