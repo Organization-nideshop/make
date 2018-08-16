@@ -101,3 +101,9 @@ page{
     background: #fff;
     margin-top: 20rpx;
 }
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

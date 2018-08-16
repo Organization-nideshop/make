@@ -1,0 +1,6 @@
+<view class="container">
+    <image class="icon" src="../../../static/images/birth-icon_03.png" mode="widthFix" data-id='../completeInfo/completeInfo' bindtap='goToPage'></image>
+    <input class="orderId" placeholder-class="defaultInfo" placeholder="请输入充值单号或者消费单号" />
+    <view class="btn-area">确 定</view>
+</view>
+

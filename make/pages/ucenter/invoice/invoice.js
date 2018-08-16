@@ -144,10 +144,14 @@ Page({
   onShareAppMessage: function() {
 
   },
-  /*showFrom(e) {
-    var param = e.currentTarget.dataset.param;
-    this.setData({
-      isShowFrom: param == 1 ? (this.data.isShowFrom ? false : true) : false
-    });
-  }*/
+  goToApplyInvoice:function () {
+      wx.navigateTo({
+          url:'../applyInvoice/applyInvoice'
+      })
+  },
+  goToHistoryInvoice:function () {
+      wx.navigateTo({
+          url:'../historyInvoice/historyInvoice'
+      })
+  }
 })

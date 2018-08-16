@@ -8,37 +8,37 @@
     <view class="input-list">
         <view class="input-items" data-id="0" bindtap="showList">
             <span class="relType">家人/亲戚</span>
-            <span class="showList" style="{{_id==0&&open?'display:none':'display:block'}}"></span>
-            <span class="hideList" style="{{_id==0&&open?'display:block':'display:none'}}"></span>
+            <span class="showList {{_id==0&&open?'hide':'show'}}"></span>
+            <span class="hideList {{_id==0&&open?'show':'hide'}}"></span>
         </view>
-        <view class="relList" style="{{_id==0&&open?'display:block':'display:none'}}">
+        <view class="relList {{_id==0&&open?'show':'hide'}}">
             <view wx:for="{{relation1}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
         </view>
 
         <view class="input-items" data-id="1" bindtap="showList">
             <span class="relType">朋友/恋人</span>
-            <span class="showList" style="{{_id==1&&open?'display:none':'display:block'}}"></span>
-            <span class="hideList" style="{{_id==1&&open?'display:block':'display:none'}}"></span>
+            <span class="showList {{_id==1&&open?'hide':'show'}}"></span>
+            <span class="hideList {{_id==1&&open?'show':'hide'}}"></span>
         </view>
-        <view class="relList" style="{{_id==1&&open?'display:block':'display:none'}}">
+        <view class="relList {{_id==1&&open?'show':'hide'}}" >
             <view wx:for="{{relation2}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
         </view>
 
         <view class="input-items" data-id="2" bindtap="showList">
             <span class="relType">同事/伙伴</span>
-            <span class="showList" style="{{_id==2&&open?'display:none':'display:block'}}"></span>
-            <span class="hideList" style="{{_id==2&&open?'display:block':'display:none'}}"></span>
+            <span class="showList {{_id==2&&open?'hide':'show'}}"></span>
+            <span class="hideList {{_id==2&&open?'show':'hide'}}"></span>
         </view>
-        <view class="relList" style="{{_id==2&&open?'display:block':'display:none'}}">
+        <view class="relList {{_id==2&&open?'show':'hide'}}">
             <view wx:for="{{relation3}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
         </view>
 
         <view class="input-items" data-id="3" bindtap="showList">
             <span class="relType">同学/老师</span>
-            <span class="showList" style="{{_id==3&&open?'display:none':'display:block'}}"></span>
-            <span class="hideList" style="{{_id==3&&open?'display:block':'display:none'}}"></span>
+            <span class="showList {{_id==3&&open?'hide':'show'}}"></span>
+            <span class="hideList {{_id==3&&open?'show':'hide'}}"></span>
         </view>
-        <view class="relList" style="{{_id==3&&open?'display:block':'display:none'}}">
+        <view class="relList {{_id==3&&open?'show':'hide'}}">
             <view wx:for="{{relation4}}" class="relationship {{relation.id==item.id?'selected':''}}" data-num="{{item.id}}" data-value="{{item.value}}" bindtap="selectThis">{{item.value}}</view>
         </view>
 

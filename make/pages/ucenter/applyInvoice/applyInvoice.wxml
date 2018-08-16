@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="sign-top">
+        <view class="icon-items">
+            <image class="icon" src="../../../static/images/birth-icon_03.png" mode="widthFix" data-id='../completeInfo/completeInfo' bindtap='goToPage'></image>
+        </view>
+        <view class="invoice-btn" bindtap="makeOutInvoice">订单编号开票</view>
+    </view>
+    <view class="list-title">
+        <text class="date">时间</text>
+        <text class="type">类型</text>
+        <text class="amount">可开票金额</text>
+    </view>
+</view>

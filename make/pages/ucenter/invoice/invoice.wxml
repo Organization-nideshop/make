@@ -1,8 +1,8 @@
 <view class="btn-top">
-    <view class="applyInvoice">
+    <view class="applyInvoice" bindtap="goToApplyInvoice">
         <text>申请开票</text>
     </view>
-    <view class="historyInvoice">
+    <view class="historyInvoice" bindtap="goToHistoryInvoice">
         <text>开票历史</text>
     </view>
 </view>

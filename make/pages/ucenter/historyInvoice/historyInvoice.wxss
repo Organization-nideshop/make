@@ -1,0 +1,22 @@
+.top-nav{
+    height: 80rpx;
+    border-bottom: 1px solid #c9a16d;
+    display: flex;
+    justify-content: center;
+}
+.top-nav view{
+    /*width: 30%;*/
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.checked{
+    color: #fff;
+    background: #c9a16d;
+}
+.unchecked{
+    color: #c9a16d;
+    background: #fff;
+}
