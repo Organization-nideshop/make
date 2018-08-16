@@ -43,6 +43,7 @@ Page({
         checkedId:id
       });
     }
+    console.log(that.data.typeAdress);
   },
 
   /**
