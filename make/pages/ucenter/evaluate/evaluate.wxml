@@ -1,0 +1,57 @@
+<view class="container">
+    <view class="top-items">
+        <image src="../../../static/img/logo-w.png" mode="widthFix"></image>
+        <text>消费维权服务站</text>
+    </view>
+    <view class="content">
+        <view class="tips">质量安全无小事，质量安全是大事........................</view>
+        <view class="evaluation">
+            <text class="title">服务意见</text>
+            <view class="list-items">
+                <text class="txt-left">您的姓名</text>
+                <input />
+            </view>
+            <view class="list-items">
+                <text class="txt-left">联系方式</text>
+                <input />
+            </view>
+            <view class="list-items-sp">
+                <text class="txt-left-sp">详细情况</text>
+                <textarea placeholder-class="defaultInfo"></textarea>
+            </view>
+            <view class="list-items-upload">
+                <text class="txt-left-sp">上传图片</text>
+                <view class="uploadView">
+                    <view class="uploadInfo">
+                        <text>已选0张0KB</text>
+                        <view class="selectImg">选择图片</view>
+                        <view class="uploadImg">上传图片</view>
+                    </view>
+                    <view class="preview">
+                        <block wx:for="{{upLoadImg}}">
+                            <view class="img-area">
+                                <image src="{{item.url}}" mode="aspectFit"></image>
+                            </view>
+                        </block>
+                        <view class="img-area">
+                            <image src="../../../static/img/default-icon.png" mode="aspectFit"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-area">提交</view>
+        </view>
+    </view>
+    <view class="foot-area">
+        <view class="tel">
+            <image src="../../../static/img/tel.png"></image>
+            <text>监督服务电话</text>
+            <image src="../../../static/img/tel.png"></image>
+        </view>
+        <text>12315</text>
+        <text>029-86525888/86523837</text>
+        <text>400-0226-999</text>
+        <text>服务邮箱：kefu@maky.com.cn</text>
+        <text>Copyright© 2016-2018 陕工商备案09003989号</text>
+    </view>
+</view>

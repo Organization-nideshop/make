@@ -104,7 +104,7 @@
                 </view>
                 <span class="arrow-right-gold"></span>
             </view>
-            <view class="modalItems" data-id="" bindtap="goToPage">
+            <view class="modalItems" data-id="../evaluate/evaluate" bindtap="goToPage">
                 <view class="modalItemsTitle">服务评价
                     <span class="modalItems-content">送10积分，10成长值</span>
                 </view>
