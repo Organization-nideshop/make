@@ -1,6 +1,6 @@
 <view class="container">
     <view class="top-items">
-        <image src="../../../static/img/logo-w.png" mode="widthFix"></image>
+        <image src="../../../static/images/logo-w.png" mode="widthFix"></image>
         <text>消费维权服务站</text>
     </view>
     <view class="content">
@@ -23,18 +23,20 @@
                 <text class="txt-left-sp">上传图片</text>
                 <view class="uploadView">
                     <view class="uploadInfo">
-                        <text>已选0张0KB</text>
-                        <view class="selectImg">选择图片</view>
-                        <view class="uploadImg">上传图片</view>
+                        <text>待上传{{imgNum}}张{{imgSize}}KB</text>
+                        <view class="selectImg" bindtap="selectImg">选择图片</view>
+                        <view class="uploadImg" bindtap="uploadImg">上传图片</view>
                     </view>
                     <view class="preview">
                         <block wx:for="{{upLoadImg}}">
-                            <view class="img-area">
-                                <image src="{{item.url}}" mode="aspectFit"></image>
+                            <view class="img-area" >
+                                <image src="{{item.imgUrl}}" data-index="{{index}}" mode="aspectFit"></image>
+                                <view class="selectedMark" wx:if="{{item.uploadFlag==1}}"></view>
+                                <a wx:if="{{item.uploadFlag==1}}">√</a>
                             </view>
                         </block>
                         <view class="img-area">
-                            <image src="../../../static/img/default-icon.png" mode="aspectFit"></image>
+                            <image src="../../../static/images/default-icon.png" mode="aspectFit"></image>
                         </view>
                     </view>
                 </view>
@@ -44,9 +46,9 @@
     </view>
     <view class="foot-area">
         <view class="tel">
-            <image src="../../../static/img/tel.png"></image>
+            <image src="../../../static/images/tel.png"></image>
             <text>监督服务电话</text>
-            <image src="../../../static/img/tel.png"></image>
+            <image src="../../../static/images/tel.png"></image>
         </view>
         <text>12315</text>
         <text>029-86525888/86523837</text>

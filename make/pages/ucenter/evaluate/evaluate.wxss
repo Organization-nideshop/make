@@ -175,6 +175,7 @@ page{
     overflow:hidden;
     margin: 10rpx;
     float:left;
+    position: relative;
 }
 .preview image{
     max-width:273rpx;
@@ -208,4 +209,39 @@ page{
 .tel image{
     width: 40rpx;
     height: 40rpx;
+}
+
+.selectedMark{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-right: 40rpx solid #c9a16d;
+    border-top: 40rpx solid transparent;
+    border-left: 40rpx solid transparent;
+    border-bottom: 40rpx solid #c9a16d;
+    /*z-index: 10;*/
+}
+
+a{
+    position: absolute;
+    right: 25rpx;
+    bottom: 15rpx;
+    display: inline-block;
+    width: 15rpx;
+    height:4rpx;
+    background: #fff;
+    line-height: 0;
+    font-size:0;
+    vertical-align: middle;
+    -webkit-transform: rotate(45deg);
+}
+a:after{
+    content:'/';
+    display:block;
+    width: 30rpx;
+    height:4rpx;
+    background: #fff;
+    -webkit-transform: rotate(-100deg) translateY(-50%) translateX(50%);
 }
