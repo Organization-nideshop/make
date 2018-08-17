@@ -42,11 +42,11 @@
           <view class="list-items-m">
               <view class="list-items-tr">
                   <view class="list-items-td">
-                      <image class="icon-img" src="../../static/img/goods-icon_02.png"></image>
+                      <image class="icon-img" src="../../static/images/goods-icon_02.png"></image>
                       <text>：{{goods.type}}</text>
                   </view>
                   <view class="list-items-td">
-                      <image class="icon-img" src="../../static/img/goods-icon_05.png"></image>
+                      <image class="icon-img" src="../../static/images/goods-icon_05.png"></image>
                       <text>：{{goods.parets}}</text>
                   </view>
               </view>
@@ -56,14 +56,14 @@
                       <text>：{{goods.sweetness}}</text>
                   </view>
                   <view class="list-items-td">
-                      <image class="icon-img" src="../../static/img/goods-icon_04.png"></image>
+                      <image class="icon-img" src="../../static/images/goods-icon_04.png"></image>
                       <text>：{{goods.scene}}</text>
                   </view>
               </view>
           </view>
           <view class="list-items">
               <view class="list-items-td">
-                  <image class="icon-img-sp" src="../../static/img/goods-icon_11.png"></image>
+                  <image class="icon-img-sp" src="../../static/images/goods-icon_11.png"></image>
                   <text>：{{goods.ship}}</text>
               </view>
               <view class="list-items-td">
@@ -74,10 +74,10 @@
               <image class="icon-img-sp" src="../../static/img/good-item1.jpg" mode="widthFix"></image>
           </view>
           <view class="list-bottom">
-              <image class="btn-icon" src="../../static/img/goods-icon_21.png" bindtap='backToTop' ></image>
-              <image class="btn-icon" src="../../static/img/goods-icon_15.png"></image>
+              <image class="btn-icon" src="../../static/images/goods-icon_21.png" bindtap='backToTop' ></image>
+              <image class="btn-icon" src="../../static/images/goods-icon_15.png"></image>
               <view class="cart-icon" bindtap="goToCart">
-                  <image src="../../static/img/goods-icon_18.png"></image>
+                  <image src="../../static/images/goods-icon_18.png"></image>
                   <text class="cart-count" wx:if="{{cart.length>0}}"></text>
               </view>
           </view>
