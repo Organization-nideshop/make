@@ -29,14 +29,19 @@
                     </view>
                     <view class="preview">
                         <block wx:for="{{upLoadImg}}">
-                            <view class="img-area" >
-                                <image src="{{item.imgUrl}}" data-index="{{index}}" mode="aspectFit"></image>
+                            <view class="img-area">
+                                <image src="{{item.imgUrl}}" data-index="{{index}}" mode="aspectFit" bindtap="showDeleteModal"></image>
                                 <view class="selectedMark" wx:if="{{item.uploadFlag==1}}"></view>
                                 <a wx:if="{{item.uploadFlag==1}}">√</a>
+                                <progress percent="{{progress}}" wx:if="{{progress!=0&&item.uploadFlag==0}}" />
+                                <view class="modal-screen" data-index="{{index}}" wx:if="{{modalShow==index}}" bindtap="hideModal">
+                                    <image src="../../../static/images/recycle.png" data-index="{{index}}" bindtap="deleteImg"></image>
+                                </view>
                             </view>
+
                         </block>
                         <view class="img-area">
-                            <image src="../../../static/images/default-icon.png" mode="aspectFit"></image>
+                            <image src="../../../static/images/default-icon.png" mode="aspectFit" bindtap="selectImg"></image>
                         </view>
                     </view>
                 </view>

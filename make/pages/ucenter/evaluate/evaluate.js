@@ -10,6 +10,8 @@ Page({
     jsonstr: [],
     imgSize: 0,
     imgNum: 0,
+    progress:0,
+    modalShow:null,
   },
 
   /**
@@ -69,6 +71,10 @@ Page({
   },
   selectImg: function() {
     var that = this;
+    that.setData({
+      progress: 0,
+    });
+    
     var upLoadImg = that.data.upLoadImg;
     var imgSize = that.data.imgSize;
     if (upLoadImg.length >= 9) {
@@ -127,17 +133,7 @@ Page({
       })
       return false;
     }
-    for (var i = 0; i < imgArr.length; i++) {
-      if (imgArr[i].uploadFlag == 0) {
-        imgArr[i].uploadFlag = 1;
-      }
-    }
-    that.setData({
-      upLoadImg: imgArr,
-      imgSize: 0,
-      imgNum: 0
-    });
-    console.log(that.data.upLoadImg);
+    that.showProgress();
   },
   imgSizeOrNum: function() {
     var that = this;
@@ -156,7 +152,46 @@ Page({
     });
   }, 
   showProgress:function(){
-    
-  }
-  // setTimeout("alert('对不起, 要你久候')", 3000)
+      var that = this;
+      that.setData({
+          progress: 20
+      })
+      setTimeout(function () {
+        var imgArr = that.data.upLoadImg;
+          that.setData({
+              progress: 100
+          })
+        for (var i = 0; i < imgArr.length; i++) {
+          if (imgArr[i].uploadFlag == 0) {
+            imgArr[i].uploadFlag = 1;
+          }
+        }
+        that.setData({
+          upLoadImg: imgArr,
+          imgSize: 0,
+          imgNum: 0
+        });
+      }, 200);
+  },
+    showDeleteModal:function (e) {
+        var index = e.currentTarget.dataset.index;
+        this.setData({
+            modalShow:index
+        })
+    },
+    hideModal:function () {
+        this.setData({
+            modalShow:null
+        })
+    },
+    deleteImg:function (e) {
+        var that = this;
+        var arry = that.data.upLoadImg;
+        var index = e.currentTarget.dataset.index;
+        arry.splice(index,1);
+        that.setData({
+          uploadImg: arry
+        })
+        console.log(that.data.upLoadImg);
+    }
 })
