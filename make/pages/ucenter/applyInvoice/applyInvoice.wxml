@@ -10,4 +10,16 @@
         <text class="type">类型</text>
         <text class="amount">可开票金额</text>
     </view>
+    <view class="list-items">
+        <block wx:for="{{orderInfo}}">
+            <view class="line-items">
+                <view class="time">{{item.consumeDate}}</view>
+                <text class="mid">{{item.consumeType}}</text>
+                <text class="mid">{{item.applyAmount}}</text>
+                <view class="btn-area">
+                    <text class="apply-btn">申请发票</text>
+                </view>
+            </view>
+        </block>
+    </view>
 </view>

@@ -1,0 +1,42 @@
+<view class="invoiceTitle">
+    <text>{{invoiceInfo.applyDate}}</text>{{invoiceInfo.order}}
+</view>
+<view class="invoiceContent">
+    <view class="line-items">
+        <text>发票抬头</text>：
+        <view>{{invoiceInfo.invoiceTitle}}</view>
+    </view>
+    <view class="line-items">
+        <text>发票类型</text>：
+        <view>{{invoiceInfo.invoiceProperty}}</view>
+    </view>
+    <view class="line-items">
+        <text>发票性质</text>：
+        <view>{{invoiceInfo.invoiceType}}</view>
+    </view>
+    <view class="line-items">
+        <text>开户行名称</text>：
+        <view>{{invoiceInfo.bankName}}</view>
+    </view>
+    <view class="line-items">
+        <text>开户行账号</text>：
+        <view>{{invoiceInfo.bankAccount}}</view>
+    </view>
+    <view class="line-items">
+        <text>地址</text>：
+        <view>{{invoiceInfo.address}}</view>
+    </view>
+    <view class="line-items">
+        <text>电话</text>：
+        <view>{{invoiceInfo.mobile}}</view>
+    </view>
+    <view class="line-items">
+        <text>开票金额</text>：
+        <view>{{invoiceInfo.invoicePrice}}</view>
+    </view>
+    <view class="line-items">
+        <text>发票状态</text>：
+        <view>{{invoiceInfo.status}}</view>
+    </view>
+</view>
+<view class="btn-area" bindtap="backToHistoryInvoice">返回</view>

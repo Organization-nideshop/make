@@ -5,7 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+      orderInfo:[
+          {
+              oid:'1',
+              consumeDate:'2018-08-09 10:33',
+              consumeType:'充值',
+              applyAmount:'0.01'
+          },
+          {
+              oid:'2',
+              consumeDate:'2018-08-09 10:33',
+              consumeType:'充值',
+              applyAmount:'0.01'
+          },
+          {
+              oid:'3',
+              consumeDate:'2018-08-09 10:33',
+              consumeType:'充值',
+              applyAmount:'0.01'
+          },
+          {
+              oid:'4',
+              consumeDate:'2018-08-09 10:33',
+              consumeType:'充值',
+              applyAmount:'0.01'
+          },
+      ]
   },
 
   /**

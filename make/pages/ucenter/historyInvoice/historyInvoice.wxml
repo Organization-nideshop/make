@@ -3,3 +3,25 @@
     <view class="{{_id==1?'checked':'unchecked'}}" data-id="1" bindtap="orderByStatus">已开票</view>
     <view class="{{_id==2?'checked':'unchecked'}}" data-id="2" bindtap="orderByStatus">无效</view>
 </view>
+<view class="list-items">
+    <block wx:for="{{invoiceInfo}}">
+        <view class="itemContent">
+            <view class="invoiceTitle">
+                {{item.order}}<text>{{item.status}}</text>
+            </view>
+            <view class="invoiceContent">
+                <view class="txt">
+                    <text>发票抬头：{{item.invoiceTitle}}</text>
+                    <text>发票类型：{{item.invoiceType}}</text>
+                    <text>申请日期：{{item.applyDate}}</text>
+                    <text>金额：¥{{item.invoicePrice}}</text>
+                </view>
+                <view class="arrow-right" bindtap="previewInvoice"></view>
+            </view>
+            <view class="btn-area">
+                <view class="preview-btn" bindtap="previewInvoice">预览发票</view>
+            </view>
+        </view>
+    </block>
+
+</view>

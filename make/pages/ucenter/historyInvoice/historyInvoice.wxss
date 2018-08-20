@@ -5,7 +5,6 @@
     justify-content: center;
 }
 .top-nav view{
-    /*width: 30%;*/
     height: 100%;
     display: flex;
     align-items: center;
@@ -19,4 +18,64 @@
 .unchecked{
     color: #c9a16d;
     background: #fff;
+}
+
+.list-items{
+    padding: 10rpx;
+}
+.itemContent{
+    border: 1px solid #eee;
+    padding: 20rpx;
+}
+.invoiceTitle{
+    height: 40rpx;
+    display:flex;
+    justify-content:space-between;
+    font-size: 24rpx;
+    border-bottom: 1px solid #eee;
+}
+.invoiceTitle text{
+    font-size: 24rpx;
+    color: #c9a16d;
+}
+
+.invoiceContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.txt{
+    display: flex;
+    flex-direction: column;
+}
+.txt text{
+    margin: 10rpx 0;
+    font-size: 24rpx;
+    color: #999;
+}
+.arrow-right{
+    width: 15rpx;
+    height: 15rpx;
+    border-right: 2rpx solid #666;
+    border-top: 2rpx solid #666;
+    transform:rotate(45deg);
+    margin-bottom: 6rpx;
+    margin-right: 20rpx;
+}
+
+.btn-area{
+    display: flex;
+    justify-content: flex-end;
+}
+.preview-btn{
+    width: 160rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    border: 1px solid #eee;
+    font-size: 24rpx;
+    color: #c9a16d;
+    border-radius: 5rpx;
+    float: right;
+    margin-right: 0;
 }

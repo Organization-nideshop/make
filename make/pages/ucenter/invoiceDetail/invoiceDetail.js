@@ -1,21 +1,23 @@
-// pages/ucenter/historyInvoice/historyInvoice.js
+// pages/ucenter/invoiceDetail/invoiceDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      _id:1,
-      invoiceInfo:[
-          {
-              order:'个人',
-              status:'已开票',
-              invoiceTitle:'诈骗',
-              invoiceType:'电子发票',
-              applyDate:'2018-7-28 3:16:36 PM',
-              invoicePrice:'100'
-          }
-      ]
+      invoiceInfo: {
+          applyDate:'2018-7-28 3:16:36 PM',
+          order:'个人',
+          invoiceTitle:'诈骗',
+          invoiceType:'增值税普通发票',
+          invoiceProperty:'电子发票',
+          invoicePrice:'100',
+          bankName:'招商',
+          bankAccount:'456789',
+          address:'faweljfaw',
+          mobile:'13124324234',
+          status:'已开票'
+      }
   },
 
   /**
@@ -73,16 +75,9 @@ Page({
   onShareAppMessage: function () {
   
   },
-    orderByStatus:function (e) {
-        var id = parseInt(e.currentTarget.dataset.id);
-        var that = this;
-        that.setData({
-            _id:id
-        })
-    },
-    previewInvoice:function () {
-        wx.navigateTo({
-            url:'../../ucenter/invoiceDetail/invoiceDetail'
+    backToHistoryInvoice:function () {
+        wx.navigateBack({
+            delta:1
         })
     }
 })

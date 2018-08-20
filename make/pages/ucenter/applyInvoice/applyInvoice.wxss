@@ -46,6 +46,9 @@ page{
     display: flex;
     align-items: center;
 }
+.list-title text{
+    color: #c9a16d;
+}
 .date{
     width: 30%;
     text-align: center;
@@ -53,4 +56,48 @@ page{
 .type{
     width: 20%;
     text-align: center;
+}
+
+.list-items{
+    margin: 0 20rpx;
+}
+.line-items:nth-of-type(2n){
+    background: #eee;
+}
+.line-items{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d7d7d7;
+    height: 80rpx;
+}
+.time{
+    width: 30%;
+    text-align: center;
+    color: #c9a16d;
+    font-size: 28rpx;
+}
+.mid{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #d7d7d7;
+    color: #c9a16d;
+    height: 40rpx;
+    font-size: 28rpx;
+}
+.btn-area{
+    width: 30%;
+    padding: 0 10rpx;
+    height: 40rpx;
+    border-left: 1px solid #d7d7d7;
+}
+.apply-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background: #c9a16d;
+    font-size: 28rpx;
+    border-radius: 5rpx;
 }
