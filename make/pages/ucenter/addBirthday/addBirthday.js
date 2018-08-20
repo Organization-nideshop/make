@@ -1,34 +1,21 @@
-var getDate= new Date();
-
-const date = new Date()
-const years = []
-const months = []
-const days = []
-
-for (let i = 1900; i <= date.getFullYear(); i++) {
-    years.push(i)
-}
-
-for (let i = 1 ; i <= 12; i++) {
-    months.push(i)
-}
-
-for (let i = 1 ; i <= 31; i++) {
-    days.push(i)
-}
+var wxSelector = require('../../../lib/wxParse/wxSelector.js');
 
 Page({
     data:{
-        /*date:'',
-        myDate:getDate.getFullYear() + '-' + (getDate.getMonth() + 1) + '-' + getDate.getDate(),
-        showTips:'block'*/
-        years: years,
-        months: months,
-        days: days,
-        showDate:'',
-        value: [9999, 1, 1],
-        showTips:'block',
-        // showPicker:'none'
+        showDate: '',
+        dateSelectorData:{
+          modalShow:false,
+          animationData:null,
+          value: [9999, 0, 0, 0],
+          year: 1900,
+          month: '01',
+          day: '01',
+          hour: '01',
+          years: [],
+          months: [],
+          days: [],
+          hours: [],
+      }//时间选择器——数据
     },
     goToPage:function (e) {
         var url = e.currentTarget.dataset.id;
@@ -36,80 +23,26 @@ Page({
             url:url
         })
     },
-    /*bindDateChange:function (e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value);
-        console.log(this.data.myDate);
-        this.setData({
-            date: e.detail.value,
-            showTips:'none'
-        })
-    },*/
     onLoad:function () {
-        console.log(this.data.myDate+"biaoji");
+      wx.setNavigationBarTitle({
+        title: '添加TA的生日'
+      });
+      //时间选择器——数据
+      wxSelector.getTimes(this);
     },
-
-    bindChange: function(e) {
-        const val = e.detail.value
-        this.setData({
-            /*year: this.data.years[val[0]],
-            month: this.data.months[val[1]],
-            day: this.data.days[val[2]],*/
-            showDate: this.data.years[val[0]]+'-'+this.data.months[val[1]]+'-'+this.data.days[val[2]],
-            showTips:'none',
-            // showPicker:'none'
-        })
+    bindChange: function (e) {
+      //时间选择器——变化
+      const val = e.detail.value;
+      wxSelector.bindChange(val,this);
     },
-    /*showPicker:function () {
-        this.setData({
-            showPicker:'block'
-        })
-    }*/
     showPicker:function () {
-        this.showModal();
+      //时间选择器——打开
+      wxSelector.showModal(this);
     },
-    showModal:function () {
-        console.log("1111");
-        var animation = wx.createAnimation({
-            duration:100,
-            timingFunction:"linear",
-            delay:0
-        })
-        this.animation = animation;
-        animation.translateY(300).step();
-        this.setData({
-            animationData:animation.export(),
-            modalShow:true
-        })
-        setTimeout(function () {
-            animation.translateY(0).step();
-            this.setData({
-                animationData:animation.export(),
-                modalShow:true
-            })
-        }.bind(this,100))
+    hidePicker: function (event) {
+      //时间选择器——关闭
+      let type=event.currentTarget.dataset.key;
+      wxSelector.hideModal(type,this);
     },
-    modalHide:function () {
-        this.hideModal();
-    },
-    hideModal:function () {
-        console.log("2222");
-        var animation = wx.createAnimation({
-            duration:100,
-            timingFunction:"linear",
-            delay:0
-        })
-        this.animation = animation;
-        animation.translateY(300).step();
-        this.setData({
-            animationData:animation.export(),
-            modalShow:false
-        })
-        setTimeout(function () {
-            animation.translateY(0).step();
-            this.setData({
-                animationData:animation.export(),
-                modalShow:false
-            })
-        }.bind(this,100))
-    },
+    
 })

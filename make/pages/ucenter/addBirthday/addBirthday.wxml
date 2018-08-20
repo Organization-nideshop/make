@@ -1,88 +1,62 @@
-<view class="container">
-    <view class="top-icon">
-        <image src="../../../static/images/birth-icon_03.png"></image>
+<import src="../../../lib/wxParse/wxSelector.wxml" />
+<view class="container {{dateSelectorData.modalShow ? 'over-flow-hidden' : ''}}">
+  <view class="top-icon">
+    <image src="../../../static/images/birth-icon_03.png"></image>
+  </view>
+  <view class="input-list">
+    <view class="input-items">
+      <span>姓名</span>
+      <input placeholder-style="color:#999" placeholder="请输入您的姓名" />
     </view>
-    <view class="input-list">
-        <view class="input-items">
-            <span>姓名</span>
-            <input placeholder-style="color:#999" placeholder="请输入您的姓名" />
-        </view>
-        <view class="input-items">
-            <span>性别</span>
-            <radio-group class="radio-group">
-                <label class="radio-style">
-                    <radio value="male" checked color="#c9a16d"/>男
-                </label>
-                <label class="radio-style">
-                    <radio value="female" color="#c9a16d"/>女
-                </label>
-            </radio-group>
-        </view>
-        <view class="input-items">
-            <span>年历</span>
-            <radio-group class="radio-group">
-                <label class="radio-style">
-                    <radio value="solar" checked color="#c9a16d"/>阳历
-                </label>
-                <label class="radio-style">
-                    <radio value="lunar" color="#c9a16d"/>阴历
-                </label>
-            </radio-group>
-        </view>
-        <view class="input-items">
-            <span>生日</span>
-            <!--<picker mode="date" value="{{date}}" start="1900-01-01" end="{{myDate}}" bindtap="getCurrDate" bindchange="bindDateChange">
-                <view class="picker">
-                    <input value="点击设置生日" style="display: {{showTips}}" disabled/>{{date}}
-                </view>
-            </picker>-->
-            <input placeholder-style="color:#999" placeholder="点击设置生日" style="display: {{showTips}}" disabled bindtap="showPicker" />{{showDate}}
-        </view>
+    <view class="input-items">
+      <span>性别</span>
+      <radio-group class="radio-group">
+        <label class="radio-style">
+          <radio value="male" checked color="#c9a16d" />男
+        </label>
+        <label class="radio-style">
+          <radio value="female" color="#c9a16d" />女
+        </label>
+      </radio-group>
+    </view>
+    <view class="input-items">
+      <span>年历</span>
+      <radio-group class="radio-group">
+        <label class="radio-style">
+          <radio value="solar" checked color="#c9a16d" />阳历
+        </label>
+        <label class="radio-style">
+          <radio value="lunar" color="#c9a16d" />阴历
+        </label>
+      </radio-group>
+    </view>
+    <view class="input-items">
+      <span>生日</span>
+      <input placeholder-style="color:#999" placeholder="点击设置生日" value="{{showDate}}" disabled bindtap="showPicker" /> 
+    </view>
 
-        <view class="input-items">
-            <span>手机</span>
-            <input placeholder-style="color:#999" placeholder="请输入您的手机号码" />
-        </view>
-        <view class="input-items" data-id="../birthRelationship/birthRelationship" disabled bindtap="goToPage">
-            <span>关系</span>
-            <input placeholder-style="color:#999" placeholder="描述你们的关系" />
-        </view>
-        <view class="input-items-sp" data-id="../addBirthdayDetail/addBirthdayDetail" bindtap="goToPage">
-            <span>添加更多资料</span>
-            <span class="triangle"></span>
-        </view>
-        <view class="input-items-sp" data-id="../setBirthRemind/setBirthRemind" bindtap="goToPage">
-            <span>设置生日提醒</span>
-            <view class="sp-right">
-                <span>提前2天</span>
-                <span class="triangle"></span>
-            </view>
-        </view>
+    <view class="input-items">
+      <span>手机</span>
+      <input placeholder-style="color:#999" placeholder="请输入您的手机号码" />
     </view>
-    <view class="button-bottom">保存</view>
+    <view class="input-items" data-id="../birthRelationship/birthRelationship" disabled bindtap="goToPage">
+      <span>关系</span>
+      <input placeholder-style="color:#999" placeholder="描述你们的关系" />
+    </view>
+    <view class="input-items-sp" data-id="../addBirthdayDetail/addBirthdayDetail" bindtap="goToPage">
+      <span>添加更多资料</span>
+      <span class="triangle"></span>
+    </view>
+    <view class="input-items-sp" data-id="../setBirthRemind/setBirthRemind" bindtap="goToPage">
+      <span>设置生日提醒</span>
+      <view class="sp-right">
+        <span>提前2天</span>
+        <span class="triangle"></span>
+      </view>
+    </view>
+  </view>
+  <view class="button-bottom">保存</view>
 
-    <!--弹出日期选择器-->
-    <view class="modal-screen" wx:if="{{modalShow}}" bindtap="modalHide"></view>
-    <view class="modal" wx:if="{{modalShow}}" animation="{{animationData}}">
-        <view class="btn-area">
-            <span bindtap="modalHide">取消</span>
-            <span bindtap="modalHide">确定</span>
-        </view>
-        <view class="modal-title">
-            <span>年</span>
-            <span>月</span>
-            <span>日</span>
-        </view>
-        <picker-view indicator-class="selectedItems" mask-style="opacity:0" value="{{value}}" bindchange="bindChange">
-            <picker-view-column>
-                <view wx:for="{{years}}" style="line-height: 30px">{{item}}</view>
-            </picker-view-column>
-            <picker-view-column>
-                <view wx:for="{{months}}" style="line-height: 30px">{{item}}</view>
-            </picker-view-column>
-            <picker-view-column>
-                <view wx:for="{{days}}" style="line-height: 30px">{{item}}</view>
-            </picker-view-column>
-        </picker-view>
-    </view>
+  <!--弹出日期选择器-->
+  <template is="dateSelector" data="{{dateSelectorData}}"></template>
 </view>

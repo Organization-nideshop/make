@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="birthInfo-list" wx:for="{{birthInfo}}">
+    <view class="birthInfo-list" wx:for="{{birthInfo}}" wx:key="{{index}}">
         <span class="birthInfo-title" id="{{index}}">{{item.title}}</span>
         <span class="birthInfo-content">{{item.content}}</span>
     </view>
