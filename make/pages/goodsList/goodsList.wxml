@@ -13,16 +13,16 @@
   <view class="catalog">
 
     <scroll-view class="nav" scroll-y="true">
-      <block wx:for="{{navList}}">
+      <block wx:for="{{navList}}" wx:key="{{index}}">
         <view class="item" data-id="{{item.id}}" data-index="{{index}}" data-subnumber="{{item.subNumber}}" bindtap="switchCate">
           <view class="itemContent {{ currentCategory.id == item.id ? 'active' : ''}}">{{item.name}}</view>
         </view>
         <block wx:if="{{item.id==currentCategory.id}}">
-        <view class="subitem" wx:if="{{item.subNavList.length>0}}">
-          <view class="subitemContent {{ currentCategory.subId == items.id ? 'active' : ''}}" wx:for="{{item.subNavList}}" data-id="{{item.id}}" data-subid="{{items.id}}" wx:for-item="items" bindtap="switchSubCate">
-            {{items.name}}
+          <view class="subitem" wx:if="{{item.subNavList.length>0}}">
+            <view class="subitemContent {{ currentCategory.subId == items.id ? 'active' : ''}}" wx:for="{{item.subNavList}}" data-id="{{item.id}}" data-subid="{{items.id}}" wx:for-item="items" bindtap="switchSubCate">
+              {{items.name}}
+            </view>
           </view>
-        </view>
         </block>
       </block>
     </scroll-view>
@@ -37,14 +37,14 @@
               <view class="triangle-desc"></view> -->
             </view>
           </view>
-          <view class="item by-price {{currentSortType == 'price' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="priceSort">
+          <view class="item {{currentSortType == 'price' ? 'active' : ''}} " bindtap="openSortFilter" id="priceSort">
             <view class="txt">价格</view>
             <view>
-              <!-- <view class="triangle-asc"></view>
-              <view class="triangle-desc"></view> -->
+              <view class="triangle-asc {{currentSortType == 'price'&&currentSortOrder == 'asc'  ? 'active' : ''}}"></view>
+              <view class="triangle-desc {{currentSortType == 'price'&&currentSortOrder == 'desc'  ? 'active' : ''}}"></view>
             </view>
           </view>
-          <view class="item {{currentSortType == 'category' ? 'active' : ''}}" bindtap="openSortFilter" id="categoryFilter">
+          <view class="item {{currentSortType == 'sales' ? 'active' : ''}}" bindtap="openSortFilter" id="salesSort">
             <view class="txt">销量</view>
             <view>
               <!-- <view class="triangle-desc"></view>
@@ -56,9 +56,9 @@
       <view class="bd">
         <!-- 商品列表 -->
         <block wx:if="{{currentCategory.goodList.length}}">
-          <template wx:for="{{currentCategory.goodList}}" is="goodsList" data="{{index:index,categoryId:currentCategory.id,subId:currentCategory.subId,item}}"></template> 
+          <template wx:for="{{currentCategory.goodList}}" wx:key="{{index}}" is="goodsList" data="{{index:index,categoryId:currentCategory.id,subId:currentCategory.subId,item}}"></template>
         </block>
-        <block wx:if="{{!currentCategory.goodList.length}}">
+        <block wx:else>
           <text class="text">偷懒的miao未添加~</text>
         </block>
         <!-- 商品列表 -->
@@ -74,4 +74,10 @@
       </view>
     </scroll-view>
   </view>
+
+  <!-- 弹出框1 -->
+   <template is="specPopup" data="{{specPopupData}}"></template>
+
+  <!-- 购物车弹出框2 -->
+   <template is="cartPopup" data="{{cartPopupData}}"></template>
 </view>

@@ -9,9 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentSortType:"default",
+    totalPrice: 0.00,
+    totalDisprice: 0.00,
+    cartNumber: 3,
     selectId:0,
     allNum:10,
-    cartNumber:2,
     page:0,
     pageNumber:6,
     navList: [{
@@ -73,6 +76,7 @@ Page({
           id: 0,
           title: '卡布奇诺',
           subtitle: '直降10元',
+          describe:'坚果的外表下，隐藏着一颗樱桃甜心，搭配浓浓的优选进口奶油',
           pic_url:'../../static/img/1.jpg',
           price_info: 179,
           old_price_info:189,
@@ -83,7 +87,7 @@ Page({
             {
               name: "卡布奇诺",
               size:'6寸',
-              price:'188',
+              price:'179',
               number:'1'
             }, {
               name: "卡布奇诺",
@@ -107,7 +111,7 @@ Page({
           old_price_info: 189,
           actType: 0,
           activity: '',
-          number: 0
+          number: 1
         },
         {
           id: 2,
@@ -156,10 +160,134 @@ Page({
       ], 
        
     },
+    cartGoods: [{
+      'id': '0',
+      'goods_name': '卡布奇诺',
+      'list_pic_url': '../../static/img/1.jpg',
+      'size': '6英寸',
+      'type': '0',
+      'distrType': '0',
+      'price_info': '188',
+      'old_price_info': '189',
+      'number': '2',
+      'actType': '1',
+      'activity': '直降',
+    }, {
+        'id': '1',
+        'goods_name': '卡布奇诺',
+        'list_pic_url': '../../static/img/2.jpg',
+        'size': '6英寸',
+        'type': '0',
+        'distrType': '0',
+        'price_info': '189',
+        'old_price_info': '189',
+        'number': '2',
+        'actType': '1',
+        'activity': '',
+      }],
+    specDetail: {
+      id: 0,
+      title: '卡布奇诺',
+      subtitle: '直降10元',
+      describe: '坚果的外表下，隐藏着一颗樱桃甜心，搭配浓浓的优选进口奶油,24小时光照，晒完正面晒反面',
+      pic_url: '../../static/img/1.jpg',
+      price_info: 179,
+      old_price_info: 189,
+      actType: 1,
+      activity: '直降',
+      number: 2,
+      spec: [
+        {
+          name: "卡布奇诺",
+          size: '6寸',
+          price: '179',
+          number: '1'
+        }, {
+          name: "卡布奇诺",
+          size: '8寸',
+          price: '238',
+          number: '1'
+        }, {
+          name: "卡布奇诺",
+          size: '10寸',
+          price: '288',
+          number: '0'
+        }
+      ]
+    },
     scrollLeft: 0,
     scrollTop: 0,
     scrollHeight: 0,
-    // cart: [{ id: 0, num: 2 }, { id: 2, num: 1 }]
+    cartPopupData:{
+      showModalStatus2:false,
+      animationData:null,
+      cartGoods: [{
+        'id': '0',
+        'goods_name': '卡布奇诺',
+        'list_pic_url': '../../static/img/1.jpg',
+        'size': '6英寸',
+        'type': '0',
+        'distrType': '0',
+        'price_info': '188',
+        'old_price_info': '198',
+        'number': '1',
+        'actType': '1',
+        'activity': '直降',
+      }, {
+        'id': '1',
+        'goods_name': '卡布奇诺',
+        'list_pic_url': '../../static/img/2.jpg',
+        'size': '6英寸',
+        'type': '0',
+        'distrType': '0',
+        'price_info': '189',
+        'old_price_info': '189',
+        'number': '0',
+        'actType': '1',
+        'activity': '',
+      }],
+      cartPrice:{
+        price:188,
+        old_price:198,
+        discount:10
+      }
+    },
+    specPopupData:{
+      showModalStatus1:false,
+      animationData:null,
+      specDetail: {
+        id: 0,
+        title: '卡布奇诺',
+        subtitle: '直降10元',
+        describe: '坚果的外表下，隐藏着一颗樱桃甜心，搭配浓浓的优选进口奶油,24小时光照，晒完正面晒反面',
+        pic_url: '../../static/img/1.jpg',
+        price_info: 179,
+        old_price_info: 189,
+        actType: 1,
+        activity: '直降',
+        number: 2,
+        spec: [
+          {
+            name: "卡布奇诺",
+            size: '6寸',
+            price: '179',
+            number: '1'
+          }, {
+            name: "卡布奇诺",
+            size: '8寸',
+            price: '238',
+            number: '1'
+          }, {
+            name: "卡布奇诺",
+            size: '10寸',
+            price: '288',
+            number: '0'
+          }
+        ]
+      },
+      categoryId:0,
+      subId:1,
+    },
   },
 
   /**
@@ -378,26 +506,32 @@ Page({
           }
         ]}
     });
-  }, cutNumber:function(event){
+  }, 
+  addNumber: function (event){
+   let itemIndex = event.target.dataset.itemIndex;
+   let categoryId = event.target.dataset.itemCategoryid;
+   let subId = event.target.dataset.itemSubid;
+   wxList.addNumber(itemIndex, categoryId, subId,this);
+  },
+  cutNumber: function (event){
     let itemIndex = event.target.dataset.itemIndex;
-    let categoryId = event.target.dataset.categoryId;
-    let subId = event.target.dataset.subId;
-    var spec = currentCategory.goodList[itemIndex].spec;
-    if (spec.length>0){
-      console.log("规格弹出框");
-    }else{
-      console.log("添加数量");
-    }
-    wxList.cutNumber(itemIndex);
-  }, addNumber: function (event) {
-    let itemIndex = event.target.dataset.itemIndex;
-    let categoryId = event.target.dataset.categoryId;
-    let subId = event.target.dataset.subId;
-    var spec = currentCategory.goodList[itemIndex].spec;
-    if (spec.length > 0) {
-      console.log("规格弹出框");
-    } else {
-      console.log("减少数量");
-    }
+    let categoryId = event.target.dataset.itemCategoryid;
+    let subId = event.target.dataset.itemSubid;
+    wxList.cutNumber(itemIndex, categoryId, subId, this);
+  },
+  showCart:function(){
+    wxList.showModal(2,this);
+  }
+  , hideCarOrSpec:function(event){
+    let type = event.currentTarget.dataset.type;
+    wxList.hideModal(type, this);
+  },
+  checkoutOrder: function () {
+    wx.navigateTo({
+      url: '../../pages/checkout/checkout',
+    })
+  }, openSortFilter: function (event) {
+    let currentId = event.currentTarget.id;
+    wxList.openSortFilter(currentId, this);
   }
 })

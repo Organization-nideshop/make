@@ -1,5 +1,5 @@
-<import src="../../lib/wxParse/wxList.wxml"/>
-<import src="../../lib/wxParse/wxCart.wxml"/>
+<import src="../../lib/wxParse/wxList.wxml" />
+<import src="../../lib/wxParse/wxCart.wxml" />
 <scroll-view class="container" style="height: 100%;">
   <view class="search-header">
     <view class="input-box">
@@ -10,68 +10,59 @@
     <view class="right" bindtap="closeSearch">取消</view>
   </view>
   <view class="no-search" wx:if="{{ !searchStatus}}">
-    
     <view class="serach-keywords search-hot" wx:if="{{!keyword}}">
       <view class="h">
         <view>
-          <image src="../../static/images/icon1_04.png"/>
+          <image src="../../static/images/icon1_04.png" />
         </view>
         <text class="title">热门搜索</text>
       </view>
       <view class="b">
-        <view class="item {{item.is_hot === 1 ? 'active' : ''}}" hover-class="navigator-hover" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{hotKeyword}}">{{item.keyword}}</view>
+        <view class="item {{item.is_hot === 1 ? 'active' : ''}}" hover-class="navigator-hover" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{hotKeyword}}" wx:key="{{index}}">{{item.keyword}}</view>
       </view>
     </view>
     <view class="serach-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
       <view class="h">
         <view>
-          <image src="../../static/images/icon1_05.png"/>
+          <image src="../../static/images/icon1_05.png" />
         </view>
         <text class="title">历史搜索</text>
-        <text class="clear" bindtap="clearHistory" >清理历史</text>
+        <text class="clear" bindtap="clearHistory">清理历史</text>
       </view>
       <view class="b">
-        <view class="item" bindtap="onKeywordTap" data-keyword="{{item}}" wx:for="{{historyKeyword}}" hover-class="navigator-hover">{{item}}</view>
+        <view class="item" bindtap="onKeywordTap" data-keyword="{{item}}" wx:for="{{historyKeyword}}" wx:key="{{index}}" hover-class="navigator-hover">{{item}}</view>
       </view>
     </view>
     <view class="shelper-list" wx:if="{{keyword}}">
-      <view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" bindtap="onKeywordTap" data-keyword="{{item}}">{{item}}</view>
+      <view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" wx:key="{{index}}" bindtap="onKeywordTap" data-keyword="{{item}}">{{item}}</view>
     </view>
   </view>
 
-  <view class="search-result" wx:if="{{ searchStatus && goodsList.length}}">
+  <view class="search-result" wx:if="{{ searchStatus && currentCategory.goodList.length}}">
     <view class="sort">
-        <view class="sort-box">
-          <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
-            <view class="txt">综合</view>
-            <view>
-              <!-- <view class="triangle-asc"></view>
-              <view class="triangle-desc"></view> -->
-            </view>
-          </view>
-          <view class="item by-price {{currentSortType == 'price' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="priceSort">
-            <view class="txt">价格</view>
-            <view>
-              <!-- <view class="triangle-asc"></view>
-              <view class="triangle-desc"></view> -->
-            </view>
-          </view>
-          <view class="item {{currentSortType == 'num' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="numSort">
-            <view class="txt">销量</view>
-            <view>
-              <!-- <view class="triangle-desc"></view>
-              <view class="triangle-asc"></view> -->
-            </view>
+      <view class="sort-box">
+        <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
+          <view class="txt">综合</view>
+        </view>
+        <view class="item by-price {{currentSortType == 'price' ? 'active' : ''}}" bindtap="openSortFilter" id="priceSort">
+          <view class="txt">价格</view>
+          <view>
+              <view class="triangle-asc {{currentSortType == 'price'&&currentSortOrder == 'asc'  ? 'active' : ''}}"></view>
+              <view class="triangle-desc {{currentSortType == 'price'&&currentSortOrder == 'desc'  ? 'active' : ''}}"></view>
           </view>
         </view>
+        <view class="item {{currentSortType == 'sales' ? 'active' : ''}}" bindtap="openSortFilter" id="salesSort">
+          <view class="txt">销量</view>
+        </view>
       </view>
-    <view class="cate-item"> 
+    </view>
+    <view class="cate-item">
       <view class="b">
-        <template wx:for="{{goodsList}}" is="goodsList" data="{{index:index,categoryId:'',subId:'',item}}"></template>
+        <template wx:for="{{currentCategory.goodList}}" wx:key="{{index}}" is="goodsList" data="{{index:index,categoryId:'',subId:'',item}}"></template>
         <!-- 购物车 -->
         <template is="cart" data="{{cartNumber}}"></template>
         <!-- 购物车 -->
-        <block wx:if="{{goodsList.length<allNum}}">
+        <block wx:if="{{currentCategory.goodList.length<allNum}}">
           <text class="tip1_text" bindtap="moreLoad">戳我加载更多</text>
         </block>
         <block wx:else>
@@ -81,7 +72,11 @@
     </view>
   </view>
 
-  <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
+  <view class="search-result-empty" wx:if="{{!currentCategory.goodList.length && searchStatus}}">
     <text class="text">偷懒的miao未添加~</text>
   </view>
+  <!-- 规格弹出框1 -->
+   <template is="specPopup" data="{{specPopupData}}"></template>
+   <!-- 购物车弹出框2 -->
+   <template is="cartPopup" data="{{cartPopupData}}"></template>
 </scroll-view>

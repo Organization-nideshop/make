@@ -1,3 +1,5 @@
+@import "../../lib/wxParse/wxSelector.wxss";
+
 page {
   height: 100%;
   background: #f4f4f4;
@@ -7,12 +9,12 @@ page {
   background-color: #fff;
 }
 
-.top{
+.top {
   left: 0;
   top: 0;
   background-color: #fff;
   border-bottom: 15rpx solid #f4f4f4;
-    padding-left: 30rpx;
+  padding-left: 30rpx;
   padding-right: 30rpx;
 }
 
@@ -22,9 +24,7 @@ page {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
-
-
+  justify-content: flex-start;
 }
 
 .checked-type image {
@@ -60,20 +60,21 @@ page {
   color: #b99567;
 }
 
-.remind{
-  width:100%;
-  display:flex;
-  flex-flow:row nowrap;
-  align-items:center;
-  justify-content:left;
-  color:#666;
+.remind {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  color: #666;
   font-size: 24rpx;
-  margin-top:-10px;
-  margin-bottom:10rpx; 
+  margin-top: -10px;
+  margin-bottom: 10rpx;
 }
-.remind image{
-  width:35rpx;
-  height:30rpx;
+
+.remind image {
+  width: 35rpx;
+  height: 30rpx;
 }
 
 .address-box {
@@ -93,7 +94,7 @@ page {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   background-color: #fff;
   padding: 30rpx 30rpx;
   border-bottom: 15rpx solid #f4f4f4;
@@ -117,6 +118,12 @@ page {
   align-items: center;
   justify-content: center;
   height: 38rpx;
+}
+
+.distr-time .m text {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 20rpx;
 }
 
 .triangle-down {
@@ -150,7 +157,7 @@ page {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   background-color: #fff;
   padding-left: 30rpx;
   padding-right: 30rpx;
@@ -296,7 +303,7 @@ page {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .coupon-box .l {
@@ -427,7 +434,7 @@ page {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .goods-items .t image {
@@ -572,30 +579,138 @@ page {
   justify-content: center;
   background-color: #fff;
   border-bottom: 1rpx solid #f4f4f4;
-  padding:  0 30rpx;
+  padding: 0 30rpx;
 }
 
-.distr_self .l{
+.distr_self .l {
   width: 200rpx;
-
 }
-.distr_self .m{
+
+.distr_self .m {
   flex: 1;
   text-align: right;
-  font-size:24rpx;
-  color:#666;
-  height: auto;
-}
-.distr_self .m view{
-  width:100%;
-  text-align: right;
-  font-size:24rpx;
-  color:#666;
+  font-size: 24rpx;
+  color: #666;
   height: auto;
 }
 
-.distr_self .r,.distr_self .r image{
+.distr_self .m view {
+  width: 100%;
+  text-align: right;
+  font-size: 24rpx;
+  color: #666;
+  height: auto;
+}
+
+.distr_self .r, .distr_self .r image {
   width: 43rpx;
   height: 43rpx;
 }
 
+/*弹出框start*/
+
+.screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.attr_box {
+  width: 80%;
+  overflow: hidden;
+  position: fixed;
+  top: 35%;
+  left: 10%;
+  z-index: 2000;
+  background: #fff;
+  border-radius:5rpx;
+}
+
+.title-modal {
+  font-size: 30rpx;
+  padding: 10rpx;
+  text-align: center;
+  color: #b99567;
+}
+
+.content-inf {
+  padding: 10rpx 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.content-inf input{
+  border-bottom:1rpx solid #e9e9e9;
+  margin-bottom:15rpx;
+}
+
+.close-modal {
+  width: 40rpx;
+  float: right;
+  font-size: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.footer-modal{
+  padding:15rpx 30rpx;
+  display:flex;
+  flex-flow:row nowrap;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.footer-modal view {
+  color: #fff;
+  background-color: #b99567;
+  border-radius: 5rpx;
+  width: 100rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+/*弹出框end*/
+/* 生日牌 start*/
+.tips {
+  background: #b99567;
+  color: #fff;
+  padding: 15rpx 20rpx;
+  font-size: 24rpx;
+}
+
+.blessTips {
+  padding: 15rpx 20rpx;
+  font-size: 24rpx;
+  color: #9e9e9e;
+  border-bottom: 1rpx solid #c3c3c3;
+}
+
+.bless {
+  width: 100%;
+  height: 220rpx;
+  font-family: PingFang SC Medium;
+  font-size: 24rpx;
+  color: #888;
+  letter-spacing: 3rpx;
+  resize: none;
+  padding: 25rpx 40rpx;
+  box-sizing: border-box;
+  border-radius: 5rpx;
+}
+/* 生日牌 end*/
+
+.over-flow-hidden {
+  overflow: hidden;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+}

@@ -1,52 +1,57 @@
-<view class="container">
+<import src="../../lib/wxParse/wxSelector.wxml" />
+<view class="container {{showModalStatus || dateSelectorData.modalShow? 'over-flow-hidden' : ''}}">
   <view class="top">
     <view class="checked-type">
       <image class="logistics" src="../../static/images/logistics.jpg"></image>
       <view class="typeTitle">物流方式：</view>
-      <view class="typeDistribution {{_typeDistribution==0?'checked':''}}"  data-key="0" bindtap='changeDistr'>商家配送</view>
+      <view class="typeDistribution {{_typeDistribution==0?'checked':''}}" data-key="0" bindtap='changeDistr'>商家配送</view>
       <view class="typeDistribution {{_typeDistribution==1?'checked':''}}" data-key="1" bindtap='changeDistr'>到店自提</view>
     </view>
     <view class="remind" wx:if="{{_typeDistribution==1}}">
-      <image src="../../static/images/remind.jpg"/>米旗门店均可自提（商超店除外）
+      <image src="../../static/images/remind.jpg" />米旗门店均可自提（商超店除外）
     </view>
   </view>
   <!-- 商家配送弹出 start -->
   <block wx:if="{{_typeDistribution==0}}">
-  <view class="address-box">
-    <view class="address-item" bindtap="selectAddress" wx:if="{{checkedAddress.id > 0}}">
-      <view class="l">
-        <text class="name">{{checkedAddress.name}}</text>
-        <text class="default" wx:if="{{checkedAddress.is_default === 1}}">默认</text>
+    <view class="address-box">
+      <view class="address-item" bindtap="selectAddress" wx:if="{{checkedAddress.id > 0}}">
+        <view class="l">
+          <text class="name">{{checkedAddress.name}}</text>
+          <text class="default" wx:if="{{checkedAddress.is_default === 1}}">默认</text>
+        </view>
+        <view class="m">
+          <text class="mobile">{{checkedAddress.mobile}}</text>
+          <text class="address">{{checkedAddress.full_region + checkedAddress.address}}</text>
+        </view>
+        <view class="r">
+          <image src="/static/images/address_right.png" bindtap="checkAdress"></image>
+        </view>
       </view>
-      <view class="m">
-        <text class="mobile">{{checkedAddress.mobile}}</text>
-        <text class="address">{{checkedAddress.full_region + checkedAddress.address}}</text>
-      </view>
-      <view class="r">
-        <image src="/static/images/address_right.png" bindtap="checkAdress"></image>
+      <view class="address-item address-empty" wx:if="{{checkedAddress.id <= 0}}">
+        <view class="l">
+          请输入收货地址
+        </view>
+        <view class="r">
+          <image class="address-edit" src="../../static/images/edit.jpg" bindtap="checkAdress"></image>
+        </view>
       </view>
     </view>
-    <view class="address-item address-empty" wx:if="{{checkedAddress.id <= 0}}">
-      <view class="l">
-        请输入收货地址
+    <view class="address-bg" style="background: url(../../static/images/address-bg.png) 0 0 repeat-x;"></view>
+    <view class="distr-time" bindtap="showPicker">
+      <view>
+        <view class="l">
+          <image src="../../static/images/time.jpg"></image>
+        </view>
+        <view class="m">配送时间</view>
+        <view class="m">
+          <text> {{showDate}}</text>
+          <span class="triangle-down"></span>
+        </view>
+        <view class="r">
+          <image src="../../static/images/remind.jpg" />西安三环内满88配送</view>
       </view>
-      <view class="r">
-        <image class="address-edit" src="../../static/images/edit.jpg" bindtap="checkAdress"></image>
-      </view>
+
     </view>
-  </view>
-  <view class="address-bg" style="background: url(../../static/images/address-bg.png) 0 0 repeat-x;"></view>
-  <view class="distr-time">
-    <view>
-      <view class="l">
-      <image src="../../static/images/time.jpg"></image>
-      </view>
-      <view class="m">配送时间</view>
-      <view class="m"><span class="triangle-down"></span></view>
-      <view class="r"><image src="../../static/images/remind.jpg"/>西安三环内满88配送</view>
-    </view>
-    
-  </view>
   </block>
   <!-- 商家配送弹出 end -->
   <!-- 到店自提弹出 start -->
@@ -54,25 +59,34 @@
     <view class="distr_self">
       <view class="l">选择门店</view>
       <view class="m">西安大明宫店</view>
-      <view class="r"><image src="/static/images/address_right.png" bindtap="checkStore"></image></view>
+      <view class="r">
+        <image src="/static/images/address_right.png" bindtap="checkStore"></image>
+      </view>
     </view>
-    <view class="distr_self">
+    <view class="distr_self" bindtap="showPicker">
       <view class="l">到货时间</view>
-      <view class="m">18.4.23. 12：00</view>
-      <view class="r"><image src="/static/images/address_right.png"></image></view>
+      <view class="m">
+        <block wx:if="{{showDate.length>0}}">{{showDate}}</block>
+        <block wx:else>请选择到货时间</block>
+      </view>
+      <view class="r">
+        <image src="/static/images/address_right.png"></image>
+      </view>
     </view>
-    <view class="distr_self">
+    <view class="distr_self"  bindtap="showModal" data-key="1">
       <view class="l">提货信息</view>
       <view class="m">
         <view class="name">露露</view>
         <view class="phone">1525****367</view>
       </view>
-      <view class="r"><image src="/static/images/address_right.png"></image></view>
+      <view class="r">
+        <image src="/static/images/address_right.png"></image>
+      </view>
     </view>
   </block>
   <!-- 到店自提弹出 end -->
 
-  <view class="birthday-card">
+  <view class="birthday-card" bindtap="showModal" data-key="2">
     <view class="l">
       <image src="../../static/images/card.jpg"></image>
     </view>
@@ -93,7 +107,7 @@
           <text class="name">{{item.goods_name}}</text>
         </view>
         <view class="t">
-          <image src="../../static/images/parts.jpg"/>
+          <image src="../../static/images/parts.jpg" />
           <view class="m">{{item.parts}}</view>
           <view class="b">￥{{item.retail_price}}</view>
         </view>
@@ -132,7 +146,8 @@
         <text class="name">商品金额</text>
       </view>
       <view class="r">
-        <view class="txt"><span class="unit">￥</span>{{goodsTotalPrice}}</view>
+        <view class="txt">
+          <span class="unit">￥</span>{{goodsTotalPrice}}</view>
       </view>
     </view>
     <view class="order-item">
@@ -140,7 +155,8 @@
         <text class="name">运费</text>
       </view>
       <view class="r">
-        <view class="txt"><span class="unit">￥</span>{{freightPrice}}</view> 
+        <view class="txt">
+          <span class="unit">￥</span>{{freightPrice}}</view>
       </view>
     </view>
   </view>
@@ -148,4 +164,39 @@
     <view class="l">实付：￥{{actualPrice}}</view>
     <view class="r" bindtap="submitOrder">结算</view>
   </view>
+
+  <!--弹出日期选择器-->
+  <template is="dateSelector" data="{{dateSelectorData}}"></template>
+
+  <!-- 提货信息弹出框 -->
+  <view class=" screen" catchtouchmove='true' bindtap="hideModal" data-key="1" wx:if="{{showModalStatus1}}"></view>
+  <view animation="{{animationData1}}" class="attr_box"  wx:if="{{showModalStatus1}}">
+    <view class="title-modal" catchtouchmove='true'>提货信息
+      <view class="close-modal" bindtap="hideModal" data-key="1">×</view>
+    </view>
+    <view class="content-inf">
+        <input value="" placeholder='请输入姓名'/>
+        <input value="" placeholder='电话'/>
+    </view>
+    <view class="footer-modal">
+      <view bindtap="hideModal" data-key="1">确定</view>
+    </view>
+  </view>
+
+  <!-- 添加生日牌 -->
+  <view class="screen" catchtouchmove='true' bindtap="hideModal" data-key="2" wx:if="{{showModalStatus2}}"></view>
+  <view animation="{{animationData2}}" class="attr_box"  wx:if="{{showModalStatus2}}">
+    <view class="title-modal" catchtouchmove='true'>添加生日牌
+      <view class="close-modal" bindtap="hideModal" data-key="2" >×</view>
+    </view>
+    <view class="content-inf">
+        <view class="tips">生日牌PS:最多6个汉字或12个字符</view>
+        <view class="blessTips">请填写生日祝福</view>
+        <textarea class="bless" placeholder="" auto-focus />
+    </view>
+    <view class="footer-modal">
+      <view bindtap="hideModal" data-key="2" >确定</view>
+    </view>
+  </view>
+  
 </view>

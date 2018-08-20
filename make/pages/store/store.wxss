@@ -57,7 +57,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   color: #666;
   font-size: 24rpx;
   padding: 0 50rpx;
@@ -199,7 +199,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .detail-store .item .info .tt {
