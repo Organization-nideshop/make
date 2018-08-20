@@ -75,17 +75,19 @@ li{
 }
 .radio-style radio{
     transform:scale(.5);
-    border: 2rpx solid #c9a16d;
+    /* border: 2rpx solid #c9a16d; */
     background: transparent;
     border-radius: 50%;
     width: 40rpx;
     height: 40rpx;
     padding: 0.3em;
     text-align: center;
+    border: 2rpx solid #c9a16d;
 }
 /* 未选中的 背景样式 */
 radio .wx-radio-input{
-    border: 2rpx solid #c9a16d;
+    /* border: 2rpx solid #c9a16d; */
+    border: 0;
     background: transparent;
     border-radius: 50%;
     width: 36rpx;
