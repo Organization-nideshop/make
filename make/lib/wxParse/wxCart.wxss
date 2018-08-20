@@ -67,3 +67,123 @@
   z-index: 1;
   border: 0;
 }
+
+/* 购物车弹出框2 start */
+ .commodity_screen2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 10000;
+  color: #fff;
+}
+
+.commodity_attr_box2 {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20000;
+  background: #fff;
+}
+
+.commodity_attr_box2 .title-modal2, .commodity_attr_box2 .content-inf2,
+.commodity_attr_box2 .footer-modal2 {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.commodity_attr_box2 .title-modal2 {
+  height: 60rpx;
+  padding: 0 30rpx;
+  border-top: 10rpx;
+}
+
+.commodity_attr_box2 .title-modal2 .t {
+  flex: 1;
+  text-align: left;
+  font-family: PingFang SC Heavy;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.commodity_attr_box2 .title-modal2 image {
+  width: 35rpx;
+  height: 31rpx;
+}
+
+.commodity_attr_box2 .title-modal2 .d {
+  width: 55rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.commodity_attr_box2 .content-inf2 {
+  background-color: #fff;
+  border-top: 10rpx solid #eee;
+  height: 120rpx;
+  padding:0 30rpx;
+}
+
+.commodity_attr_box2 .content-inf2 .l{
+  flex: 1;
+  font-size:30rpx;
+}
+.commodity_attr_box2 .content-inf2 .m{
+  width: 150rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color:#c9a16d;
+}
+.commodity_attr_box2 .content-inf2 .r{
+  width: 120rpx;
+}
+
+.commodity_attr_box2 .footer-modal2 {
+  height: 80rpx;
+}
+
+.commodity_attr_box2 .footer-modal2 .l{
+  flex: 1;
+  padding-left:30rpx;
+}
+.commodity_attr_box2 .footer-modal2 .l .name{
+font-size:30rpx;
+color:#c9a16d;
+
+}
+.commodity_attr_box2 .footer-modal2 .l .unit{
+font-size:24rpx;
+color:#c9a16d;
+}
+.commodity_attr_box2 .footer-modal2 .l .price{
+  font-size:30rpx;
+color:#c9a16d;
+}
+.commodity_attr_box2 .footer-modal2 .l .old_price{
+ font-size: 24rpx;
+ color:#666;
+ text-decoration:line-through;
+ padding:0 10rpx;
+}
+.commodity_attr_box2 .footer-modal2 .l .discount{
+font-size: 24rpx;
+ color:#666;
+}
+.commodity_attr_box2 .footer-modal2 .r {
+  width: 250rpx;
+  height: 80rpx;
+  background-color: #c9a16d;
+  text-align: center;
+  line-height: 80rpx;
+  color:#fff;
+}
+/* 购物车弹出框2 end */

@@ -1,43 +1,92 @@
 <!-- 商品列表template -->
 <template name="goodsList">
-  <!-- <navigator url="/pages/goods/goods?id={{item.id}}" class="goodsItem"> -->
   <view url="#" class="goodsItem">
     <navigator url="/pages/goods/goods?id={{item.id}}">
-    <!--活动标签1-->
-    <block wx:if="{{item.actType==1}}">
-      <view id="tips"></view>
-      <view id="tips2"></view>
-      <span class="tips">{{item.activity}}</span>
-    </block>
-    <!--活动标签1-->
-    <!--活动标签2-->
-    <block wx:if="{{item.actType==2}}">
-      <view id="tips3">{{item.activity}}
-        <view id="tips4"></view>
-      </view>
-
-    </block>
-    <!--活动标签2-->
-    <image class="icon" src="{{item.pic_url}}"></image>
-    <view class="np">
-      <text class="title">{{item.title}}</text>
-      <text class="activity" wx:if="{{item.actType>0}}">{{item.activity}}</text>
-    </view>
-    <view class="np">
-      <text class="price">¥{{item.price_info}}</text>
-      <block>
-        <text class="oldPrice" wx:if="{{item.actType>0}}">¥{{item.old_price_info}}</text>
-        <text class="subTitle" wx:if="{{item.actType>0}}">{{item.subtitle}}</text>
+      <!--活动标签1-->
+      <block wx:if="{{item.actType==1}}">
+        <view id="tips"></view>
+        <view id="tips2"></view>
+        <span class="tips">{{item.activity}}</span>
       </block>
-    </view>
+      <!--活动标签1-->
+      <!--活动标签2-->
+      <block wx:if="{{item.actType==2}}">
+        <view id="tips3">{{item.activity}}
+          <view id="tips4"></view>
+        </view>
+
+      </block>
+      <!--活动标签2-->
+      <image class="icon" src="{{item.pic_url}}"></image>
+      <view class="np">
+        <text class="title">{{item.title}}</text>
+        <text class="activity" wx:if="{{item.actType>0}}">{{item.activity}}</text>
+      </view>
+      <view class="np">
+        <text class="price">¥{{item.price_info}}</text>
+        <block>
+          <text class="oldPrice" wx:if="{{item.actType>0}}">¥{{item.old_price_info}}</text>
+          <text class="subTitle" wx:if="{{item.actType>0}}">{{item.subtitle}}</text>
+        </block>
+      </view>
     </navigator>
     <view class="np">
       <view class="selnum">
-        <view class="cut" bindtap="cutNumber" data-item-index="{{index}}" data-item-categoryId="{{categoryId}}" data-item-subId="{{subId}}">-</view> 
+        <view class="cut" bindtap="cutNumber" data-item-index="{{index}}" data-item-categoryId="{{categoryId}}" data-item-subId="{{subId}}">-</view>
         <input value="{{item.number}}" class="number" disabled="true" type="number" />
         <view class="add" bindtap="addNumber" data-item-index="{{index}}" data-item-categoryId="{{categoryId}}" data-item-subId="{{subId}}">+</view>
       </view>
     </view>
+  </view>
+</template>
+
+
+
+<!-- 规格弹出框 -->
+<template name="specPopup">
+  <view class="commodity_screen1" catchtouchmove='true' bindtap="hideCarOrSpec" data-type="1" wx:if="{{specPopupData.showModalStatus1}}"></view>
+  <view animation="{{specPopupData.animationData}}" class="commodity_attr_box" wx:if="{{specPopupData.showModalStatus1}}">
+    <view class="title-modal" catchtouchmove='true'>
+      <image src="{{specPopupData.specDetail.pic_url}}" />
+      <view class="m">
+        <view class="t">{{specPopupData.specDetail.title}}</view>
+        <view class="d">{{specPopupData.specDetail.describe}}</view>
+      </view>
+      <view class="close-modal" bindtap="hideCarOrSpec" data-type="1">×</view>
     </view>
-  <!-- </navigator> -->
+    <view class="content-inf">规格选择:</view>
+    <block wx:for="{{specPopupData.specDetail.spec}}" wx:for-index="{{index}}" wx:key="{{index}}" wx:for-item="spec">
+      <view class="content-inf">
+        <text class="name">{{spec.name}}</text>
+        <text class="active">{{specPopupData.specDetail.activity}}</text>
+        <text class="size">{{spec.size}}</text>
+        <text class="unit">¥</text>
+        <text class="price">{{spec.price}}</text>
+        <view class="selnum">
+          <view class="cut" bindtap="cutNumber" data-item-index="{{index}}" data-item-categoryId="{{specPopupData.categoryId}}" data-item-subId="{{specPopupData.subId}}">-</view>
+          <input value="{{spec.number}}" class="number" disabled="true" type="number" />
+          <view class="add" bindtap="addNumber" data-item-index="{{index}}" data-item-categoryId="{{specPopupData.categoryId}}" data-item-subId="{{specPopupData.subId}}">+</view>
+        </view>
+      </view>
+    </block>
+    <view class="footer-modal">
+      <view class="l">
+        <image src="../../static/images/spec_cart.png" />
+        <view class="icon_dot_notices2">
+          <view class="icon_dot_notices_inner2 cartNumber">2</view>
+          <view class="icon_dot_notices_left2"></view>
+          <view class="icon_dot_notices_right2"></view>
+        </view>
+      </view>
+      <view class="m">
+        <view class="total">
+          <text class="sl">合计: ¥ </text>
+          <text class="sm">188</text>
+          <text class="sr">¥236</text>
+        </view>
+        <view class="discount">已优惠30元</view>
+      </view>
+      <view class="r" bindtap="checkoutOrder">去结算</view>
+    </view>
+  </view>
 </template>

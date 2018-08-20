@@ -1,3 +1,94 @@
+/* 排序css */
+.sort {
+  background: #fff;
+  width: 100%;
+  height: 70rpx;
+  position: fixed;
+  z-index: 999;
+  border-bottom: 1px solid #eee;
+}
+
+.sort-box {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.sort-box .item {
+  flex: 1;
+  color: #333;
+  font-size: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-box .item .txt {
+  display: block;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.sort-box .item.active .txt {
+  color: #b99567;
+}
+
+.sort-box-category {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 40rpx 40rpx 0 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.sort-box-category .item {
+  height: 54rpx;
+  line-height: 54rpx;
+  text-align: center;
+  float: left;
+  padding: 0 16rpx;
+  margin: 0 0 40rpx 40rpx;
+  border: 1px solid #666;
+  color: #333;
+  font-size: 24rpx;
+}
+
+.sort-box-category .item.active {
+  color: #b99567;
+  border: 1px solid #b99567;
+}
+
+.sort .sort-box .triangle-asc {
+width: 0;
+height: 0;
+border-width: 8rpx;
+border-style: solid;
+border-color:  transparent transparent #333 transparent;
+margin:5rpx 6rpx;
+}
+
+.sort .sort-box .triangle-desc {
+width: 0;
+height: 0;
+border-width: 8rpx;
+border-style: solid;
+border-color: #333 transparent transparent transparent;
+margin:5rpx 6rpx;
+}
+
+.sort .sort-box .triangle-asc.active {
+border-color:  transparent transparent #c9a16d transparent;
+}
+
+.sort .sort-box .triangle-desc.active {
+border-color: #c9a16d transparent transparent transparent;
+}
+
+/* 商品列表css */
 .goodsItem {
   display: block;
   float: left;
@@ -27,7 +118,7 @@
   margin: 0 20rpx 8rpx 20rpx;
   width: 100%;
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -63,7 +154,7 @@
 
 /* 加减数量 */
 
-.goodsItem .np .selnum {
+.selnum {
   width: 100rpx;
   height: 30rpx;
   float: right;
@@ -213,3 +304,249 @@
   left: 50%;
   bottom: 0;
 }
+
+/* 弹出框1 start */
+
+.commodity_screen1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 10000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20000;
+  background: #fff;
+}
+
+.title-modal {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 30rpx 0 30rpx;
+}
+
+.title-modal image {
+  height: 180rpx;
+  width: 210rpx;
+}
+
+.title-modal .m {
+  flex: 1;
+}
+
+.title-modal .m view {
+  width: 100%;
+  padding: 6rpx 20rpx;
+}
+
+.title-modal .m .t {
+  font-size: 32rpx;
+  font-family: PingFang SC heavy;
+  font-weight: bold;
+  letter-spacing: 1rpx;
+}
+
+.title-modal .m .d {
+  color: #c9a16d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.title-modal .close-modal {
+  width: 30rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  font-size: 50rpx;
+  color: #c9a16d;
+}
+
+.content-inf {
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #c9a16d;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 75rpx;
+  margin: 0 30rpx;
+}
+
+.content-inf .name {
+  width: 130rpx;
+  font-size: 30rpx;
+}
+
+.content-inf .active {
+  width: 50rpx;
+  color: #c9a16d;
+  border: 1rpx solid #c9a16d;
+  font-size: 22rpx;
+  margin-right: 10rpx;
+}
+
+.content-inf .size {
+  flex: 1;
+  color: #c9a16d;
+  font-size: 30rpx;
+}
+
+.content-inf .unit {
+  width: 20rpx;
+  color: #c9a16d;
+  font-size: 24rpx;
+}
+
+.content-inf .price {
+  width: 80rpx;
+  color: #c9a16d;
+  font-size: 30rpx;
+}
+
+.content-inf .selnum2 {
+  width: 100rpx;
+  color: #c9a16d;
+}
+
+.footer-modal {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 90rpx;
+  background-color: #4e4c4c;
+  margin-top: 60rpx;
+}
+
+.footer-modal .l {
+  width: 150rpx;
+  height: 90rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-modal .m {
+  flex: 1;
+}
+
+.footer-modal .m .total {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer-modal .m .total .sl {
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.footer-modal .m .total .sm {
+  color: #fff;
+  font-size: 32rpx;
+  padding: 0 15rpx 0 0;
+}
+
+.footer-modal .m .total .sr {
+  text-decoration: line-through;
+  color: #c9a16d;
+  font-size: 24rpx;
+}
+
+.footer-modal .m .discount {
+  font-size: 22rpx;
+  color: #fff;
+  letter-spacing: 1rpx;
+  padding-top: 5rpx;
+}
+
+.footer-modal .r {
+  width: 250rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #c9a16d;
+  color: #fff;
+  font-family: PingFang SC heavy;
+}
+
+.footer-modal .l image {
+  width: 59rpx;
+  height: 59rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* 弹出框1 end */
+
+/* 弹出框1 购物车 数量提醒start */
+
+.icon_dot_notices2 {
+  margin: 0 12rpx;
+  height: 24rpx;
+  background-color: #b99567;
+  line-height: 24rpx;
+  font-size: 12rpx;
+  position: relative;
+  top: -15rpx;
+  right: 10rpx;
+}
+
+.icon_dot_notices_inner2 {
+  display: block;
+  position: relative;
+  z-index: 2;
+  margin: 0 -6rpx;
+  color: #fff;
+  border: 0;
+  background-color: #b99567;
+}
+
+.icon_dot_notices_left2 {
+  position: absolute;
+  left: -12rpx;
+  top: 0;
+  background-color: #b99567;
+  width: 12rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  display: inline-block;
+  border-bottom-left-radius: 24rpx;
+  border-top-left-radius: 24rpx;
+  z-index: 1;
+  border: 0;
+}
+
+.icon_dot_notices_right2 {
+  position: absolute;
+  right: -12rpx;
+  top: 0;
+  background-color: #b99567;
+  width: 12rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  display: inline-block;
+  border-bottom-right-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  z-index: 1;
+  border: 0;
+}
+
+/* 弹出框1 购物车 数量提醒 end */

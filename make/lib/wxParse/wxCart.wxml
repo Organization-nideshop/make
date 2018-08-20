@@ -1,11 +1,47 @@
-<!-- 商品列表template -->
+<!-- 购物车 template -->
 <template name="cart">
-  <view class="cartAdd">
+  <view class="cartAdd" bindtap="showCart">
     <view class="icon_dot_notices">
       <view class="icon_dot_notices_inner cartNumber">{{cartNumber}}</view>
       <view class="icon_dot_notices_left"></view>
       <view class="icon_dot_notices_right"></view>
     </view>
     <image src="../../static/images/icon1_07.png" />
+  </view>
+</template>
+
+<!-- 购物车弹出框 template -->
+<template name="cartPopup">
+  <view class="commodity_screen2" catchtouchmove='true' bindtap="hideCarOrSpec" data-type="2" wx:if="{{cartPopupData.showModalStatus2}}"></view>
+  <view animation="{{cartPopupData.animationData}}" class="commodity_attr_box2" wx:if="{{cartPopupData.showModalStatus2}}">
+    <view class="title-modal2" catchtouchmove='true'>
+      <view class="t">已选商品</view>
+      <image src="../../static/images/clear.png" />
+      <view class="d">
+        清空
+      </view>
+    </view>
+    <block wx:for="{{cartPopupData.cartGoods}}" wx:for-index="{{index}}" wx:key="{{index}}" wx:for-item="cart">
+      <view class="content-inf2">
+        <text class="l">{{cart.goods_name}}<block wx:if="{{cart.size}}">({{cart.size}})</block>
+        </text>
+        <text class="m">¥{{cart.price_info}}</text>
+        <view class="r selnum">
+          <view class="cut" bindtap="cutNumber" data-item-index="{{index}}" data-item-categoryId="" data-item-subId="">-</view>
+          <input value="{{cart.number}}" class="number" disabled="true" type="number" />
+          <view class="add" bindtap="addNumber" data-item-index="{{index}}" data-item-categoryId="" data-item-subId="">+</view>
+        </view>
+      </view>
+    </block>
+    <view class="footer-modal2">
+      <view class="l">
+        <text class="name">实付:</text>
+        <text class="unit">¥</text>
+        <text class="price">{{cartPopupData.cartPrice.price}}</text>
+        <text class="old_price">¥{{cartPopupData.cartPrice.old_price}}</text>
+        <text class="discount">优惠{{cartPopupData.cartPrice.discount}}元</text>
+      </view>
+      <view class="r" bindtap="checkoutOrder">去结算</view>
+    </view>
   </view>
 </template>
